@@ -1,0 +1,707 @@
+
+\section{AdS impact parameter space}
+\label{sec:ads}
+
+Our goal in this section is to compute the Regge limit of a scalar four-point function in a perturbative large $N$ CFT at one-loop and finite
+$\Delta_{\text{gap}}$. At finite $\Delta_{\text{gap}}$ we have to consider the $t$-channel exchange of all possible double-trace operators and also single-trace operators, which are respectively dual to tidal excitations of the external scattering states and  to long-string creation in the string theory context. It was shown in \cite{Meltzer:2019pyl} that the exchange of single-trace operators dual to the long-string creation effects is subleading in the Regge limit. Therefore we only need to consider the exchange of double-trace operators.
+This is where the new perturbative CFT optical theorem \eqref{eq:cft_optical_theorem_intro} takes a central role, as it allows us to compute the contributions of double-trace operators to the correlator starting from the corresponding tree-level correlators. The contribution of the leading Regge trajectory to the scalar tree-level correlators is known to leading order in the Regge limit \cite{Cornalba:2007fs,Costa:2012cb}. 
+
+In this section we will therefore study \eqref{eq:cft_optical_theorem_intro} in the Regge limit, and this time we expand the tree-level correlators in the $s$-channel. In the Regge limit the four external points are 
+in Lorentzian kinematics as depicted in figure \ref{fig:regge_figure}.
+	\begin{figure}
+	\begin{center}
+	\begin{tikzpicture}[anchor=base,baseline,scale=0.9, transform shape]
+		\node (vertLT) at (-2.5, 2.5) [] {};
+		\node (vertRT) at ( 2.5, 2.5) [] {};
+		\node (vertLB) at (-2.5,-2.5) [] {};
+		\node (vertRB) at ( 2.5,-2.5) [] {};
+		\node (opO1) at (-1.2,-1.6) [] {};
+		\node (opO2) at (-1.2, 1.6) [] {};
+		\node (opO3) at ( 1.2,-1.6) [] {};
+		\node (opO4) at ( 1.2, 1.6) [] {};
+		\node at (-1.9,-1.2) {\large $y_1$};
+		\node at (-1.9,1.2) {\large $y_4$};
+		\node at (1.9,-1.2) {\large $y_3$};
+		\node at (1.9,1.2) {\large $y_2$};
+		\node at (-1.5,-1.2) [twopt] {};
+		\node at (-1.5,1.2) [twopt] {};
+		\node at (1.5,-1.2) [twopt] {};
+		\node at (1.5,1.2) [twopt] {};
+		\node at (2.7,2.5) {$y^+$};
+		\node at (-2.5,2.5) {$y^-$};
+		\draw [axis] (vertLB)-- (vertRT);
+		\draw [axis] (vertRB)-- (vertLT);
+		\draw [thick, black] (0,3.5) -- (-3.5,0);
+		\draw [thick, black] (0,-3.5) -- (-3.5,0);
+		\draw [thick, black] (3.5,0) -- (0,3.5);
+		\draw [thick, black] (3.5,0) -- (0,-3.5);
+	\end{tikzpicture}
+	\end{center}
+	\caption{Kinematics in the central Poincar\'{e} patch with coordinates $y_i$. Time is on the vertical axis, transverse directions are suppressed.}
+	\label{fig:regge_figure}	
+	\end{figure}
+In this configuration all distances between points are spacelike except for $y_{14}^2, y_{23}^2 < 0$. 
+The Regge limit is reached by sending the four-points to infinity along the light cones
+\beq
+y_{1}^{+} \rightarrow-\infty, \quad y_{2}^{+} \rightarrow+\infty, \quad y_{3}^{-} \rightarrow-\infty, \quad y_{4}^{-} \rightarrow+\infty\,.
+\eeq
+The Regge limit can be directly applied to the left hand side of \eqref{eq:cft_optical_theorem_intro}. The terms on the Regge sheets $A^{\circlearrowleft}(y_i)$ and $A^{\circlearrowright}(y_i)$ are dominant over the Euclidean terms in this limit. However, we cannot apply the Regge limit directly to the right hand side of \eqref{eq:cft_optical_theorem_intro} as the shadow integrals range over Euclidean configurations. Hence we will apply Wick rotations on the points $y_{5},\,y_{6},\,y_{7},\,y_{8}$ to obtain a gluing of the discontinuities of Lorentzian correlators. We will assume that in the Regge limit the dominant contribution to the gluing formula comes from the domain where the individual tree-level correlators are in the Regge limit themselves. We do not provide a proof of this assumption but we justify it in section \ref{sec:reggeandimpact}.
+
+When each four-point function in \eqref{eq:gluing_expan} is in the Regge limit, the points $y_{5},\,y_{6},\,y_{7},\,y_{8}$ are placed in the same positions as $y_{1},\,y_{4},\,y_{2},\,y_{3}$ in fig.\ \ref{fig:regge_figure}, respectively. Thus $y_7$ is in the future of $y_8$ and this pair is spacelike from $y_1 ,\, y_4 ,\, y_5 ,\, y_6$. Similarly, $y_6$ is in the future of $y_5$ and is spacelike from $y_2 ,\, y_3 ,\, y_7 ,\, y_8$. 
+For the chosen kinematics
+we put the pair $y_5 ,\, y_6$ in anti-time order  using the epsilon prescription of \eqref{eq:wightman} with $\epsilon_5 > \epsilon_6$, and the pair $y_7 ,\, y_8$ in time order using $\epsilon_7 > \epsilon_8$. Applying this on \eqref{eq:cft_optical_theorem} gives the following formula for the Regge limit of the double discontinuity
+\begin{align}
+\dDisc_t A_{\text{1-loop}}(y_k) \Big|_{\text{d.t.}} = -\frac{1}{2}
+\sum\limits_{\cO_5, \cO_6}  \frac{1}{N_{\cO_5}N_{\cO_6}}\int & dy_5 dy_6 dy_7 dy_8\, \< [\cO_2 ,\cO_3 ] \cO_5 \cO_6 \>_{\text{tree}} \< \tl \cO_5 \tl{\cO}_{7}^{\dag}\>  \nonumber\\
+&\<\tl \cO_6 \tl{\cO}_{8}^{\dag}\>
+		 \< \cO_7 \cO_8 [\cO_4 , \cO_1]\>_{\text{tree}} \Big|_{\left[\cO_5\cO_6\right]} \,.
+\label{eq:regge_gluing_form}
+\end{align}
+The relative ordering between $\epsilon_5 ,\epsilon_7$ and $\epsilon_6 ,\epsilon_8$ is irrelevant as the pairs, appearing in the two-point functions on the right hand side of \eqref{eq:regge_gluing_form}, are spacelike separated in the Regge configuration.
+
+In this section we define the discontinuities as the commutators inserted into the fully Lorentzian correlators
+\bea
+\Disc_{14} A^{1874}(y_i) &\coloneqq \< \cO_7 \cO_8 [\cO_4 , \cO_1]\> = 
+A^{1874}{}^\circlearrowleft(y_i) - A^{1874}_{\text{Euc}}(y_i)\,, \\
+\Disc_{23}  A^{3652}(y_i) &\coloneqq \< [\cO_2 ,\cO_3 ] \cO_5 \cO_6 \> = 
+A^{3652}_{\text{Euc}}(y_i) - A^{3652}{}^\circlearrowright(y_i)  \,.
+\eea{eq:new_singledisc}
+This definition differs slightly from the one in \eqref{eq:discdefnorg}. Stripping out the appropriate pre-factors from \eqref{eq:new_singledisc}, one can check that these single discontinuities can be equivalently defined as
+\bea
+\Disc_{14}  \mathcal{A}^{1234}(z,\bar{z}) &\coloneqq
+e^{i \pi(a+b)} \mathcal{A}^{1234}(z,\bar{z}^\circlearrowleft) - e^{-i \pi(a+b)} \mathcal{A}^{1234}(z,\bar{z})\,, \\
+\Disc_{23}  \mathcal{A}^{1234}(z,\bar{z}) &\coloneqq
+\mathcal{A}^{1234}(z,\bar{z}) -  \mathcal{A}^{1234}(z,\bar{z}^\circlearrowright)\,, \\
+\Disc_{23}  \mathcal{A}^{3412}(z,\bar{z}) & =
+e^{-i \pi(a+b)} \mathcal{A}^{3412}(z,\bar{z}) - e^{i \pi(a+b)} \mathcal{A}^{3412}(z,\bar{z}^\circlearrowright)\,.
+\eea{eq:Disc_conventional}
+Starting from the discontinuity defined in \eqref{eq:discdefnorg}, these expressions result from continuing another half circle in $\zb$, so that the different terms are either evaluated at the original position or continued a full circle around 1. The extra phase comes from the additional Wick rotations.
+The final  result matches the definition of the discontinuity in \cite{Caron-Huot:2020nem}.
+Note that $\zb$ is continued an extra half circle in opposite directions for the first two lines in \eqref{eq:Disc_conventional}, so that with these definitions the relation to the $\dDisc$ in \eqref{eq:dDisc_y} remains valid.\footnote{For $t$-channel blocks, the new definitions for the discontinuities in \eqref{eq:Disc_conventional} are related to the old definition in \eqref{eq:discdefnorg} by a phase, for example, for $\Disc_{14}$ the relative phase is $e^{i\pi\tau_{\cO}/2}$.}
+Therefore the optical theorem in the Regge limit can still be expressed as
+\bea
+\dDisc_t  A_{\rm 1-loop}(y_i)\Big|_\text{d.t.}  \!= -\frac{1}{2}
+\sum\limits_{\substack{\mathcal{O}_5,\mathcal{O}_6\\ \in\  s.t.}}
+ \!
+ \int dy_5 dy_6 \, \Disc_{23}  A_{\rm tree}^{3652}(y_k) \, \bS_5 \bS_6 \Disc_{14} A_{\rm tree}^{1564}(y_k)  \Big|_{[\cO_5 \cO_6]}\,,
+\eea{eq:cft_optical_theorem_s} 
+with the discontinuities as defined in the first and third lines of \eqref{eq:Disc_conventional}, and the gluing and shadow integrals now ranging over Minkowski space. This formula is also depicted in figure \ref{fig:optical_theorem_strings} in terms of Witten diagrams.
+\begin{figure}
+	\begin{center}
+\begin{equation*}
+\dDisc_t \,
+\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+    \draw [thick,fill=cyan,fill opacity=0.4] (-0.6,0) ellipse (0.2 and 0.6);
+    \draw [thick,fill=cyan,fill opacity=0.4] (0.6,0) ellipse (0.2 and 0.6);
+	\node (vertLU) at (-0.6,0.6) [twopt] {};
+	\node (vertRU) at ( 0.6,0.6) [twopt] {};
+	\node (vertLD) at (-0.6,-0.6) [twopt] {};
+	\node (vertRD) at ( 0.6,-0.6) [twopt] {};
+	\node (opO1) at (-1.3,-1.3) [] {};
+	\node (opO2) at (-1.3, 1.3) [] {};
+	\node (opO3) at ( 1.3,-1.3) [] {};
+	\node (opO4) at ( 1.3, 1.3) [] {};
+	\node at (-1.4,-1.5) {$1$};
+	\node at (-1.4, 1.3) [] {$2$};
+	\node at ( 1.4,-1.5) [] {$4$};
+	\node at ( 1.4, 1.3) [] {$3$};
+	\node at (0,0.5) [below] {$P_2$};	
+	\node at (0,-0.7) [below] {$P_1$};
+	\draw [scalar no arrow] (vertLD)-- (opO1);
+	\draw [scalar no arrow] (vertLU)-- (opO2);
+	\draw [finite] (vertLU)-- (vertRU);
+	\draw [finite] (vertLD)-- (vertRD);
+	\draw [scalar no arrow] (vertRD)-- (opO3);
+	\draw [scalar no arrow] (vertRU)-- (opO4);
+    \draw (0,0) circle (1.7);
+\end{tikzpicture}} \,
+\sim \sum\limits_{\cO_5, \cO_6} \int 
+\Disc_{23}
+\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+	\node (vertL) at (-0.5,0) [twopt] {};
+	\node (vertR) at ( 0.5,0) [twopt] {};
+	\node (opO1) at (-1.,-1.) [] {};
+	\node (opO2) at (-1., 1.) [] {};
+	\node (opO3) at ( 1.,-1.) [] {};
+	\node (opO4) at ( 1., 1.) [] {};
+	\node at (-1.2,-1.3) {$5$};
+	\node at (-1.2, 1.1) [] {$2$};
+	\node at ( 1.2,-1.3) [] {$6$};
+	\node at ( 1.2, 1.1) [] {$3$};
+	\node at (0,-0.1) [below] {$P_2$};	
+	\draw [spinning no arrow] (vertL)-- (opO1);
+	\draw [scalar no arrow] (vertL)-- (opO2);
+	\draw [finite] (vertL)-- (vertR);
+	\draw [spinning no arrow] (vertR)-- (opO3);
+	\draw [scalar no arrow] (vertR)-- (opO4);
+    \draw (0,0) circle (1.3);
+\end{tikzpicture}}
+\Disc_{14}
+\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+	\node (vertL) at (-0.5,0) [twopt] {};
+	\node (vertR) at ( 0.5,0) [twopt] {};
+	\node (opO1) at (-1.,-1.) [] {};
+	\node (opO2) at (-1., 1.) [] {};
+	\node (opO3) at ( 1.,-1.) [] {};
+	\node (opO4) at ( 1., 1.) [] {};
+	\node at (-1.2,-1.3) {$1$};
+	\node at (-1.2, 1.1) [] {$\tl 5$};
+	\node at ( 1.2,-1.3) [] {$4$};
+	\node at ( 1.2, 1.1) [] {$\tl 6$};
+	\node at (0,-0.1) [below] {$P_1$};	
+	\draw [scalar no arrow] (vertL)-- (opO1);
+	\draw [spinning no arrow] (vertL)-- (opO2);
+	\draw [finite] (vertL)-- (vertR);
+	\draw [scalar no arrow] (vertR)-- (opO3);
+	\draw [spinning no arrow] (vertR)-- (opO4);
+    \draw (0,0) circle (1.3);
+\end{tikzpicture}}
+\end{equation*}
+\end{center}
+\caption{Optical theorem in the Regge limit in terms of Witten diagrams. The tree-level correlators are dominated by $s$-channel Pomeron exchange. The external operators are scalars, while $\cO_5$ and $\cO_6$ are summed over all states that couple to the 
+external scalars and the Pomeron (tidal excitations). The ellipses on the l.h.s.\ indicate that all string excitations are taken into account.}
+\label{fig:optical_theorem_strings}	
+\end{figure}
+
+We should also note that for real $z, \zb$, $\Disc_{23}$ in the third line of \eqref{eq:Disc_conventional} is related to $\Disc_{14}$ in the first line by
+\beq
+\Disc_{23}  \mathcal{A}^{3412}(z,\bar{z}) = - \left. \left( \Disc_{14} \mathcal{A}^{1234}(z,\bar{z}) \right)^* \right|_{(a,b)\to (-b,-a)}\,, \quad 0<z, \zb < 1\,.
+\label{eq:disc_relation}
+\eeq
+Applied to the correlators appearing in \eqref{eq:cft_optical_theorem_s} this reads
+\beq
+\Disc_{23}  \mathcal{A}^{3652}(z,\zb) = - \left. \left( \Disc_{14} \mathcal{A}^{1564} (z,\zb)\right)^* \right|_{1564\to 3652}\,.
+\label{eq:disc_relation56}
+\eeq
+To benefit from this useful relation, we will always strip out a pre-factor such that we obtain the correlator $\mathcal{A}^{3652}(z,\zb)$ on the right hand side of \eqref{eq:cft_optical_theorem_s}. Otherwise we would have to use the second line of \eqref{eq:Disc_conventional} for $\Disc_{23}$.
+Finally, in the Regge limit the analytically continued correlators are dominant over the Euclidean contributions so that we have
+\bea
+\Disc_{14} \mathcal{A}^{1234}(z,\bar{z}) &\approx e^{i \pi(a+b)} \mathcal{A}^{1234}(z,\bar{z}^\circlearrowleft)\,,\\
+\Disc_{23}  \mathcal{A}^{3412}(z,\bar{z}) &\approx - e^{i \pi(a+b)} \mathcal{A}^{3412}(z,\bar{z}^\circlearrowright)\,,\\
+\dDisc_t \, \mathcal{A}^{1234}(z,\bar{z}) &\approx - \frac{1}{2} \left(
+e^{i \pi(a+b)} \mathcal{A}^{1234}(z,\bar{z}^\circlearrowleft)
++ e^{-i \pi(a+b)} \mathcal{A}^{1234}(z,\bar{z}^\circlearrowright)
+\right)\,,
+\eea{eq:discs_Regge}
+where the $\approx$ sign means we took the Regge limit.
+In order to account for the tidal excitations, the operators $\cO_5$ and $\cO_6$ can carry spin, in which case their indices are contracted with the ones of $\tl \cO_5$ and $\tl \cO_6$ and sums over tensor structures are implied. In subsections \ref{sec:reggeandimpact},
+ \ref{sec:impact} and 
+\ref{sec:sdisc} below we will mostly suppress the aspect of spinning correlators. We will come back to this issue in subsection \ref{sec:vertex_function}.
+ 
+
+
+
+\subsection{Regge limit}
+\label{sec:reggeandimpact}
+
+
+
+To obtain the impact parameter representation, we first change the coordinate system placing each point on a different Poincar\'{e} patch as shown in figure \ref{fig:Poincare_patches}. We use the following coordinate transformations
+\beq
+\begin{aligned}
+x_{i} &=\left(x_{i}^{+}, x_{i}^{-}, x_{i \perp}\right)=-\frac{1}{y_{i}^{+}}\left(1, y_{i}^{2}, y_{i \perp}\right), & & i=1,2,5,7\,, \\
+x_{i} &=\left(x_{i}^{+}, x_{i}^{-}, x_{i \perp}\right)=-\frac{1}{y_{i}^{-}}\left(1, y_{i}^{2}, y_{i \perp}\right), & & i=3,4,6,8\,.
+\end{aligned}
+\label{eq:xofy}
+\eeq
+\begin{figure}
+	\begin{center}
+	\begin{tikzpicture}[anchor=base,baseline,scale=0.6, transform shape]
+		\node (opO1) at (-1.2,-1.6) [] {};
+		\node (opO2) at (-1.2, 1.6) [] {};
+		\node (opO3) at ( 1.2,-1.6) [] {};
+		\node (opO4) at ( 1.2, 1.6) [] {};
+		\node at (-1.9,-1.2) {\Large $x_1$};
+		\node at (-1.9,1.1) {\Large $x_4$};
+		\node at (1.9,-1.2) {\Large $x_3$};
+		\node at (1.9,1.1) {\Large $x_2$};
+		\node at (-1.5,-1.2) [twopt] {};
+		\node at (-1.5,1.2) [twopt] {};
+		\node at (1.5,-1.2) [twopt] {};
+		\node at (1.5,1.2) [twopt] {};
+		\draw [ultra thick, black] (-1.75,-1.75)-- (1.75,1.75);
+		\draw [ultra thick, black] (1.75,-1.75)-- (-1.75,1.75);
+		\draw [ultra thick, black] (0,3.5) -- (-3.5,0);
+		\draw [ultra thick, black] (0,-3.5) -- (-3.5,0);
+		\draw [ultra thick, black] (3.5,0) -- (0,3.5);
+		\draw [ultra thick, black] (3.5,0) -- (0,-3.5);
+		\draw [thick, blue] (0,3.5) -- (-1.75,5.25);
+		\draw [thick, blue] (-5.25,1.75) -- (-1.75,5.25);
+		\draw [thick, blue] (-5.25,1.75) -- (-3.5,0);
+		\node at (-2.3,2.3) [blue] {\huge $\mathcal{P}_4$};
+		\draw [thick, red] (-3.5,0) -- (-5.25,-1.75);
+		\draw [thick, red] (-5.25,-1.75) -- (-1.75,-5.25);
+		\draw [thick, red] (-1.75,-5.25) -- (0,-3.5);
+		\node at (-2.3,-2.3) [red] {\huge $\mathcal{P}_1$};
+		\draw [thick, brown] (0,-3.5) -- (1.75,-5.25);
+		\draw [thick, brown] (1.75,-5.25) -- (5.25,-1.75);
+		\draw [thick, brown] (5.25,-1.75) -- (3.5,0);
+		\node at (2.3,-2.3) [brown] {\huge $\mathcal{P}_3$};
+		\draw [thick, purple] (3.5,0) -- (5.25,1.75);
+		\draw [thick, purple] (5.25,1.75) -- (1.75,5.25);
+		\draw [thick, purple] (1.75,5.25) -- (0,3.5);
+		\node at (2.3,2.3) [purple] {\huge $\mathcal{P}_2$};
+		\draw [thick, black, dotted] (-3.5, 5.25) -- (-3.5,-5.25);
+		\draw [thick, black, dotted] (3.5, 5.25) -- (3.5,-5.25);
+	\end{tikzpicture}
+	\end{center}
+	\caption{The external operators at coordinates $x_i$ in their respective Poincar\'e patches $\mathcal{P}_i$. The black dotted lines are identified when the Poincar\'e patches are wrapped on the boundary of the global AdS cylinder.}
+	\label{fig:Poincare_patches}	
+	\end{figure}
+In the new $x_i$ coordinates, the Regge limit corresponds to placing the four external points at the origin of their respective Poincar\'{e} patches,
+\beq
+x_1, x_2, x_3, x_4 \to 0\,.
+\label{eq:regge_limit_x}
+\eeq
+However, $x_5$ to $x_8$ are integrated over in the CFT optical theorem.
+
+Conformal correlators transform covariantly under the transformation \eqref{eq:xofy}.
+In the scalar case we have
+\beq
+A\left(y_{i}\right)=(-y_{1}^{+})^{-\De_1} (y_{2}^{+})^{-\De_2} (-y_{3}^{-})^{-\De_3} (y_{4}^{-})^{-\Delta_4}  A\left(x_{i}\right)\,.
+\label{eq:Ax_to_Ay}
+\eeq
+In the spinning case, one must additionally account for the Jacobian matrix $\partial y^a / \partial x^m$.\footnote{For external spinning operators, the conformal transformations have a non-trivial rotation matrix $\partial y^a / \partial x^m$. Conformal covariance of the correlators gives, in the representative example of two vectors and two scalars \cite{Cornalba:2009ax}, $A^{a b}\left(y_{i}\right)=\left(-y_{1}^{+} y_{2}^{+}\right)^{-1-\Delta_V}\left(-y_{3}^{-} y_{4}^{-}\right)^{-\Delta_S} \frac{\partial y_{1}^{a}}{\partial x_{1}^{m}} \frac{\partial y_{2}^{b}}{\partial x_{2}^{n}} A^{m n}\left(x_{i}\right)$. These matrices ensure that the inversion tensors are correctly mapped from $y_i$ to $x_i$ variables, preserving their form.}
+
+Next we use conformal symmetry to express the correlator in terms of two vectors.
+This is similar to expressing the correlator in terms of two scalar cross-ratios, with the difference that here we fix two, instead of the customary three, positions using translations and special conformal transformations to express the correlator in terms of the remaining two position vectors.
+ We can follow \cite{Cornalba:2009ax} and use a translation to send $x_1$ to 0
+which, due to the different transformations in \eqref{eq:xofy} (see also \cite{Kulaxizi_2018}), will act as a special conformal transformation on the Poincar\'{e} patches for $x_3$ and $x_4$,
+\beq
+x_1 \to 0\,, \quad x_2 \to x_2 - x_1\,, \quad
+x_{3,4} \to \frac{x_{3,4} - x_{3,4}^2 x_1}{1-2 x_{3,4} \cdot x_1 + x_{3,4}^2 x_1^2}\,.
+\eeq
+Next we implement a translation on the $x_3$ and $x_4$ patches (acting as special conformal transformation on $x_{1,2}$) to also map $x_4$ to 0 in its own patch and find that the correlator as a function of the Poincar\'e patch coordinates $A(x_i)$, as defined in \eqref{eq:Ax_to_Ay}, can always be expressed as
+\beq
+A(x_1, x_2, x_3, x_4) \approx A(0, -x, \xb/\xb^2, 0) \equiv A(x,\xb)\,,
+\label{eq:Axxbar}
+\eeq
+with
+\beq
+x\approx x_1 - x_2 \,, \qquad \xb \approx x_3 - x_4\,,
+\eeq
+in the Regge limit \eqref{eq:regge_limit_x}.
+
+It is further convenient to implement the coordinate change using embedding space coordinates $P^M \in \mathbb{R}^{2,d}$
+\beq
+P^M = \big(P^+,P^-,P^m\big)\,, \qquad P\cdot P = -P^+ P^- + \eta_{m n} P^m P^n\,.
+\eeq
+These are related to the coordinates $y^m \in \mathbb{R}^{1,d-1}$ of physical Minkowski space by \cite{Cornalba:2009ax}
+\beq
+P^M = \big(y^+, y^-, 1, y^2,y_\perp\big) \quad \Rightarrow \quad
+P_{ij} \equiv -2 P_i \cdot P_j = (y_i-y_j)^2\,,
+\eeq
+and to the coordinates $x_i$ by
+\bea
+P_1^M &= -y_1^+ \left(-1,-x_1^2,x_1^m\right)\,, & & 
+P_2^M =  y_2^+ \left(-1,-x_2^2,x_2^m\right)\,,\\
+P_3^M &= -y_3^- \left(-x_3^2,-1, x_3^m\right), & &
+P_4^M =  y_4^- \left(-x_4^2,-1, x_4^m\right)\,.
+\eea{eq:xiPatches}
+One can easily show that the cross-ratios \eqref{eq:crossratios} are given in terms of $x$ and $\xb$ as
+\beq
+z\zb = x^2 \xb^2\,, \qquad (1-z)(1-\zb) = 1 + x^2 \xb^2 + 2 x \cdot \xb\,,
+\label{eq:xxb_derivation}
+\eeq
+and the kinematic prefactor \eqref{eq:T} becomes
+\beq
+T^{1234} = \frac{(-y_{1}^{+})^{-\De_1} (y_{2}^{+})^{-\De_2} (-y_{3}^{-})^{-\De_3} (y_{4}^{-})^{-\Delta_4}}{x^{\De_1 + \De_2} \xb^{\De_3 + \De_4}}\,.
+\eeq
+When combining \eqref{eq:OPE_s} and \eqref{eq:Ax_to_Ay}, the numerator of the last expression cancels the Jacobian prefactor in \eqref{eq:Ax_to_Ay} to give,
+\beq
+A\left(x_{i}\right) = \frac{A^{1234}(z, \zb)}{x^{\De_1 + \De_2} \xb^{\De_3 + \De_4}}\,.
+\label{eq:strip_A}
+\eeq
+ If we now study the correlator $A^{3652}(x_i)$, a priori we have to take into account that only $x_2$ and $x_3$ are affected by the Regge limit. However, we will assume that the integration will be dominated by the region where the integration points are also boosted. Using the embedding space coordinates
+\bea
+P_5^M =  -y_5^+ \left(-1,-x_5^2,x_5^m\right)\,, \qquad
+P_6^M &= y_6^- \left(-x_6^2,-1, x_6^m\right)\,,
+\eea{eq:x56Patches}
+we find
+\beq
+x' \approx x_5 - x_2 \,, \qquad \xb' \approx x_3 - x_6\,.
+\eeq
+Where the primed variables are meant to emphasize that the points $1,4$ are replaced by $5,6$ in this correlator as compared to \eqref{eq:Axxbar}.
+Performing these steps for all the correlators in \eqref{eq:cft_optical_theorem_s} we find,
+\bea
+\dDisc_t A_{\text{1-loop}}(x_{12},x_{34}) = -\frac{1}{2}
+\sum\limits_{\cO_5, \cO_6}  \int dx_5 dx_6 \, \Disc_{23} A^{3652}_{\text{tree}}(x_{36},x_{52})   \\
+									\bS_5 \bS_6	\Disc_{14} A^{1564}_{\text{tree}}(x_{15},x_{64}) \Big|_{\left[\cO_5\cO_6\right]}\,,
+\eea{eq:cft_optical_theorem_x}
+where we stop explicitly mentioning that we are dealing with only the contribution of double-trace operators as single-trace contributions are subleading in the limit considered.
+Let us stress that in order to write the correlators on the right hand side in terms of two differences, we assumed that each of the individual tree-level correlators are in the Regge limit themselves. 
+The easiest way to justify this is in Fourier space using the impact parameter transform defined below.
+Each tree-level position space correlator is dominated by a power $\sigma^{1-j(\nu)}$ in the Regge limit, which maps to a power of the AdS center of mass energy $S^{j(\nu)-1}$ in impact parameter space. Since the optical theorem is multiplicative in impact parameter space, subleading Regge trajectories or kinematical corrections from the conformal block at finite boost get mapped to smaller powers of $S$, and therefore do not contribute to the leading behavior.
+The eikonal approximation in AdS \cite{Cornalba:2007zb} gives additional intuition for this, since it means that even in AdS, the particles remain essentially undeflected, scattering forward each time they exchange a Pomeron. Furthermore, we will show in section \ref{sec:Appendix_tchannel} that this configuration reproduces the behavior at one-loop derived in \cite{Meltzer:2019pyl}.
+
+\subsection{Impact parameter space}
+\label{sec:impact}
+
+
+
+
+Let us now consider the two-point functions $\<\tl \cO_5 \tl \cO_7\>$ and $\<\tl \cO_8 \tl \cO_6\>$ for the shadow transforms in \eqref{eq:cft_optical_theorem_x}.
+In the Regge configuration, $x_5$ is the patch of $x_1$, $x_6$ is the patch of $x_4$, $x_7$ is the patch of $x_2$ and $x_8$ is the patch of $x_3$.
+As explained in \cite{Cornalba:2007zb,Kravchuk:2018htv}, the two-point function between two coordinates on adjacent Poincar\'e patches has an additional phase factor $e^{i \pi \Delta}$ and this phase can be accounted for by switching from the $i\e$ prescription of a Feynman propagator to that of a Wightman propagator (see \cite{Cornalba:2007zb}).
+The normalization of the shadow transform in \eqref{eq:shadowtransform} and \eqref{eq:shadownormali} is obtained from the Fourier transform of a two-point function as the shadow transform acts multiplicatively in Fourier space (see section 3.2 of \cite{Karateev:2018oml}). The normalization in \eqref{eq:shadownormali} is obtained from the Fourier transform of a Euclidean two-point function, which matches the one of a Lorentzian two-point function with Feynman $i\e$ prescription. The Wightman propagator in momentum space however has support only on the future lightcone and the coefficient of the Fourier transform is different (see Appendix B of \cite{Cornalba:2007zb} and 
+section 2.1 of \cite{Gillioz:2018mto})
+\bea
+\int dx \frac{e^{-2iq\cdot x}}{\left[-(x^{0}-i\epsilon)^{2} + \vec{x}^{2}\right]^{\De}} =\cM_{\cO} 
+ \,\Theta(q^{0}) \,\Theta(-q^{2})\left(-q^{2}\right)^{\De-\frac{d}{2}}\,,
+\eea{eq:WightmanFT}
+with 
+\begin{equation}
+ \cM_{\cO}  = \frac{2\pi^{\frac{d}{2}+1}}{\Gamma(\De)\Gamma\big(\De - \frac{d}{2} + 1\big)} \,.
+\end{equation}
+Consequently we change the normalization $N_\cO$ of the shadow transform in \eqref{eq:shadowtransform} to (for scalar operators)
+\be
+\mathcal{N}_\cO = \cM_\cO \cM_{\tl \cO}  \,. 
+\label{eq:new_normali}
+\ee
+
+Next we define, following \cite{Cornalba:2007fs}, the impact parameter representation as the Fourier transform of the discontinuity of the correlator in the two remaining vectors%
+\footnote{The AdS impact parameter representation was previously defined in \cite{Cornalba:2007fs,Cornalba:2006xm,Cornalba:2008qf} as the Fourier transform of the correlator on the second sheet $A(z,\zb^\circlearrowleft)$. Since this contribution dominates in the Regge limit, it is indistinguishable from the discontinuity of the correlator in this limit.
+However, in the $t$-channel the two notions are clearly different and it was necessary to take the discontinuity to derive \eqref{eq:cft_optical_theorem_intro}.
+In the next section we will see that the discontinuity is the better choice also in the $s$-channel.}
+\beq
+\Disc_{14} A^{1jk4}(x_{1j},x_{k4}) = \int dp \, d\bar{p} \, e^{-2i p \cdot x_{1j}-2i \bar{p} \cdot x_{k4}} B^{1jk4}(p,\bar{p})\,,
+\label{eq:BtoA}
+\eeq
+where the function $B(p,\bar{p})$ has support only on the future Milne wedge of $p$ and $\bar{p}$.
+Using \eqref{eq:disc_relation56} on \eqref{eq:BtoA} we get the Fourier transform of $\Disc_{23}$.
+\be
+\label{eq:BtoA23}
+\Disc_{23} A^{3kj2}(x_{3k},x_{j2}) = -\int dp \, d\bar{p} \, e^{-2i p \cdot x_{3k}-2i \bar{p} \cdot x_{j2}} B^{3kj2}(-p,-\bar{p})^{*}\,.
+\ee
+The causal relations and thus the $i\epsilon$ prescription in \eqref{eq:BtoA23} are opposite to those in \eqref{eq:BtoA} and the complex conjugation prescribed in \eqref{eq:disc_relation56} compensates for that.
+Inserting \eqref{eq:BtoA} into \eqref{eq:cft_optical_theorem_x} and using that $A^{1\tilde{5}\tilde{6}4}_{\text{tree}}$ is a double shadow transform of $A^{1784}_{\text{tree}}$ we obtain, upon using \eqref{eq:disc_relation56} for the $\Disc_{23}$,
+\bea
+{}& \dDisc_t A_{\text{1-loop}}(x_{12},x_{34})  = \frac{1}{2}
+\sum\limits_{\cO_5, \cO_6}  \int dx_{5}\, dx_{6}\, dx_{7}\, dx_{8}\; 	\int dp \, d\pb \,  dp' \, d\bar{p}' 	  \\ 
+	& \qquad 
+	\times  e^{-2i (p' \cdot x_{36}+ \bar{p}' \cdot x_{52}+ p \cdot x_{17}+ \bar{p} \cdot x_{84})} B^{3652}_\text{tree} (-p',-\pb')^* B^{1564}_\text{tree}(p,\pb)  \\
+&\qquad	
+\times \frac{T^{(\rho_5)}(x_{75})}{\mathcal{N}_{\cO_{5}}\left[-(x^{0}_{75}-i\epsilon)^{2} + \vec{x}_{75}^{2}\right]^{d-\De_5}}  \frac{T^{(\rho_6)}(x_{68})}{\mathcal{N}_{\cO_{6}}\left[-(x^{0}_{68}-i\epsilon)^{2} + \vec{x}_{68}^{2}\right]^{d-\De_6}} \Bigg|_{\left[\cO_5\cO_6\right]} \,.
+\eea{eq:ftgluing1}
+$T^{(\rho)}(x_{ij})$ is the tensor structure for the two-point function of an operator with $SO(d)$ quantum number $\rho$. For example it is the familiar inversion tensor $\eta^{\mu\nu}-2\frac{x^{\mu}x^{\nu}}{x^{2}}$ for spin 1 operators. Note that we have $B^{1564}_\text{tree}$ instead of $B^{1784}_\text{tree}$, as the superscripts now only indicate the dimensions of the corresponding operators and $\Delta_5 = \De_7$, $\De_6 = \De_8$.
+
+We can now express the two-point functions from the shadow transforms in Fourier space by inverting \eqref{eq:WightmanFT}
+\be
+\label{eq:shadow2ptFT}
+\frac{T^{(\rho)}(x)}{\left[-(x^{0}-i\epsilon)^{2} + \vec{x}^{2}\right]^{d-\De}}  ={} \frac{\mathcal{M}_{\tl\cO}}{\pi^{d}}\int\limits_{M} dq\, e^{-2iq\cdot x}\, \widehat{T}^{(\rho)}(q) \, (-q^{2})^{\frac{d}{2}-\De} \,.
+\ee
+The Fourier space integral is over the future Milne wedge $M$ as the Fourier transform has support only on this domain.
+$\widehat{T}^{(\rho)}(q)$ is the tensor structure of the two-point function in Fourier space,
+which has been discussed for example in \cite{Gillioz:2018mto}.
+It is a tensor composed of $q^\mu$ and $\eta^{\mu \nu}$ that can be factorized into a product of new tensors $t^{(\rho)}(q)$ as follows
+\beq
+\widehat{T}^{(\rho)}(q)^{\mu_1 \ldots \mu_{|\rho|}}_{\nu_1 \ldots \nu_{|\rho|}}
+= t^{(\rho)}(q)^{\mu_1 \ldots \mu_{|\rho|}}_{\sigma_1 \ldots \sigma_{|\rho|}}
+t^{(\rho)}(q)^{\sigma_1 \ldots \sigma_{|\rho|}}_{\nu_1 \ldots \nu_{|\rho|}}\,.
+\label{eq:T_factorization}
+\eeq
+Using \eqref{eq:shadow2ptFT} in \eqref{eq:ftgluing1} we end up with four position integrals over $x_{5},x_{6},x_{7},x_{8}$ and six  integrals over $q,\bar{q}$ (from the four-point functions) and $p,\bar{p},p',\bar{p}'$. The four position integrals give  four Dirac delta functions with which we can eliminate the $q,\bar{q},p',\bar{p}'$ integrals to obtain
+\bea
+\dDisc_t A_{\text{1-loop}}(x_{12},x_{34})		= \ &
+\frac{\pi^{2d}}{2}
+\sum\limits_{\cO_5, \cO_6}  \frac{1}{\cM_{\cO_5}\cM_{\cO_6}}   \int dp \, d\pb\,
+		e^{-2i (p \cdot x_{12}+ \pb \cdot x_{34})}      \\
+	&	\frac{B^{3652}_\text{tree}(-\pb,-p)^* \;\,  \widehat{T}^{(\rho_5)}(p) \,  \widehat{T}^{(\rho_6)}(\bar{p}) \;\, B^{1564}_\text{tree}(p,\pb)}{(-p^{2})^{\De_5-\frac{d}{2}}(-\bar{p}^{2})^{\De_6-\frac{d}{2}}} \Bigg|_{\left[\cO_5\cO_6\right]} \,,
+\eea{eq:circ_impact1}
+with an implicit index contraction between $B^{1564}_\text{tree}$ and $B^{3652}_\text{tree}$ and the tensor structures $\widehat{T}^{(\rho)}$.
+At this point we use \eqref{eq:T_factorization} and absorb the $ t^{(\rho)}(q)$ tensors into the definition of the phase shifts $B_\text{tree}$. This means that one needs to take it into account if one wants to relate tensor structures of CFT correlators and phase shifts, but we will not need to do such a basis change explicitly in this work.
+Using \eqref{eq:discs_Regge} we see that the double discontinuity corresponds to the quantity
+$- \Re B(p,\bar{p})$
+in impact parameter space.
+Thus we find the following gluing formula for the impact parameter representation, which is purely multiplicative,
+\beq
+- \Re B_{\text{1-loop}}(p,\bar{p}) = \frac{\pi^{2d}}{2}
+\sum\limits_{\cO_5, \cO_6}  \frac{1}{\cM_{\cO_5}\cM_{\cO_6}} \, 
+\frac{B^{3652}_\text{tree}(-\pb,-p)^* \,  B^{1564}_\text{tree}(p,\pb)}{(-p^{2})^{\De_5-\frac{d}{2}}(-\bar{p}^{2})^{\De_6-\frac{d}{2}}}  \Big|_{\left[\cO_5\cO_6\right]} \,.
+\label{eq:gluing_B}
+\eeq
+Let us consider the case when $\cO_5 = \cO_1$ and $\cO_6 = \cO_3$. In this case, it is useful to strip out a scale factor similar to that in \eqref{eq:strip_A} from the impact parameter representation
+\beq
+B^{jjkk}(p, \bar{p})=\frac{\cM_{\cO_j} \cM_{\cO_k} \; \mathcal{B}^{jjkk}(p,\pb)}{\left(-p^{2}\right)^{\frac{d}{2}-\Delta_{j}}\left(-\bar{p}^{2}\right)^{\frac{d}{2}-\Delta_{k}}}     \, .
+\label{eq:strip_pairwise}      
+\eeq
+Using \eqref{eq:WightmanFT} one sees that with this choice of normalization the impact parameter representation of the MFT correlator is $\mathcal{B}^{jjkk}_{\text{MFT}}=1$,
+which is necessary for the eikonalization of the  phase shift in AdS gravity.
+Inspired by this fact we choose the normalization
+\beq
+B^{ijkl}(p, \bar{p})=\frac{\sqrt{\cM_{\cO_i} \cM_{\cO_j} \cM_{\cO_k} \cM_{\cO_l}} \; \mathcal{B}^{ijkl}(p,\pb)}{\left(-p^{2}\right)^{\frac{d-\Delta_{i}-\Delta_{j}}{2}}\left(-\bar{p}^{2}\right)^{\frac{d-\Delta_{k}-\Delta_{l}}{2}}}     \, ,
+\label{eq:strip}      
+\eeq
+for the general case.
+This gives  the following compact form for the optical theorem in impact parameter space
+\bea
+- \Re \cB_{\text{1-loop}}(p,\bar{p}) =  \frac{1}{2}
+\sum\limits_{\cO_5, \cO_6}    \; \cB^{3652}_\text{tree}(-\pb,-p)^* \; \cB^{1564}_\text{tree}(p,\pb)  \; \Bigg|_{\left[\cO_5\cO_6\right]}  \,.
+\eea{eq:gluing_stripped}
+In \cite{Meltzer:2019pyl}, the Regge limit of a one-loop four-point function of scalars was studied in the large $\lambda$ regime with $S\gg \lambda\gg 1$. The contribution of tidal excitations to the correlator is suppressed in this regime. It corresponds to just one term in the sum on the right hand side of \eqref{eq:gluing_stripped} i.e.\ with $\cO_5 = \cO_1$ and $\cO_6 = \cO_3$. We show in section \ref{sec:Dav_match} that this term from our formula \eqref{eq:gluing_stripped} reproduces the result from \cite{Meltzer:2019pyl} in the large $\lambda$ or equivalently the large $\De_{\text{gap}}^{2}$ limit. We do not need to discard any shadow double-trace contributions for this match. This motivates us to assume that the only non-zero contributions to the gluing of tree-level correlators in the Regge limit is from the physical double-traces $[\cO_5 \cO_6]$, and we will drop the explicit projections henceforth. This is compatible with the intuition that there is no need to project out shadow operators in a Lorentzian CFT optical theorem.
+
+
+
+\subsection{$s$-channel discontinuities in the Regge limit}
+\label{sec:sdisc}
+
+Next we have to analyze the discontinuities on the right hand side of  the optical theorem \eqref{eq:cft_optical_theorem_s}. The discontinuity of the scalar $s$-channel block was recently computed in general without taking the Regge limit in \cite{Caron-Huot:2020nem} and we will review it here. The generalization to external spinning operators is done in section \ref{sec:vertex_function}, after taking the Regge limit. Let us take the conformal partial wave expansion \eqref{eq:partialwaveexpansion} in the $s$ channel and use the symmetry of the integrand to extend the integration region at the cost of a factor $1/2$
+\be
+A^{1234}(z,\zb) &= \frac{1}{2} \sum_{J} \int_{\frac d 2 - i \oo}^{\frac d 2 + i\oo} \frac{d\De}{2\pi i}\, 
+I^{1234}(\De,J)\, \psi^{1234}_{\text{good},\cO} (z,\zb) \,.
+\label{eq:partialwaveexpansion_s}
+\ee
+Let 
+$\psi^{1234}(z,\zb)$ be the partial wave $\Psi^{1234}(y_i)$ with the prefactor $T^{1234}$ stripped off. $\psi^{1234}_{\text{good},\cO} (z,\zb)$ is the conformal partial wave with an additional term that 
+vanishes for integer spin but ensures favorable properties for non-integer spin  \cite{Caron-Huot:2020nem}. The new partial wave is given by
+\bea
+\psi^{1234}_{\text{good},\cO}(z,\zb)  =  \psi^{1234}_\cO(z,\zb)   +  2\pi \, S(\cO_3 \cO_4 [\tl\cO^\dag]) \, K_{J+d-1,1-\Delta} \, \xi_{\De,J}^{(a,b)} \, g^{1234}_{J+d-1,1 - \Delta}(z,\zb) \,,
+\eea{eq:psigood}
+where $g^{1234}_{\De,J}(z,\zb)$ is the usual conformal block, the constants $a,b$ are defined below \eqref{eq:dDisc_conventional} and 
+\bea
+\xi_{\De,J}^{(a,b)} = & \left(s^{(a,b)}_{\Delta+J}-s^{(a,b)}_{\Delta+2-d-J}\right) \frac{\Gamma\big(-J-\tfrac{d-2}{2}\big)}{\Gamma(-J)}   \,, \\
+s^{(a,b)}_{\beta} = &  \, \frac{\sin\big(\pi(a+\beta/2 )\big) \, \sin\big(\pi(b+\beta/2)\big)}{\sin(\pi\beta)}  \,, \\
+K_{\De,J} = &\, \frac{\Gamma(\De - 1)}{\Gamma\big(\De - \frac{d}{2}\big)}\, \kappa^{(a,b)}_{\De+J}  \,,\\
+\kappa^{(a,b)}_{\beta} = &\, \frac{\Gamma\big(\frac{\beta}{2}-a\big)\Gamma\big(\frac{\beta}{2}+a\big)\Gamma\big(\frac{\beta}{2}-b\big)\Gamma\big(\frac{\beta}{2}+b\big)}{2\pi^{2}\Gamma(\beta-1)\Gamma(\beta)}  \,. 
+\eea{eq:shortening} 
+With this conformal partial wave it is possible to compute the discontinuity exactly \cite{Caron-Huot:2020nem}
+\beq
+\frac{\Disc_{14} \, \psi^{1234}_{\text{good},\cO}(z,\zb)}{S(\cO_3 \cO_4 [\tl\cO^\dag])} = \frac{R^{1234}_{\cO}(z,\zb)}{\pi i \kappa_{\De,J}^{(a,b)}}\,.
+\label{eq:Disc14Psi}
+\eeq
+Here $R$ is the so-called Regge block
+\bea
+ R^{1234}_{\cO}(z,\zb) &= g^{1234}_{1-J,1-\Delta}
+ -\kappa'^{(a,b)}_{\Delta+J} g^{1234}_{\Delta,J}
+-\frac{\Gamma(d-\Delta-1)\Gamma\big(\Delta-\tfrac{d}{2}\big)}{\Gamma(\Delta-1)\Gamma\big(\tfrac{d}{2}-\Delta\big)}\,\kappa'^{(a,b)}_{d-\Delta+J}\ g^{1234}_{d-\Delta,J}+
+\\ &\phantom{=}+ 
+\frac{\Gamma(J+d-2)\Gamma\big(-J-\tfrac{d-2}{2}\big)}{\Gamma\big(J+\tfrac{d-2}{2}\big)\Gamma(-J)}
+\,\kappa'^{(a,b)}_{\Delta+J}\ \kappa'^{(a,b)}_{d-\Delta+J}\ g^{1234}_{J+d-1,1-\Delta}\,,
+\eea{eq:Regge_block}
+with $\kappa'^{(a,b)}_{\beta}$ defined as
+\be
+\label{eq:kappaprime}
+\kappa'^{(a,b)}_{\beta} = \frac{r^{(a,b)}_{\beta}}{r^{(a,b)}_{2-\beta}}\,, 
+\qquad 
+r^{(a,b)}_{\beta} = \frac{\Gamma(\frac{\beta}{2}+a)\Gamma(\frac{\beta}{2}+b)}{\Gamma(\beta)}    \, . 
+\ee
+$\Disc_{23}$ in the $3412$ OPE channel can be obtained by using \eqref{eq:disc_relation} on \eqref{eq:Disc14Psi}
+\beq
+\frac{\Disc_{23} \, \psi^{3412}_{\text{good},\cO}(z,\zb)}{S(\cO_{1}\cO_{2}[\tl\cO^\dag])}= \frac{R^{3412}_{\cO}(z,\zb)}{\pi i \kappa_{\De,J}^{(-b,-a)}}\,,
+\eeq
+which was the reason to consider this channel for the correlators on the right hand side of \eqref{eq:cft_optical_theorem_s}.
+The Regge block is dominated in the Regge limit by \cite{Caron-Huot:2020nem,Caron_Huot_2017,Cornalba:2007fs}
+\beq
+g^{1234}_{1-J,1-\De}(z,\zb) = \frac{4 \pi^{\frac{d}{2}} \Gamma(\De-\frac{d}{2})}{\Gamma(\De-1)} \sigma^{1-J} \left( \Omega_{\De-\frac{d}{2}}(\rho)
++ O(\sigma) \right)\,.
+\eeq
+The $\sigma,\rho$ cross-ratios introduced here are defined as 
+\beq
+\sigma = \sqrt{z \zb} = \sqrt{x^2 \xb^2}\,, \quad
+\cosh(\rho) = \frac{z+\zb}{2 \sqrt{z \zb}} = -\frac{x \cdot \bar{x}}{\sqrt{x^2 \xb^2}} \,.
+\label{eq:sigma_rho}
+\eeq
+$\Omega_{i\nu}(\rho)$ is the harmonic function on $d-1$ dimensional hyperbolic space $H_{d-1}$ transverse to the scattering plane in $\text{AdS}_{d+1}$ \cite{Cornalba:2006xk}
+\bea
+\Omega_{i \nu} (\rho) 
+={}&-\frac{i \nu \sin(\pi i \nu) \Gamma(h-1+i \nu) \Gamma(h-1-i \nu) }{2^{2h-1}\pi^{h+\frac{1}{2}} \Gamma\big(h-\frac{1}{2}\big)} \\
+& {}_2F_1 \left(h-1+i \nu, h-1-i\nu,h-\frac{1}{2},\frac{1-\cosh(\rho)}{2}\right)\,.
+\eea{eq:Omega}
+Inserting everything into \eqref{eq:partialwaveexpansion_s}, we find the following expression for the discontinuity of the correlator in the Regge limit
+\beq
+\label{eq:sameoldregge}
+\Disc_{14}  A^{1234}(z,\bar{z}) = 2\pi i\sum\limits_J \int\limits_{-\oo}^{\oo} d\nu \ \a(\nu,J)\, \sigma^{1-J} \Omega_{i\nu} (\rho)\,,
+\eeq
+with
+\beq
+\label{eq:alphaus}
+\a(\nu,J) = - \, \frac{\pi^{\frac d 2 -2} \, S\big(\cO_{3}\cO_{4}\big[\big(-i\nu-\frac{d}{2}\big)^\dag\big]\big) \, \Gamma(i \nu)}{2\pi \kappa_{i\nu+\frac{d}{2},J}^{(a,b)}\, \Gamma\big(i \nu + \frac d 2 -1\big)} \,I^{1234}\!\left(i \nu + \frac{d}{2},J\right) .
+\eeq
+
+As in flat space the sum in \eqref{eq:sameoldregge} is dominated by the large $J$ contributions in the Regge limit and only finite due to a conspiration of the coefficients to ensure Regge boundedness.
+The next step is therefore to perform a  Sommerfeld-Watson resummation over $J$ to evaluate \eqref{eq:sameoldregge}. Also, note that the spectral function, as given by the Lorentzian inversion formula \cite{Caron_Huot_2017}, is of the form
+\be
+I^{1234}(\nu) = I^{1234,t}(\nu) + (-1)^{J}I^{1234,u}(\nu)   \,.        \label{eq:spectral_break}
+\ee
+Let us first consider the case of a correlator with pairwise equal external operators i.e.\ $a=b=0$, $I^{1234,t} = I^{1234,u}$, where only even spins are exchanged.
+Now for the resummation we replace the sum by an integral,
+\beq
+2\sum\limits_{J \text{ even}} \to
+\int_C dJ \frac{e^{i\pi J}}{1-e^{i\pi J}}  \,.
+\label{eq:sommerfeld-watson}
+\eeq
+The contour $C$ encloses all poles on the positive real axis (at even integers) in a clockwise direction. 
+The leading Regge trajectory is given by the operators with the lowest dimension $\De(J)$ for every even spin $J$ and $\a(\nu,J)$ has poles at $i \nu = \pm (\De(J)- d/2)$.
+Defining the inverse function $j=j(\nu)$ of the spectral function $\De(J)$ by
+\beq
+\nu^2 + \big(\De(j(\nu))-\tfrac{d}{2}\big)^2 = 0\,,
+\eeq
+we see that the poles in $\nu$ translate into a single pole at $J=j(\nu)$.
+By deforming the $J$ contour to the left one sees that the $J$ integral is given by the residue at $J=j(\nu)$, i.e.
+\begin{equation}
+\Disc_{14}  A^{1234}(z,\bar{z}) = 2\pi i \int\limits_{-\oo}^{\oo} d\nu \ \a(\nu)\, \sigma^{1-j(\nu)} \Omega_{i\nu} (\rho)\,, 
+\label{eq:discA_regge} 
+\end{equation}
+where
+\begin{equation}
+\a(\nu)  = - \underset{J=j(\nu)}{\Res} i \, \frac{e^{i\pi J}}{1-e^{-i\pi J}} \frac{\pi^{\frac d 2 -2} \, S\big(\cO_{3}\cO_{4}\big[\big(-i\nu-\frac{d}{2}\big)^\dag\big]\big) \, \Gamma(i \nu)}{\kappa_{i\nu+\frac{d}{2},J}^{(a,b)}\, \Gamma\!\big(i \nu + \frac d 2 -1\big)} \,
+ I^{1234,t}\left(i \nu + \frac{d}{2},J\right) .
+\end{equation}
+When the operators are not pairwise equal, the even and odd spin operators organize into two analytic families as evident from the Lorentzian inversion formula \cite{Caron_Huot_2017}. To obtain the contribution of the leading Regge trajectory we still sum over the even spin exchanges. The result is of the same form as in \eqref{eq:discA_regge} with $I^{1234,t}$ replaced by $ \frac{1}{2}I^{1234}$ in $\alpha(\nu)$.
+For the other correlator we can use \eqref{eq:disc_relation} to see that we get an analogous result with the complex conjugate spectral function
+\beq
+\Disc_{23} A^{3412}(z,\bar{z}) = 2\pi i \int\limits_{-\oo}^{\oo} d\nu \ \a(\nu)^*\, \sigma^{1-j(\nu)} \Omega_{i\nu} (\rho)\,.
+\eeq
+One can show that the corresponding impact parameter representation is given in general
+by the same spectral function times a multiplicative factor which cancels poles for the external double-trace operators \cite{Cornalba:2006xm}
+\beq
+\cB(p,\pb) = 2\pi i \int\limits_{-\oo}^{\oo} d\nu \ \b(\nu)\, S^{j(\nu)-1} \Omega_{i\nu} (L)\,,
+\label{eq:B}
+\eeq
+where 
+\beq
+\label{eq:betaexpr}
+\b(\nu) = \frac{ 4 \pi^{2-d}(\sqrt{\cM_{\cO_1} \cM_{\cO_2} \cM_{\cO_3} \cM_{\cO_4}})^{-1} \; \a(\nu)}
+{\chi_{j(\nu)}(\nu)  \,\chi_{j(\nu)}(-\nu) }\,,
+\eeq
+with the definition
+\begin{equation}
+\chi_{j(\nu)}(\nu) = \Gamma\left( \frac{\Delta_1+\Delta_2+j(\nu)-d/2 + i \nu}{2}\right)
+ \Gamma\left( \frac{\Delta_3+\Delta_4+j(\nu)-d/2 + i \nu}{2}\right).
+ \label{eq:chi_definition}
+\end{equation}
+The impact parameter space cross-ratios, analogous to \eqref{eq:sigma_rho}, are
+\beq
+S= \sqrt{p^2 \pb^2}, \qquad \cosh L=-\frac{p \cdot \bar{p}}{\sqrt{p^2 \pb^2}}\,.    \label{eq:impactCR}
+\eeq
+In the dual AdS scattering process  these cross ratios are interpreted  as the squared of the energy with respect to global time and as 
+the impact parameter in the transverse space $H_{d-1}$. 
+
+
+
+\subsection{Spinning particles and the vertex function}
+\label{sec:vertex_function}
+
+In this section we will introduce concrete expressions for the tree amplitudes with spinning external legs and show that the contributions of the contracted spinning legs can be expressed in terms of a scalar function of three spectral parameters which we call the vertex function, analogous to \eqref{eq:V_flat_def} in flat space.
+We construct tensor structures in terms of differential operators, which are a Regge limit version of weight-shifting operators that generate spinning conformal blocks from the scalar ones \cite{Costa:2011dw,Karateev:2017jgd}. 
+It is convenient to work with tensor structures which are homogeneous in $p$ and $\bar{p}$, i.e.\ independent of the cross-ratio $S$ in \eqref{eq:impactCR}, such that all tensor structures have the same large $S$ behavior in the Regge limit. These differential operators can be constructed from the covariant derivative on the hyperboloid $H_{d-1}$ and from $\hat{p}= p/|p|, \hat{\bar{p}}=\bar{p}/|\bar{p}|$ 
+\cite{Cornalba:2009ax,Costa:2017twz}.
+The possible differential operators that generate spin for a single particle are
+	\beq
+		\mathcal{D}^{\rho,k}_{\mathbf{m}} (p) = 
+		\hat{p}_{m_1} \ldots \hat{p}_{m_k} {\nabla_{p}}_{m_{k+1}} \ldots {\nabla_{p}}_{m_{|\rho|}} \,, \qquad k = 0,\ldots, |\rho|\,.
+		\label{eq:ts_operators}
+	\eeq
+Tree diagrams for exchange of the Pomeron   then have the form
+	\beq
+		\cB^{(\De_5,\rho_5),(\De_6,\rho_6)}_{\mathbf{m} \mathbf{n}}  (p,\bar{p}) 
+		= 2\pi i\int\limits_{-\infty}^\infty d\nu \, S^{j(\nu)-1} 
+		\mathfrak{D}^{(\De_5,\rho_5),(\De_6,\rho_6)}_{\mathbf{m} \mathbf{n}} (\nu)\,
+		\Omega_{i \nu} (L)\,.
+		\label{eq:Btree_differential}
+	\eeq
+	Here
+$\cB^{(\De_5,\rho_5),(\De_6,\rho_6)}_{\mathbf{m}\mathbf{n}}  (p,\bar{p})$ is defined just as in \eqref{eq:BtoA} and \eqref{eq:strip}, but with tensor structures constructed from $\hat{p}$ and $\hat{\bar{p}}$.
+In \eqref{eq:Btree_differential} we introduced the following definition for the combination of spectral functions $\b(\nu)$ and differential operators that generate different tensor structures
+	\beq
+		\mathfrak{D}^{(\De_5,\rho_5),(\De_6,\rho_6)}_{\mathbf{m} \mathbf{n}} (\nu)
+		= \sum\limits_{k_5=0}^{|\rho_5|}  \sum\limits_{k_6=0}^{|\rho_6|} \beta^{k_5,k_6}_{(\De_5,\rho_5),(\De_6,\rho_6)} (\nu)
+		 \mathcal{D}^{\rho_5,k_5}_{\mathbf{m}} (p) \mathcal{D}^{\rho_6,k_6}_{\mathbf{n}} (\bar{p})\,.
+\label{eq:Dfrak}
+	\eeq
+Notice that, in contrast to flat space, we do not impose a full factorization into three-point structures but rather allow for a separate spectral function for each combination of three-point structures.	
+
+The next step is to derive the general functional form of \eqref{eq:gluing_stripped} after the contractions and sums have been done. We begin by inserting \eqref{eq:Btree_differential} into \eqref{eq:gluing_stripped},
+	\begin{align}
+- \Re \cB_{\text{1-loop}} (p,\pb)={}& 2\pi^{2}  \sum\limits_{\De_5,\De_6,\rho_5,\rho_6} \int\limits_{-\infty}^\infty d\nu_1 d\nu_2 \, S^{j(\nu_1) + j(\nu_2)-2} 
+		\label{eq:Btilde_neater_fs} \\
+		&\mathfrak{D}^{(\De_5,\rho_5),(\De_6,\rho_6)}_{\mathbf{m} \mathbf{n}} (\nu_1)^*\, \Omega_{i \nu_1} (L)
+		\,\pi_{\rho_{5}}^{\mathbf{m}; \mathbf{p}}
+		\pi_{\rho_{6}}^{\mathbf{n}; \mathbf{q}}
+		\,\mathfrak{D}^{(\De_5,\rho_5),(\De_6,\rho_6)}_{\mathbf{p} \mathbf{q}} (\nu_2)
+		 \,\Omega_{i \nu_2} (L)\,.
+		\nonumber
+	\end{align}
+Here $\pi_\rho$ is the projector to the irreducible representation $\rho$ of $SO(d)$, which is necessary because the operators \eqref{eq:ts_operators} do not ensure the properties of irreducible representations such as tracelessness and Young symmetrization.
+Next we will show how one can replace the contractions and derivatives in the previous equation by spectral parameters.
+Note first that due to $p \cdot \nabla_p = 0$, all contractions involving $\hat{p}$ or $\hat{\pb}$ give factors of their norm $-1$. The remaining contractions involve only covariant derivatives. These contracted derivatives can all be replaced by functions of the spectral parameters by using the Laplace equation for the harmonic function
+	\beq
+		\left( \nabla_{H_{d-1}}^2 + \nu^2 + (d/2-1)^2 \right) \Omega_{i \nu} (L) = 0 \,.
+		\label{eq:nabla}
+	\eeq
+Using this equation, factors of $\nabla_p^2$ can directly be replaced.
+To evaluate contractions between derivatives acting on different harmonic functions we expand the product of two scalar harmonic functions as follows,
+	\beq
+		\Omega_{i \nu_1} (L) \Omega_{i \nu_2} (L) = \int\limits_{-\infty}^\infty d\nu \, \Phi(\nu_1,\nu_2,\nu) \Omega_{i \nu} (L)\,,
+		\label{eq:Omega_prod}
+	\eeq
+where $\Phi(\nu_1,\nu_2,\nu)$ was computed (for the similar case of harmonic functions on AdS$_{d+1}$) in appendix D of \cite{Penedones:2010ue}.\footnote{Note that $\Phi_{\text{here}} \Omega_{i \nu}(0)=\Phi_{\text{there}}$.}
+By acting repeatedly with \eqref{eq:nabla} on this equation, one can determine the function $W_k$ that appears in
+	\beq
+		{\nabla_{p}}_{m_1} \ldots {\nabla_{p}}_{m_k}   \Omega_{i \nu_1} (L)
+		\nabla_p^{m_1} \ldots \nabla_p^{m_k} \Omega_{i \nu_2} (L) =
+		\int\limits_{-\infty}^\infty d\nu \, W_{k} \big(\nu_1^2,\nu_2^2,\nu^2\big)\, \Phi(\nu_1,\nu_2,\nu) \,\Omega_{i \nu} (L)\,.
+		\label{eq:Wk}
+	\eeq
+$W_{k}$ is a fixed kinematical  polynomial of maximal degree $k$ in its arguments.
+For example, the first non-trivial case is
+	\beq
+		\int\limits_{-\infty}^\infty \!\! d\nu \, \Phi(\nu_1,\nu_2,\nu) \nu^2 \,\Omega_{i \nu} (L)
+		= \left( \nu_1^2 + \nu_2^2 +(\tfrac{d}{2}-1)^2 \right) \Omega_{i \nu_1} (L)\, \Omega_{i \nu_2} (L)
+		-2 \nabla_\mu \Omega_{i \nu_1} (L) \nabla^\mu \Omega_{i \nu_2} (L),
+	\eeq
+from which one can read off $W_{0}$ and $W_1$ to be 
+	\beq
+		W_{0} \big(\nu_1^2,\nu_2^2,\nu^2\big) = 1\,, \qquad
+		W_{1} \big(\nu_1^2,\nu_2^2,\nu^2\big)  = \frac{1}{2} \Big(
+		\nu_1^2 + \nu_2^2 - \nu^2 + (d/2-1)^2
+		\Big) .
+	\eeq
+More generally, by acting with the Laplacian on both sides of (\ref{eq:Wk}) one can derive a recursion relation of the form
+	\bea
+{}&		\int d\nu \,W_{k+1}(\nu_i) \, \Phi(\nu_i)\, \Omega_{i \nu} (L) = \int d\nu \,W_{k}(\nu_i)\,W_{1}(\nu_i)\,\Phi(\nu_i) \,\Omega_{i \nu} (L) \\
+		& + \frac{1}{2} \left([\nabla^2,\nabla_{m_1}\dots\nabla_{m_{k}}] \Omega_{i \nu_1} (L) \nabla^{m_1}\dots\nabla^{m_{k}} \Omega_{i \nu_2} (L) +(\nu_1 \leftrightarrow \nu_2)\right) \,.
+	\eea{eq:Wrecrer}
+The terms with commutators, which will vanish in the flat space limit, can be evaluated using the fact that the commutators of covariant derivatives can be replaced by Riemann tensors, which for the hyperboloid can be written in terms of the metric. This means that these terms have two derivatives less than the other terms, and will therefore produce less than maximal powers of $\nu_i$. This shows that the maximal power of $\nu_i$ in $W_k$ is just given by repeatedly multiplying $W_1$. Therefore we have
+	\beq
+		W_{k} \big(\nu_1^2,\nu_2^2,\nu^2\big)  = \left(\frac{\nu_1^2 + \nu_2^2 - \nu^2}{2} 
+		 \right)^k + O\!\left(\nu_i^{2(k-1)}\right) .
+\label{eq:Wk_leading}
+	\eeq
+Having shown that all derivatives can be replaced by polynomials of the spectral parameters, we can define
+	\bea
+		&\mathfrak{D}^{(\De_5,\rho_5),(\De_6,\rho_6)}_{\mathbf{m} \mathbf{n}} (\nu_1)^*\, \Omega_{i \nu_1} (L)
+		\,\pi_{\rho_5}^{\mathbf{m};\mathbf{p}}
+		\pi_{\rho_6}^{\mathbf{n};\mathbf{q}}\,
+		\mathfrak{D}^{(\De_5,\rho_5),(\De_6,\rho_6)}_{\mathbf{p} \mathbf{q}} (\nu_2)
+		\, \Omega_{i \nu_2} (L)\\
+		&=\int\limits_{-\infty}^\infty d\nu \, W_{(\De_5,\rho_5),(\De_6,\rho_6)} \big(\nu_1^2,\nu_2^2,\nu^2\big)\, \Phi(\nu_1,\nu_2,\nu) \,\Omega_{i \nu} (L)\,.
+	\eea{eq:W_llb}
+This gives the contribution of a given pair of intermediate states labeled by $(\Delta_5,\rho_5)$ and $(\Delta_6,\rho_6)$ to $- \Re \cB_{\text{1-loop}}(p,\pb)$.
+Now we can define the vertex function  $V (\nu_1,\nu_2,\nu)$, which is even in all its arguments, in analogy to \eqref{eq:V_flat_def} as the sum over all such contributions in \eqref{eq:Btilde_neater_fs}
+	\bea
+		\sum\limits_{\De_5,\De_6,\rho_5,\rho_6,}
+		W_{(\De_5,\rho_5),(\De_6,\rho_6)} \big(\nu_1^2,\nu_2^2,\nu^2\big)
+		= \beta (\nu_1)^* \beta (\nu_2) V (\nu_1,\nu_2,\nu)^2\,,
+	\eea{eq:vertex_ansatz}
+and reach the following representation for the 1-loop amplitude
+	\bea
+		- \Re \cB_{\text{1-loop}} (p,\pb) = 2\pi^2  \int\limits_{-\infty}^\infty  d\nu d\nu_1  d\nu_2 \, \beta(\nu_1)^* \beta(\nu_2)
+		 \, V(\nu_1,\nu_2,\nu)^2
+		  \\ S^{j(\nu_1)+j(\nu_2)-2} \Phi(\nu_1,\nu_2,\nu)\, \Omega_{i \nu} (L)\,.
+			\eea{eq:Bt_SL_vertex}
+All the information about the spinning tree-level correlators and their contractions is encoded in the vertex function $V(\nu_1,\nu_2,\nu)$ which  mirrors the role of its flat space analogue.
+
+
+However, in order to compute the full impact parameter representation rather than just its real part, we have to go through a detour via the Lorentzian inversion formula, as described in \cite{Meltzer:2019pyl}.
+We first Fourier transform back to $\dDisc_t \, A_{\text{1-loop}}$ from which we obtain the $s$-channel OPE coefficients.
+Then we can compute $\Disc_{14} A_{\text{1-loop}}$ which we can finally Fourier transform to obtain $\cB_{\text{1-loop}}(p,\pb)$. Since in the Regge limit the difference between $\dDisc_t \, A_{\text{1-loop}}$ and $\Disc_{14} A_{\text{1-loop}}$ is just a phase factor (see \cite{Meltzer:2019pyl}), the same happens for the impact parameter representation
+	\begin{align}
+		\cB_{\text{1-loop}} (p,\pb) =  -4\pi^2 \int\limits_{-\infty}^\infty d\nu d\nu_1 d\nu_2 \, & \frac{1 + e^{-i \pi (j(\nu_1)+j(\nu_2)-1)}}{1 - e^{-2 \pi i (j(\nu_1)+j(\nu_2)-1)}} \, \beta(\nu_1)^* \beta(\nu_2) \,V(\nu_1,\nu_2,\nu)^2
+		       \nonumber \\ &
+S^{j(\nu_1)+j(\nu_2)-2} \; \Phi(\nu_1,\nu_2,\nu)\, \Omega_{i \nu} (L)  \,.
+	\label{eq:B_SL_vertex}
+	\end{align}
+It is important to emphasize that this provides a finite $\Delta_{gap}$ description for the one-loop correlator in the Regge limit up to the knowledge of the vertex function $V(\nu_1,\nu_2,\nu)^2$. For CFTs that admit a flat space limit, 
+we will see in  sections \ref{sec:flat_space_limit} and \ref{sec:IIB_AdS_flat} how one can fix part of this vertex function from the knowledge of its flat space analogue. In section \ref{sec:Appendix_tchannel} below, we make a comparison with the large $\Delta_{gap}$ limit studied in reference \cite{Meltzer:2019pyl}, and also describe the implications of \eqref{eq:Bt_SL_vertex} for t-channel CFT data.
+

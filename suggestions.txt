@@ -1,0 +1,29 @@
+Section 1 needs a few citations for all the results claimed, especially where results are just stated with no proof.
+DONE page 2: repeated “proved an indirect” “provides one indirect”.
+DONE page 2: “certain highly solutions of Einstein equation”: highly what?
+page 3: The sentence on the Wightman axioms is not very clear, they are not the relation between Euclidean and Lorentzian setup
+DONE It’s not clear how (1.1) is related to the previous sentence, some words can be added
+DONE Below (1.3) the correlation function is not an analytic function of the cross ratios
+DONE Above (1.10): this is only true for *primary* operators
+DONE Page 7: “fully characterized” is probably better replaced by “fixed” up to constants. Also since it’s not shown references are needed.
+DONE Page 8: there is a conformal that should be quantum in the second sentence (where the first sentence is the one on "All QFTs are unitary" which should be removed). The OEP coefficients are also not necessarily real.
+DONE Paragraph above (1.17) wording is a bit confusing around z and zb being complex numbers with a small imaginary part in Lorentzian.
+DONE a, b need to be defined in (1.20)
+DONE K in (1.23) is not defined
+DONE Some words or a citation should be added before (1.25)
+DONE nu and Delta are not defined in (1.26)
+DONE theta in (1.28) is not defined and perhaps a reference to more details being provided later is useful because it’s a bit mysterious like this
+DONE The last paragraph of 1.4 is a bit quick so a reference could be added
+DONE (1.35) is only for Re(J)>0, similarly below the equation it should be clarified that the circle can be dropped only for J>0.
+DONE The discussion around (1.37) is a bit schematic so it could use a reference, similarly around (1.39)
+DONE Bottom of page 17: do you use properties of Gegenbauer or hypers?
+DONE Top of page 18: a bit of the sentence seems to be missing, the properties are used to do what?
+DONE A citation below (1.47) would make it less vague
+DONE Add citation for (1.56)
+DONE Perhaps figs 1.8 and 1.9 can be swapped since they are cited in the reverse order
+DONE Typos: caption of fig 1.8 “remarkablek”, start of 1.5: “theroy”
+DONE Is the reference in fig 1.9 correct?
+DONE Bottom of page 35: do you use (2.38) or (2.39)?
+DONE In (2.41) 1_yy and s not defined
+DONE Below (2.134) I think S is not defined until (2.156)
+DONE Page 153: citation is needed when quoting recent progress including Wess-Zumino-Witten models

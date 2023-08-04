@@ -1,0 +1,504 @@
+
+
+\section{Perturbative CFT optical theorem}
+\label{sec:glue}
+
+In this section we will give a derivation for the perturbative CFT optical theorem in \eqref{eq:cft_optical_theorem_intro} using results from harmonic analysis of the conformal group following \cite{Karateev:2018oml}, but first let us motivate \eqref{eq:cft_optical_theorem_intro} and \eqref{eq:stcontribution} using the conglomeration of operators \cite{Fitzpatrick:2011dm}. 
+
+Unitarity in CFT can be formulated as  completeness of the set of states corresponding to local operators
+\beq
+1 = \sum_{\mathcal{O}} |\cO|\,.
+\eeq
+The right hand side is a sum over projectors associated to a primary operator $\cO$.
+Such projectors can be formulated in terms of a conformally invariant pairing 
+known as the shadow integral \cite{Ferrara:1972uq,Simmons_Duffin_2014}
+\beq
+|\cO| = \int dy\, | \cO(y)\> \< \bS[\cO](y) |  \Big|_{\cO}\,,
+\label{eq:shadow_projector}
+\eeq
+which defines the projector to the conformal family with primary operator $\cO$,
+automatically taking into account the contribution of descendants of $\cO$.
+Here we used the shadow transform, defined by
+\be
+\label{eq:shadowtransform}
+\bS[\cO](y) &= \frac{1}{N_{\cO}}\int  dx\, \<\tl \cO(y) \tl \cO^\dag(x)\>\cO(x)\,,
+\ee
+with an index contraction implied for spinning operators. We normalize the two-point functions to unity and 
+\be
+N_{\cO} = \pi^{d}(\Delta-1)_{|\rho|}(d-\Delta-1)_{|\rho|}\,
+\frac{\Gamma\big(\Delta-\frac{d}{2}\big)\Gamma\big(\frac{d}{2}-\Delta\big)}{\Gamma(d-\Delta+|\rho|)\Gamma(\Delta+|\rho|)} \,. 
+\label{eq:shadownormali}
+\ee
+Note that with this normalization of $\bS[\cO]$, $\bS^{2}$ is $1/N_{\cO}$  times the identity map.
+$|\rho|$ is the number of indices of the operator $\cO$.
+The shadow transform is a map
+from the operator $\cO$ to $\tl\cO$, where $\tl \cO$ is in the representation labeled by $(\tl \De = d-\De, \rho)$.
+$\cO^\dag$ is an operator with scaling dimension $\Delta$ but transforming in the dual $SO(d)$ representation $\rho^{*}$.
+
+Inserting the projector \eqref{eq:shadow_projector} into a four-point function, one finds the contribution of the t-channel 
+conformal partial wave $\Psi_\cO$ to the four-point function
+\beq
+\< \cO_2 \cO_3 |\cO| \cO_1 \cO_4 \> \propto \Psi^{3214}_\cO\,.
+\eeq
+The conformal partial wave is a linear combination of the conformal blocks for exchange of $\cO$ and its shadow $\tl \cO$.
+This explains  the notation $|_{\cO}$ adopted in \eqref{eq:shadow_projector}, since we need to project onto the contribution from $\cO$ and discard that of $\tl \cO$.
+
+In the large $N$ expansion of CFTs, there exists a complete basis of states spanned by the multi-trace operators. In a one-loop four-point function of single trace operators, with an expansion as shown in \eqref{eq:loop_expansion},
+only single- and double-trace operators appear
+\beq
+A(y_i)
+= \sum\limits_{\cO \in \cO_\text{s.t.}, \,\cO_\text{d.t.}}\< \cO_2 \cO_3 |\cO| \cO_1 \cO_4 \>\,.
+\label{eq:4pt_projected}
+\eeq
+The right hand side involves three-point functions with single- and double-trace operators.
+The double-trace operators are composite operators of the schematic form
+\beq
+[\cO_5 \cO_6]_{n,\ell} \sim \cO_5 \partial^{2n} \partial_{\mu_1} \ldots \partial_{\mu_\ell}
+\cO_6\,,
+\eeq
+and have conformal dimensions
+\beq
+\Delta_5 +\Delta_6 +2n +\ell + O \big( 1/N^2\big)\,.
+\eeq
+Below we often omit the $n$ and $\ell$ labels when talking about a family of double-trace operators.
+To obtain an optical theorem resembling the one in flat space, we would like to project onto states created by products of single-trace operators $| \cO_5(y_5) \cO_6(y_6) \>$, rather than the often infinite sum over $n$ and $\ell$ of the double-trace operators $| [\cO_5 \cO_6]_{n,\ell} (y) \>$.
+This can be achieved by relating these two states using the technique of conglomeration \cite{Fitzpatrick:2011dm}, 
+which amounts to using the formula
+\beq
+\label{eq:intro_conglo}
+| [\cO_5 \cO_6]_{n,\ell}(y) \> = \int dy_5 dy_6\, | \cO_5 (y_5) \cO_6 (y_6) \> \<  \bS[\cO_5](y_5) \bS[\cO_6](y_6) [\cO_5 \cO_6]_{n,\ell} (y) \> \,.
+\eeq
+This shows that we can define a projector
+onto double-trace operators in terms of a double shadow integral
+\beq
+\label{eq:conglomeration_projector}
+| \cO_5 \cO_6 | = \int dy_5 dy_6 \, | \cO_5 (y_5) \cO_6 (y_6) \> \< \bS[\cO_5](y_5) \bS[\cO_6](y_6) | \Big|_{[\cO_5 \cO_6]}\,,
+\eeq
+and thus \eqref{eq:intro_conglo} is just the projection
+\beq
+| \cO_5 \cO_6 | [\cO_5 \cO_6]_{n,\ell} \> = | [\cO_5 \cO_6]_{n,\ell} \>\,.
+\eeq
+The notation $|_{[\cO_5 \cO_6]}$ means that we project onto the contributions from the double-traces of the physical operators and discard contributions coming from the shadows, which, as we will discuss below, can be generated when using this bi-local projector.
+Using this projector, together with (\ref{eq:shadow_projector}) for the single-traces,
+we can write the one-loop four-point function in \eqref{eq:4pt_projected} as
+\beq
+A(y_i)
+= \sum\limits_{\cO \in \cO_\text{s.t.}}\< \cO_2 \cO_3 |\cO| \cO_1 \cO_4 \>
++\sum\limits_{\cO_5, \cO_6 \in \cO_\text{s.t.}}\< \cO_2 \cO_3 |\cO_5 \cO_6| \cO_1 \cO_4 \>\,.
+\label{eq:4pt_projected_conglomerated}
+\eeq
+The important step in \eqref{eq:4pt_projected_conglomerated} is that we replaced the sum over double-trace operators with a double sum over the corresponding single-trace operators. This is already close to the single- and double-line cuts that appear in the flat-space optical theorem at one-loop.
+
+The main difference of \eqref{eq:4pt_projected_conglomerated} with the flat space optical theorem is that in flat space one needs to sum only over cuts of internal lines, while if we express \eqref{eq:4pt_projected_conglomerated} in terms of Witten diagrams it would also contain contributions from external line cuts.
+Another way to see this is that even the disconnected correlator for $\cO_1=\cO_2$ and $\cO_4=\cO_3$ has contributions of the form
+\beq
+\< \cO_2 \cO_3 |\cO_2 \cO_3| \cO_2 \cO_3 \>\,,
+\eeq
+while internal double line cuts in a diagram can only appear starting at one-loop.
+This problem is resolved by acting on \eqref{eq:4pt_projected_conglomerated} with the double discontinuity. This procedure shifts the contributions of external double-traces to a higher order in $\frac{1}{N}$. In the context of \eqref{eq:cft_optical_theorem_intro} that we propose for conformal correlation functions (and not for Witten diagrams specifically), taking the double discontinuity suppresses the contributions of the external double-trace operators $[\cO_{2}\cO_{3}]$ and $[\cO_{1}\cO_{4}]$. We will expand on this further in section \ref{sec:Nexpansion}. 
+
+We will make the definitions of the double discontinuity and the single discontinuities more precise in sec.\ \ref{sec:Nexpansion} but for now, let us mention that the double discontinuity can be written in the following factorized form
+\beq
+\dDisc_t A(y_i) = - \frac{1}{2} \Disc_{14} \Disc_{23} A(y_i)\,.
+\label{eq:dDisc_y}
+\eeq
+The discontinuities on the right hand side are defined in terms of analytic continuations of the distances $y_{14}^2$ and $y_{23}^2$ to the negative real axis,
+\beq
+\label{eq:discdefnorg}
+\Disc_{jk} A(y_i)=
+A(y_i)|_{y_{jk}^{2} \to y_{jk}^{2} e^{\pi i}}
+-  A(y_i)|_{y_{jk}^{2} \to y_{jk}^{2} e^{- \pi i}}\,.
+\eeq
+Note that each term in this discontinuity is defined through a Wick rotation of the two coordinates $y_j$ and $y_k$ while we hold the other points Euclidean (or spacelike separated).
+
+The result \eqref{eq:stcontribution} for the exchange of single-trace operators comes from the first term on the right hand side of \eqref{eq:4pt_projected_conglomerated} with the double discontinuity taken on both sides. This are simply the single-trace terms in the conformal block expansion of the correlator. For the more interesting result \eqref{eq:cft_optical_theorem_intro}, let us use the explicit form of the projector \eqref{eq:conglomeration_projector} in the second term on the right hand side of \eqref{eq:4pt_projected_conglomerated}. This gives
+\be
+\label{eq:optical_inter}
+\sum\limits_{\cO_5, \cO_6 \in \cO_\text{s.t.}} \, \int dy_5 dy_6 \, \< \cO_3 \cO_2 | \cO_5 (y_5) \cO_6 (y_6) \> \< \bS[\cO_5](y_5) \bS[\cO_6](y_6) | \cO_1 \cO_4 \> | \Big|_{[\cO_5 \cO_6]}  \,.
+\ee  
+We can now take the double discontinuity on the left hand side using \eqref{eq:dDisc_y}, while on the right hand side we can take $\Disc_{23}$ on the first correlator and $\Disc_{14}$ on the second. This gives the result  \eqref{eq:cft_optical_theorem_intro}.
+In the next subsections we provide a detailed proof of this perturbative CFT optical theorem using results from  harmonic analysis of the conformal group   \cite{Karateev:2018oml}.  
+
+\subsection{Conformal blocks and partial waves}
+\label{sec:blocks_waves}
+
+A conformal correlator can be expanded in $s$-channel conformal blocks as follows,
+\beq
+A(y_i)=T^{1234}(y_i) {\cal A}^{1234} (z,\bar{z})\,, \quad
+{\cal A}^{1234}(z,\bar{z})=\sum\limits_{\cO}c_{12\cO}c_{34\cO}\,g^{1234}_{\cO}(z,\bar{z})\,,
+\label{eq:OPE_s}
+\eeq
+with the kinematical prefactor 
+\begin{align}
+T^{1234}(y_i)=\frac{1}{y_{12}^{\Delta_1+\Delta_2}y_{34}^{\Delta_3+\Delta_4}}\left(\frac{y^2_{14}}{y^2_{24}}\right)^{\frac{\Delta_{21}}{2}}\left(\frac{y^2_{14}}{y^2_{13}}\right)^{\frac{\Delta_{34}}{2}}\,,
+\label{eq:T}
+\end{align}
+where  $\Delta_{ij}=\Delta_{i}-\Delta_{j}$ and the cross-ratios are defined as
+\begin{align}
+z\bar{z}=\frac{y_{12}^{2}y_{34}^{2}}{y_{13}^{2}y_{24}^{2}}, \qquad (1-z)(1-\bar{z})=\frac{y_{14}^{2}y_{23}^{2}}{y_{13}^{2}y_{24}^{2}}\,.
+\label{eq:crossratios}
+\end{align}
+The $t$-channel OPE  is obtained by exchanging the labels 1 and 3, thus
+\beq
+A(y_i)=T^{3214}(y_i) {\cal A}^{3214} (z,\bar{z})\,, \quad
+ {\cal A}^{3214}(z,\bar{z})=\sum\limits_{\cO}c_{32\cO}c_{14\cO}\,g^{3214}_{\cO}(1-z,1-\bar{z})\,,
+\label{eq:OPE_t}
+\eeq
+Note that although $A^{jklm}(y_i)$ is invariant under permutations of the $jklm$ labels, the ordering of the labels is meaningful in ${\cal A}^{jklm}(z,\zb)$ because of the pre-factor $T^{jklm}(y_i)$. For the conformal blocks we will also use the notation
+\beq
+G^{1234}_{\cO}(y_k) = T^{1234}(y_k)\, g^{1234}_{\cO}(z,\bar{z})\,,
+\label{eq:G}
+\eeq
+and similarly for $t$-channel blocks.
+
+In order to perform harmonic analysis of the conformal group, one expands the four-point function not in conformal blocks but in conformal partial waves of principal series representations $\De = \frac{d}{2} + i \nu$, $\nu \in \mathbb{R}^+$ \cite{Dobrev:1977qv}. A conformal correlator can be expanded in terms of $s$-channel conformal partial waves as follows
+\be
+\label{eq:partialwaveexpansion}
+A(y_i) &= \sum_{\rho} \int_{\frac d 2}^{\frac d 2 + i\oo} \frac{d\De}{2\pi i}  \,I^{1234}_{ab}(\De,\rho) \Psi^{1234(ab)}_\cO(y_i) + \textrm{discrete},
+\ee
+where the operator $\cO$ is labeled by the scaling dimension $\Delta$ and a finite dimensional irreducible representation $\rho$ of $SO(d)$, which we take to be bosonic.
+$I_{ab}$ is the spectral function carrying the OPE data, and it can be extracted from the correlator using the Euclidean inversion formula. We will assume that there are no discrete contributions.
+The conformal partial waves are defined as a pairing of three-point structures
+\be
+\label{eq:partialwavedefinition}
+\Psi^{1234(ab)}_\cO(y_i) &= \int d y \,\<\cO_1 \cO_2 \cO(y)\>^{(a)} \< \cO_3 \cO_4 \tl \cO^\dag(y)\>^{(b)}\,,
+\ee
+where $a$ and $b$ label different tensor structures in case the external operators have spin. 
+The conformal partial wave $ \Psi^{1234(ab)}_\cO$ is related to the conformal block $G^{1234(ab)}_{\cO}$ and to the block for the exchange of the shadow by
+\be
+\label{eq:expressionforpartialwave}
+\Psi^{1234(ab)}_\cO &= S(\cO_3\cO_4[\tl\cO^\dag])^b{}_c \,G^{1234(ac)}_{\cO} + S(\cO_1\cO_2[\cO])^a{}_c \,G^{1234(cb)}_{\tl \cO}\,.
+\ee
+The matrices $S(\cO_i \cO_j [\cO_k])^a{}_b$ are part of the action of the shadow transform \eqref{eq:shadowtransform} on three-point functions,
+\be
+\label{eq:shadowcoeffdef}
+\<\cO_1 \cO_2 \bS[\cO_3]\>^{(a)} &=  \frac{S(\cO_1\cO_2[\cO_3])^a{}_b}{N_{\cO_3}} \, \<\cO_1 \cO_2 \tl \cO_3\>^{(b)}  \,,
+\ee 
+with $N_{\cO_3}$ as defined in \eqref{eq:shadownormali}. Acting with the shadow transform on an operator within a three-point structure also rotates into a different basis of tensor structures. The shadow coefficients/matrices $S$ act as a map between the two bases.
+Note that the inverse of $S(\cO_1\cO_2[\cO_3])^a{}_b$ is $(1/N_{\cO_3})S(\cO_1\cO_2[\tl \cO_3])^a{}_b$.
+
+The usual conformal block expansion \eqref{eq:OPE_s} can be obtained from \eqref{eq:partialwaveexpansion} by inserting \eqref{eq:expressionforpartialwave} and using the identity \cite{Simmons_Duffin_2018}
+\be
+\label{eq:Iide}
+I_{ab}(\Delta,\rho)\, S(\cO_3\cO_4[\tl\cO^\dag])^b{}_c = I_{bc}\big(\tl\Delta,\rho\big)\, S(\cO_1\cO_2[\tl \cO])^b{}_a  \, ,
+\ee
+to replace the contribution of the shadow block with an extension of the integration region to $\frac{d}{2}-i\infty$,
+\be
+A(y_i) = \sum_{\rho} \int_{\frac d 2 - i\oo}^{\frac d 2 + i\oo} \frac{d\De}{2\pi i}\, C^{1234}_{ab}(\De,\rho) \,G^{1234(ab)}_\cO(y_i) \,,
+\label{eq:confblockexpansionprincipal}
+\ee
+where
+\be
+C^{1234}_{ab}(\De,\rho) = I^{1234}_{ac}(\De,\rho) \,S(\cO_3\cO_4[\tl\cO^\dag])^c{}_b \, .
+\label{eq:C1234}
+\ee
+The conformal block decays for large real $\De > 0$, so the contour can be closed to the right and the integral is the sum of residues
+\bea
+-\underset{\De \to \De^*}\Res C^{1234}_{ab}(\De,\rho^*) 
+&=
+\sum_{I} c_{12\cO^*,a}^{I} c_{34\cO^*,b}^{I} \,.
+\eea{eq:residue}
+The sum over $I$ in \eqref{eq:residue} is over degenerate operators with the quantum numbers $\left(\Delta^{*},\rho^{*}\right)$. 
+Degeneracies among multi-trace operators are natural in expansions around mean field theory.\footnote{A simple example built with spin 1 operators are the families $\mathcal{O}_5^\mu \square^n \mathcal{O}_{6,\mu}$ and $\mathcal{O}_5^\mu \partial_\mu\partial_\nu\square^{n-1} \mathcal{O}_6^\nu$, which we wrote schematically. Both these sets of operators have quantum numbers $\Delta= \Delta_5 +\Delta_6+2n$ and $\rho= \bullet$.}
+
+
+In section \ref{sec:HAproof} we will use the partial wave expansion of the shadow transformed four-point function. To obtain it let us now apply the shadow transform in \eqref{eq:shadowtransform} to $\cO_1$ and $\cO_2$ on both sides of the partial wave expansion \eqref{eq:partialwaveexpansion}.
+Using  \eqref{eq:partialwavedefinition} this gives
+\bea
+\<\mathbf{S}[\cO_1] \mathbf{S}[\cO_2] \cO_3 \cO_4\>& = \sum_{\rho} \int_{\frac d 2}^{\frac d 2 + i\oo} \frac{d\De}{2\pi i} \,I^{1234}_{ab}(\De,\rho)\\
+&\int d y \, \<\mathbf{S}[\cO_1] \mathbf{S}[\cO_2] \cO(y)\>^{(a)} \< \cO_3 \cO_4 \tl \cO^\dag(y)\>^{(b)}  \,.
+\eea{eq:appshadow}
+From \eqref{eq:shadowcoeffdef}, we thus obtain the partial wave expansion of the shadow transformed correlator
+\be
+\<\mathbf{S}[\cO_1] \mathbf{S}[\cO_2] \cO_3 \cO_4\>  = \sum_{\rho} \int_{\frac d 2}^{\frac d 2 + i\oo} \frac{d\De}{2\pi i}\, I^{\mathbf{S}[1]\mathbf{S}[2]34}_{ab}(\De,\rho)\, \Psi^{\tl 1\tl 2 34(ab)}_\cO(y_i)  \, ,
+\label{eq:shadowtrans_exp}
+\ee
+where
+\bea
+I^{\mathbf{S}[1]\mathbf{S}[2]34}_{ab} & = I^{1234}_{mb}(\De,\rho)\,   \frac{S(\cO_1 [\cO_2] \cO)^{m}{}_{n}}{N_{\cO_2}} \frac{S([\cO_1] \tl\cO_2 \cO)^n{}_a}{N_{\cO_1}} \,,   
+\\
+\Psi^{\tl 1\tl 2 34(ab)}_\cO(y_i) & = \int dy\, \<\tl\cO_1 \tl\cO_2 \cO(y)\>^{(a)} \< \cO_3 \cO_4 \tl \cO^\dag(y)\>^{(b)}   \,.
+\eea{eq:shadowtrans_exp2}
+There are examples of the $S$ coefficients computed in \cite{Karateev:2018oml} which tell us that they have the appropriate zeroes to kill the double-trace poles in $I^{1234}$ and replace them with the poles for the double-traces of the shadows, as would be appropriate for $I^{\mathbf{S}[1]\mathbf{S}[2] 34}$.
+
+
+
+\subsection{A derivation using harmonic analysis}
+\label{sec:HAproof}
+
+
+We are ready to begin the derivation of the perturbative CFT optical theorem \eqref{eq:cft_optical_theorem_intro}. $\bS_{5}\bS_{6} A^{1564}_{\text{tree}}(y_i)$ in \eqref{eq:cft_optical_theorem_intro} is the coefficient of 
+$1/N^2$ in the correlator $\< \mathbf{S}[\cO_{6}]^\dag \mathbf{S}[\cO_5]^\dag  \cO_1 \cO_4\>$, and $A^{3652}_{\text{tree}}(y_i)$ is the coefficient of $1/N^2$ in $\< \cO_{3} \cO_2  \cO_5 \cO_6\>$.
+Consider the following conformally invariant pairing of two four-point functions
+\begin{align}
+&\int dy_5 dy_6 \,
+\<\cO_3 \cO_2 \cO_5 \cO_6\> \< \mathbf{S}[\cO_{6}]^\dag \mathbf{S}[\cO_5]^\dag  \cO_1 \cO_4\> \label{eq:gluing1}=
+\\
+& \sum_{\rho,\rho'} \int_{\frac d 2}^{\frac d 2 + i\oo} \frac{d\De}{2\pi i} \frac{d\De'}{2\pi i} \,  I^{3256}_{ab}(\De,\rho)\, I^{\mathbf{S}[6] \mathbf{S}[5] 14}_{cd}(\De',\rho')
+\int dy_5 dy_6 \, \Psi^{3256(ab)}_\cO(y_i)\, \Psi^{\tl 6 \tl 5 14(cd)}_{\cO'}(y_i)\,.\nonumber
+\end{align}
+To compute the $y_5$ and $y_6$ integrals, we use \eqref{eq:partialwavedefinition} and 
+the following result for the pairing of the three-point structures by two legs,
+which is known as the bubble integral,
+\be
+\label{eq:bubbleintegral}
+\int dy_1 dy_2 \< \cO_1 \cO_2 \cO(y) \>^{(a)} \<\tl \cO^\dag_1 \tl \cO^\dag_2 \tl \cO^{'\dag}(y') \>^{(b)}
+=
+\frac{\p{\< \cO_1 \cO_2 \cO \>^{(a)},\<\tl \cO^\dag_1 \tl \cO^\dag_2 \tl \cO^{\dag} \>^{(b)}}}{\mu(\De,\rho)}  \mathbf{1}_{yy'} \de_{\cO\cO'}\,, 
+\ee
+with $\de_{\cO\cO'} \equiv 2\pi \de(s-s') \de_{\rho \rho'}$.
+Here $\mu(\De,\rho)$ is the Plancherel measure and the brackets denote 
+a conformally invariant pairing of 3-point functions, given by
+\be
+\label{eq:structurepairing}
+\p{\<\cO_1 \cO_2 \cO_3\>,\<\tl \cO_1^\dag \tl \cO_2^\dag \tl \cO_3^\dag\>} &= \int \frac{d y_1 d y_2 d y_3}{\vol\SO(d+1,1)}\,\<\cO_1 \cO_2 \cO_3\>\<\tl \cO_1^\dag \tl \cO_2^\dag \tl \cO_3^\dag\>\,.
+\ee
+Using \eqref{eq:partialwavedefinition} and the bubble integral in \eqref{eq:bubbleintegral} we find
+\be
+\label{eq:cpw_bubble}
+\int dy_5 dy_6  \Psi^{3256(ab)}_\cO(y_i) \Psi^{\tl 6 \tl 5 14(cd)}_{\cO'}(y_i) =  
+\frac{\p{\< \cO_5 \cO_6 \tl \cO^{\dag} \>^{(b)},\<\tl \cO^\dag_6 \tl \cO^\dag_5 \cO \>^{(c)}}}{\mu(\De,\rho)}  \, \de_{\cO\cO'} \Psi^{3214(ad)}_\cO(y_i)\,.
+\ee
+We can now plug \eqref{eq:cpw_bubble} into \eqref{eq:gluing1} which gives  
+\begin{align}
+&\int dy_5 dy_6 
+\<\cO_3 \cO_2 \cO_5 \cO_6\> \< \mathbf{S}[\cO_{6}]^\dag \mathbf{S}[\cO_5]^\dag  \cO_1 \cO_4\> =
+\label{eq:gluing2}
+\\
+& \sum_{\rho} \int_{\frac d 2}^{\frac d 2 + i\oo} \frac{d\De}{2\pi i} \, I^{3256}_{ab}(\De,\rho) I^{\mathbf{S}[6] \mathbf{S}[5] 14}_{cd}(\De,\rho)
+\frac{\p{\< \cO_5 \cO_6 \tl \cO^{\dag} \>^{(b)},\<\tl \cO^\dag_6 \tl \cO^\dag_5 \cO \>^{(c)}}}{\mu(\De,\rho)} \,  \Psi^{3214(ad)}_\cO(y_i)\,.
+\nonumber
+\end{align}
+
+In the next steps we will show that the factor $\big( {\< \cO_5 \cO_6 \tl \cO^{\dag} \>,\<\tl \cO^\dag_6 \tl \cO^\dag_5 \cO \>}\big)$
+in (\ref{eq:gluing2})
+, along with the various shadow coefficients,
+will cancel the contribution of the OPE coefficients $c^{\text{MFT}}_{56[56]}$ in the spectral functions $I^{3256}$ and $I^{\mathbf{S}[6] \mathbf{S}[5] 14}$. In the simple case where at least one of the spectral functions in \eqref{eq:gluing2} belong to scalar MFT correlators (which requires pairwise equal operators) this is particularly easy to see, since  \cite{Karateev:2018oml}
+\be
+\label{eq:MFTspec}
+I^{\text{MFT}}(\De,\rho) = \frac{\mu(\De,\rho)}{\p{\< \cO_1 \cO_2 \tl \cO^{\dag} \>,\<\tl \cO^\dag_1 \tl \cO^\dag_2 \cO \>}} \, S([\tl \cO_1] \tl \cO_2 \cO) \, S(\cO_1 [\tl \cO_2 ] \cO)   \,,
+\ee
+so that the pairing of three-point functions can be canceled directly with one of the spectral functions.
+The general case is less obvious because the cancellation happens on the level of OPE coefficients, not spectral functions.
+Here we use \eqref{eq:shadowtrans_exp} in \eqref{eq:gluing2}, and extend the range of the principal series integral as in \eqref{eq:confblockexpansionprincipal} by repeated use of \eqref{eq:Iide}. This gives 
+\begin{align}
+&\int dy_5 dy_6 
+\<\cO_3 \cO_2 \cO_5 \cO_6\> \< \mathbf{S}[\cO_{6}]^\dag \mathbf{S}[\cO_5]^\dag  \cO_1 \cO_4\>
+={} \sum_{\rho} \int_{\frac d 2 -i\oo}^{\frac d 2 + i\oo} \frac{d\De}{2\pi i} \, I^{3256}_{ab} I^{6514}_{md}  S(\cO_1\cO_4[\tl\cO^\dag])^d{}_l     
+ \nonumber
+\\
+&
+\qquad\quad
+   \,\frac{S(\cO_6 [\cO_5] \cO)^{m}{}_{n}}{N_{\cO_5}} \frac{S([\cO_6] \tl\cO_5 \cO)^n{}_c}{N_{\cO_6}} \,
+ \frac{\p{\< \cO_5 \cO_6 \tl \cO^{\dag} \>^{(b)},\<\tl \cO^\dag_6 \tl \cO^\dag_5 \cO \>^{(c)}}}{\mu(\De,\rho)}   
+ \,G^{3214(al)}_\cO(y_i)\,.
+\label{eq:gluing3}
+ \end{align}
+Using  \eqref{eq:C1234} we can express \eqref{eq:gluing3} as
+\bea
+{}\int dy_5 dy_6 
+\<\cO_3 \cO_2 \cO_5 \cO_6\> \< \mathbf{S}[\cO_{6}]^\dag \mathbf{S}[\cO_5]^\dag  \cO_1 \cO_4\>
+={} \sum_{\rho} \int_{\frac d 2 - i\oo}^{\frac d 2 + i\oo} \frac{d\De}{2\pi i}  \,C^{3256}_{ak} C^{6514}_{md} \, Q^{km}_{65\cO} \,   G^{3214(ad)}_\cO\,,
+\eea{eq:gluing4}
+where,
+\be
+\label{eq:hiddenMFT}
+Q^{km}_{65\cO} = \frac{S(\cO_6 [\cO_5] \cO)^{m}{}_{n}}{N_{\cO_5}} \frac{S([\cO_6] \tl\cO_5 \cO)^n{}_c}{N_{\cO_6}}  \frac{\p{\< \cO_5 \cO_6 \tl \cO^{\dag} \>^{(b)},\<\tl \cO^\dag_6 \tl \cO^\dag_5 \cO \>^{(c)}}}{\mu(\De,\rho)} \,\frac{S(\cO_5\cO_6[\cO^\dag])^k{}_b}{N_{\cO}} \,    \, .
+\ee
+Next we analyze the pole structure of the spectral function in \eqref{eq:gluing4} and close the integration contour to obtain the block expansion.
+First let us consider the simple poles at the dimensions of the double-trace operators $\cO_{[56]}$ in each of $C^{3256}$ and $C^{6514}$. We will show that $Q_{65\cO}(\Delta,\rho)$ has a zero at each 
+of these dimensions, canceling one of the two poles from $C^{3256}$ and $C^{6514}$.
+This ensures that in the MFT limit the spectral function in \eqref{eq:gluing4} has a simple pole for each double-trace dimension.
+This can be seen explicitly in specific examples for the $S$ coefficients computed in \cite{Karateev:2018oml}, but in general let us note the following identity, which can be derived by applying Euclidean inversion on the expansion \eqref{eq:partialwaveexpansion} for the MFT correlator \cite{Karateev:2018oml}
+\be
+\frac{I_{ab}^{6565,\mathrm{MFT}}(\De,\rho)}{\mu(\De,\rho)}
+\p{\<\cO_6^\dag \cO_5^\dag \tl \cO^\dag \>^{(b)},\<\tl \cO_6 \tl \cO_5 \cO\>^{(c)}} 
+&=
+S([\tl \cO_6]\tl \cO_5 \cO)^{c}{}_{l} \, S(\cO_6 [\tl \cO_5]\cO)^l{}_a \,.
+\label{eq:mftcoeffs}
+\ee
+Since all operators are bosonic, \eqref{eq:mftcoeffs} can be expressed as 
+\bea
+(-1)^{2J}  \,\frac{I_{ab}^{6556,\mathrm{MFT}}(\De,\rho)}{\mu(\De,\rho)} \, \frac{S(\cO_6 [\cO_5] \cO)^{m}{}_{n}}{N_{\cO_5}} \frac{S([\cO_6] \tl\cO_5 \cO)^n{}_c}{N_{\cO_6}}  \p{\<\cO_5 \cO_6 \tl \cO^\dag \>^{(b)},\<\tl \cO_6^\dag \tl \cO_5^\dag \cO\>^{(c)}} \,  = \delta^{m}_{a}     \, .
+\eea{eq:mftid1}
+Using \eqref{eq:confblockexpansionprincipal} and \eqref{eq:hiddenMFT}, we rephrase \eqref{eq:mftid1} as 
+\be
+\label{eq:mftid2}
+ C_{ak}^{6556,\mathrm{MFT}}(\Delta,\rho)\; Q^{km}_{65\cO}(\Delta,\rho) =  \delta^{m}_{a} \, .
+\ee
+Let $(\Delta,\rho)$ be $(\Delta^{*},\rho^{*})$ for the double-trace operators $\cO_{[56]^{*}}^{I}$,
+where $I$ labels degenerate operators, as discussed previously.
+The coefficient $C^{6556,\mathrm{MFT}}_{ak}$ has a simple pole at this location and therefore \eqref{eq:mftid2} implies that $Q^{km}_{65\cO}(\Delta,\rho)$ is its inverse matrix and has a corresponding zero at this value. Evaluated at $\De = \De^*$, \eqref{eq:mftid2} takes the form
+\be
+\label{eq:mftid3}
+\left(\sum_{I} c_{65[56]^{*},a}^{MFT,I}c_{56[56]^{*},k}^{MFT,I}\right) \, q^{km} = \delta^{m}_{a} \,,
+\ee
+where $c_{65[56]^{*},a}^{MFT,I}c_{56[56]^{*},k}^{MFT,I}$ is the contribution to the residue of $C^{6556,\mathrm{MFT}}_{ak}$ corresponding to $\cO_{[56]^{*}}^{I}$ and $q^{km}$ is the coefficient of the first order zero of $Q^{km}_{65\cO}$ at $\De^*$.
+
+Note that the matrix of OPE coefficients $c_{65[56]^{*},a}^{MFT,I}c_{56[56]^{*},k}^{MFT,I}$ for a specific double-trace operator is singular. In general, \eqref{eq:mftid2} and \eqref{eq:mftid3} imply that there are sufficiently many degenerate double-trace families so the matrix obtained by summing over all of them is not singular. In the case where there is a unique tensor structure, such as when $\mathcal{O}_5$ and $\mathcal{O}_6$ are scalars, the $1\times1$ matrix is of course non-degenerate, so degenerate double-trace operators need not exist.  Contracting both sides of \eqref{eq:mftid3} with $c_{65[56]^{*},m}^{MFT,J}$, we obtain
+\be
+\label{eq:mftid4}
+ c_{56[56]^{*},k}^{MFT,I} \, q^{km} \, c_{65[56]^{*},m}^{MFT,J} = \delta^{IJ} \, .
+\ee
+Finally,
+using \eqref{eq:residue} and \eqref{eq:mftid4} we obtain the contribution of the $(\De^{*},\rho^{*})$ pole to the spectral integral in \eqref{eq:gluing4}
+\be
+\label{eq:contribonepole}
+-\underset{\De \to \De^*}\Res  C^{3256}_{ak} C^{6514}_{md} \, Q^{km}_{65\cO} \,   G^{3214(ad)}_\cO \big|_{\rho \to \rho^*}
+= \sum_{I} c_{32[56]^{*},a}^{I} c_{14[56]^{*},d}^{I} \, G^{3214(ad)}_{[56]^{*}}(y_i)   \,.
+\ee
+Given that this is precisely the contribution of the double-trace operators $[\cO_5 \cO_6]$ to the correlator $A^{3214}(y_i)$, this shows that the conformally invariant pairing
+we started with in \eqref{eq:gluing1} computes precisely this contribution, to leading order in $1/N^2$ because we used MFT expressions along the way. Thus
+\beq
+\Big(1 + O\big(1/N^2\big) \Big)\, A(y_k) \big|_{[\cO_5 \cO_6]} = 
+ \int dy_5 dy_6 \, A^{3652}(y_k) \, \bS_5 \bS_6 A^{1564}(y_k)  \Big|_{[\cO_5 \cO_6]}
+\,.
+\label{eq:gluing_nodisc}
+\eeq
+In the context of the the projector defined in the previous section in \eqref{eq:conglomeration_projector}, this result can be phrased as
+\be
+\sum_{n,\ell,I} \Big| [\cO_5 \cO_6]_{n,\ell}^{I} \Big|  
+= | \cO_5 \cO_6 | + O\big(1/N^2\big)   \,.
+\label{eq:proj_gluing}
+\ee
+The labels $n,\ell$ sum over the double-trace operators with different dimensions and spins, while $I$ sums over degenerate operators.
+The projection $|_{[\cO_5 \cO_6]}$ appears on the two sides of \eqref{eq:gluing_nodisc} for different reasons. On the left hand side it selects one family of double-trace operators among all the operators appearing in the OPE, while on the right hand side it serves to discard poles from shadow operators that we would pick up when we close the contour in \eqref{eq:gluing4}. For example, it is evident from the first equation in \eqref{eq:shadowtrans_exp2} that $Q(\De,\rho)$ has poles at the double-traces $\cO_{[\tl 5\tl 6]}^{I}$ composed of $\tl\cO_{5}$ and $\tl\cO_{6}$ and we pick up these contributions too. Let us take for simplicity the case with  $\cO_{5}$ and $\cO_{6}$ scalars and $\cO$ with integer spin $\ell$ in 4 dimensions. 
+The corresponding three-point function has only one tensor structure and the expressions for $S(\cO_6 [\cO_5] \cO)$ and $S([\cO_6] \tl\cO_5 \cO)$ 
+are known \cite{Karateev:2018oml}
+\be
+\label{eq:footnoteScoeff}
+S(\cO_6 [\cO_5] \cO) \sim \frac{\Gamma\left(\frac{\De_{6}+\tl\De_{5}-\De + \ell }{2}\right)}{\Gamma\left(\frac{\De_{6}+\De_{5}-\De + \ell }{2}\right)}\,, \qquad \qquad 
+S([\cO_6] \tl\cO_5 \cO) \sim \frac{\Gamma\left(\frac{\tl\De_{6}+\tl\De_{5}-\De + \ell }{2}\right)}{\Gamma\left(\frac{\De_{6}+\tl\De_{5}-\De + \ell }{2}\right)}    \, .
+\ee
+Therefore, the product has poles at the double-traces $[\tl\cO_5\tl\cO_6]$ (and zeroes at the double-traces $[\cO_5\cO_6]$).
+To determine such contributions in the same way as above, we should express $I^{3256}$ in terms of $I^{32\mathbf{S}[5]\mathbf{S}[6]}$ by inverting \eqref{eq:shadowtrans_exp} at \eqref{eq:gluing2} in the derivation above. We can follow the remaining steps  and use an identity for the MFT spectral function similar to \eqref{eq:mftcoeffs} (see \cite{Karateev:2018oml}). This gives the contribution from the double-traces of shadows $\cO_{[\tl 5\tl 6]}^{I}$ to be of the same form as in \eqref{eq:contribonepole}. Note that in the case of scalar MFT correlators, these poles in $Q(\De,\rho)$ are canceled by zeros in the MFT spectral function \eqref{eq:MFTspec} and hence we do not have these contributions from the double-traces of shadows.
+
+
+
+\subsection{Discontinuities in the large $N$ expansion}
+\label{sec:Nexpansion}
+
+Equation \eqref{eq:gluing_nodisc} by itself is not very useful because of the $O(\frac{1}{N^2})$ error term. External double traces contribute already at $O(N^0)$ so that their contributions at $O(\frac{1}{N^2})$ are already not attainable by  \eqref{eq:gluing_nodisc}.
+This problem is solved by taking the double discontinuity of  \eqref{eq:gluing_nodisc}, which will ensure that both sides of the equation are valid to $O(\frac{1}{N^4})$ for all double traces $[\cO_5 \cO_6]$, both external and internal.
+
+
+The discontinuities are given by commutators in Lorentzian signature, hence we analytically continue the correlators to Lorentzian signature and take the difference of different operator orderings. Euclidean correlators can be continued to Wightman functions using the following prescription \cite{Hartman:2015lfa}
+\be
+\< \cO_1(t_1 , \vec{x}_1) \cO_2(t_2 , \vec{x}_2) \cdots \cO_n(t_n , \vec{x}_n) \> = \lim_{\epsilon_i \rightarrow 0}  \< \cO_1(t_1 - i\epsilon_1 , \vec{x}_1) \cdots \cO_n(t_n - i\epsilon_n , \vec{x}_n) \>  \,,   \label{eq:wightman}
+\ee
+with $\tau_i = i t_i$ where $\tau$ is Euclidean and $t$ Lorentzian time. The limits are taken assuming $\epsilon_1 > \epsilon_2 > \cdots > \epsilon_n $. 
+
+Let us assume without loss of generality that $\cO_4$ is in the future of $\cO_1$,  that $\cO_2$ is in the future of $\cO_3$ and that all other pairs of operators are spacelike from each other. Now we apply the epsilon prescription to $\< \cO_1 \cO_2 \cO_3 \cO_4 \>$ with $\epsilon_4 >\epsilon_1$ and $\epsilon_2 >\epsilon_3$. The relative ordering of epsilons is unimportant for the spacelike separated pairs. This gives  the Lorentzian correlator $A^{\circlearrowleft} = \< \cO_2 \cO_3 \cO_4 \cO_1 \>$, which is equal to the time ordered correlator for the assumed kinematics. Similarly, we obtain $A^{\circlearrowright}= \< \cO_3 \cO_2 \cO_1 \cO_4 \>$ from the ordering $\epsilon_4 <\epsilon_1$, $\epsilon_2 <\epsilon_3$.  The Euclidean configurations $A_{\text{Euc}}$ correspond to the mixed orderings $\epsilon_4 >\epsilon_1$, $\epsilon_2 <\epsilon_3$ and $\epsilon_4 <\epsilon_1$, $\epsilon_2 >\epsilon_3$. We can then relate  the $\dDisc_t$  to these four configurations by
+\be
+\dDisc_t A(y_i) = A_{\text{Euc}}(y_i) - \frac{1}{2}\left(A^{\circlearrowleft}(y_i) + A^{\circlearrowright}(y_i)\right) = -\frac{1}{2}\< \left[\cO_2 ,\cO_3 \right] \left[\cO_4 ,\cO_1 \right]\>   \,.       \label{eq:dDisc_commutator} 
+\ee
+Using \eqref{eq:OPE_s} this gives  the conventional definition of the double discontinuity \cite{Caron_Huot_2017}
+\bea
+\dDisc_{t} A(y_i) &= T^{1234}(y_i)   \bigg[ \cos \big(\pi (a+b)\big) {\cal A}^{1234}(z,\bar{z}) -
+\\
+&-
+\frac{1}{2}\left(
+e^{i \pi(a+b)}  {\cal A}^{1234}(z,\bar{z}^\circlearrowleft)
++  e^{-i \pi(a+b)}  {\cal A}^{1234}(z,\bar{z}^\circlearrowright)
+\right) \bigg] ,
+\eea{eq:dDisc_conventional}
+where $a=\De_{21}/2$ and $b=\De_{34}/2$. $\bar{z}^\circlearrowleft$ and $\bar{z}^\circlearrowright$ denote that $\zb$ is analytically continued by a full circle counter-clockwise and clockwise around $\zb=1$, respectively.\footnote{The relation between \eqref{eq:dDisc_commutator} and \eqref{eq:dDisc_conventional} can be obtained by assigning the phases $y_{ij}^2 \to y_{ij}^2 e^{\pm i \pi}$ to the timelike distances $y_{14}$ and $y_{23}$.}
+
+The gluing of correlators on the right hand side in \eqref{eq:gluing_nodisc}, with the shadow integrals now written explicitly, is a sum of terms of the form
+\be
+\frac{1}{N_{\cO_5}N_{\cO_6}}\int dy_5 \, dy_6 \, dy_7 \, dy_8 \, \<\cO_2 \cO_3 \cO_6 \cO_5\> \, \<\tl \cO_5 \tl{\cO}_{7}^{\dag}\> \, \<\tl \cO_6 \tl{\cO}_{8}^{\dag}\> \, \<\cO_7 \cO_8 \cO_1 \cO_4 \>       \,. \label{eq:gluing_expan}
+\ee 
+Note that $\cO_5 = \cO_7$ and $\cO_6 = \cO_8$  but we have used the different labels to denote the insertion points. We can apply the same 
+$\epsilon$-prescriptions on \eqref{eq:gluing_expan} while we hold $y_5 ,\, y_6 ,\, y_7 ,\, y_8$ to be Euclidean. Taking the same combinations as in \eqref{eq:dDisc_commutator} we arrive at
+\be
+\frac{1}{N_{\cO_5}N_{\cO_6}}\int dy_5 \, dy_6 \, dy_7 \, dy_8 \, \<\left[\cO_2 ,\cO_3 \right] \cO_6 \cO_5\> \, \<\tl \cO_5 \tl{\cO}_{7}^{\dag}\> \, \<\tl \cO_6 \tl{\cO}_{8}^{\dag}\> \, \<\cO_7 \cO_8 \left[\cO_4 ,\cO_1 \right] \>       \,. \label{eq:gluing_comm}
+\ee
+The commutators in \eqref{eq:gluing_comm} give discontinuities in the correlator as defined in \eqref{eq:discdefnorg}. 
+
+We will now show that taking the $\dDisc$ of \eqref{eq:gluing1} ensures that the external double-traces $[\cO_{1}\cO_{4}]$ and $[\cO_{2}\cO_{3}]$ which usually appear at $O(N^0)$ are suppressed in $1/N$ so that they appear at the same order as other double trace operators. To this end, let us briefly discuss the $1/N$ expansion of correlators and associated CFT data.
+The leading contribution is $A_\text{MFT}$, which is simply the disconnected correlator if the external operators are pairwise equal and is absent otherwise.
+Because of this, the only operators that appear at $O(N^0)$ are the ones appearing in the disconnected correlator,
+\bea
+c_{ij [\cO_i \cO_j]_{n,\ell}}
+&= c^\text{MFT}_{ij [\cO_i \cO_j]_{n,\ell}}
++ \frac{1}{N^2} \, c^{(1)}_{ij [\cO_i \cO_j]_{n,\ell}} + \cdots\,,\\
+\De_{[\cO_i \cO_j]_{n,\ell}} &= \De_i + \De_j + 2n + \ell + \frac{1}{N^2} \,\gamma_{[\cO_i \cO_j]_{n,\ell}}+ \cdots \,.
+\eea{eq:dt_expansion}
+Other double-trace operators can only appear at higher orders in the OPE, therefore
+\beq
+\label{eq:otheroper}
+c_{ij [\cO_k \cO_l]_{n,\ell}}
+= \frac{1}{N^2} \,c^{(1)}_{ij [\cO_k \cO_l]_{n,\ell}} + \cdots\,, \qquad i,j \neq k,l\,.
+\eeq
+The analytic continuation of a $t$-channel conformal block to the Regge sheet is given by the following simple expression
+\beq
+g^{3214}_{\cO}\big(1-z,(1-\bar{z})e^{i \b}\big) = e^{i \b \frac{\tau_{\cO}}{2}} g^{3214}_{\cO}(1-z,1-\bar{z})\,.
+\label{eq:block_monodromy}
+\eeq
+As a result, the action of the single and double discontinuities on the $t$-channel block expansion in \eqref{eq:OPE_t} is given by
+\begin{align}
+{} \Disc_{14}  A^{1ij4}(y_k)
+&=  \sum\limits_{\cO} 2 i
+\sin\left(\tfrac{\pi}{2} (\tau_\cO-\De_1-\De_4) \right)
+c_{ij\cO}c_{14\cO} \, G^{ij14}_{\cO}(y_k)\,,\nonumber\\
+{} \Disc_{23} A^{3ji2}(y_k)
+&=  \sum\limits_{\cO} 2 i
+\sin\left(\tfrac{\pi}{2} (\tau_\cO-\De_2-\De_3) \right)
+c_{32\cO}c_{ij\cO}\,G^{32ij}_{\cO}(y_k)\,,\label{eq:dDisc_tchan}\\
+ \dDisc_{t}  A(y_k)
+&=  \sum\limits_{\cO} 2 
+\sin\left(\tfrac{\pi}{2} (\tau_\cO-\De_1-\De_4) \right)
+\sin\left(\tfrac{\pi}{2} (\tau_\cO-\De_2-\De_3) \right)
+c_{32\cO}c_{14\cO}\,G^{3214}_{\cO}(y_k)\,.\nonumber
+\end{align}
+The sines in the expansions are responsible for suppressing the contribution of external double-traces. 
+Therefore, using \eqref{eq:dDisc_tchan}, \eqref{eq:dt_expansion} and \eqref{eq:otheroper}, the leading contribution to the discontinuity of a correlator is $O(1/N^2)$
+\begin{align}
+{}&\Disc_{14}  A (y_i) = \frac{1}{N^2} \Disc_{14} A_\text{tree}(y_i) + O(1/N^4) =
+\label{eq:leading_Disc} \\
+&  \sum\limits_{\cO = [\cO_1 \cO_4]}  i \pi \frac{\gamma_\cO}{N^2} \,c^\text{MFT}_{14\cO}
+c_{32\cO}G^{3214}_{\cO}
++\sum\limits_{\cO \neq [\cO_1 \cO_4]} 2 i
+\sin\big(\tfrac{\pi}{2} (\tau_\cO-\De_1-\De_4) \big)
+\frac{c^{(1)}_{14\cO}}{N^2} \,c_{32\cO}G^{3214}_{\cO}\,,
+\nonumber
+\end{align}
+and similarly  the leading contribution to the double discontinuity is $O(1/N^4)$
+\begin{align}
+\label{eq:dDisc_order}
+&\dDisc_{t} A(y_i) = \frac{1}{N^4} \,\dDisc_{t}  A_\text{1-loop}(y_i) + O(1/N^6)\,.
+\end{align}
+In particular, when acting with \eqref{eq:dDisc_y} on the left hand side of \eqref{eq:gluing1} we have
+\bea
+\Disc_{23} A^{3652}  
+&=  \hspace{-9pt}\sum\limits_{\cO = [\cO_2 \cO_3]}\hspace{-9pt}  i \pi \frac{\gamma_\cO}{N^2}\, c^\text{MFT}_{32\cO}
+c_{56\cO}\, G^{3256}_{\cO}
+\\
+&+ \hspace{-9pt} \sum\limits_{\cO \neq [\cO_2 \cO_3]} \hspace{-9pt}
+2 i \sin\big(\tfrac{\pi}{2} (\tau_\cO-\De_2-\De_3) \big)\,
+\frac{c^{(1)}_{32\cO}}{N^2} \,c_{56\cO}\,G^{3256}_{\cO}\,,
+\\
+\Disc_{14} A^{1\tl 5 \tl 6 4} 
+&= \hspace{-9pt}\sum\limits_{\cO = [\cO_1 \cO_4]}\hspace{-9pt}  i \pi \frac{\gamma_\cO}{N^2} \,c_{\tl 6 \tl 5\cO} c^\text{MFT}_{14\cO}
+G^{\tl 6 \tl 514}_{\cO}
+\\
+&+\hspace{-9pt}\sum\limits_{\cO \neq [\cO_1 \cO_4]}\hspace{-9pt} 2 i
+\sin\big(\tfrac{\pi}{2} (\tau_\cO-\De_1-\De_4) \big)\,
+c_{\tl 6 \tl 5\cO} \frac{c^{(1)}_{14\cO}}{N^2} \,G^{\tl 6 \tl 514}_{\cO}\,.
+\eea{eq:leading_Disc_56} 
+Since every term is these expansions already has an explicit factor of $1/N^2$, the only operators that can contribute at this order are the ones with $c_{56\cO} = O(N^0)$ or $c_{\tl 6\tl 5\cO} = O(N^0)$, which are the double-traces $\cO = [\cO_5 \cO_6]$ and $\cO = [\tl \cO_5 \tl \cO_6]$.
+Applying the discontinuities to both sides of \eqref{eq:gluing_nodisc}
+leaves us with one of our main results, the perturbative optical theorem for the contributions of double-trace operators to the 1-loop 
+$\dDisc$ of the correlator, as stated in the introduction 
+\bea
+\dDisc_t \, A_{\rm 1-loop}(y_i)\Big|_\text{d.t.}  \!= -\frac{1}{2}
+\sum\limits_{\substack{\mathcal{O}_5,\mathcal{O}_6\\ \in\  s.t.}}
+ \!
+ \int dy_5 dy_6 \, \Disc_{23}  A_{\rm tree}^{3652}(y_k) \, \bS_5 \bS_6 \Disc_{14} A_{\rm tree}^{1564}(y_k)  \Big|_{[\cO_5 \cO_6]}\,.
+\eea{eq:cft_optical_theorem}
+The integrals in this formula are over Euclidean space. 
+It would be very interesting to derive a fully Lorentzian generalization of this formula.
+In \cite{Kravchuk:2018htv} it was shown that there is a Lorentzian version of the shadow integral which computes the conformal block without the need to project out shadow operators. A Lorentzian version of \eqref{eq:cft_optical_theorem} might have this feature as well.
+In section \ref{sec:ads} we will propose a Lorentzian fomula that is valid in the Regge limit.
+
+To obtain the full double discontinuity, this generally has to be supplemented by the contributions of single trace operators, which already had the appropriate form in terms of three-point functions of single trace operators from the start, as shown in \eqref{eq:stcontribution}. The two types of contributions are analogous to double and single line cuts of scattering amplitudes in the S-matrix optical theorem.

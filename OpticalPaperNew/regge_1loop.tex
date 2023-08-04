@@ -1,0 +1,171 @@
+
+
+\usetikzlibrary{arrows,calc,shapes,decorations.pathmorphing,decorations.markings}
+\tikzset{
+%Define standard arrow tip
+>=stealth',
+%Define style for different line styles
+help lines/.style={dashed, thick},
+axis/.style={<->},
+important line/.style={thick},
+connection/.style={thick, dotted},
+  cross/.style={
+    cross out,
+    draw=black, 
+    minimum size=7pt, 
+    inner sep=0pt,
+    outer sep=0pt
+  },
+  branchcut/.style={
+    decoration={
+      snake,
+      amplitude=1pt,
+      segment length=6pt,
+    },
+    decorate,
+    thick
+  },
+%Arrows along lines
+->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{>}}},postaction={decorate}},
+  twopt/.style={
+    circle,
+    draw,
+    fill=black,
+    inner sep=1pt,
+    minimum size=1pt
+  },
+  scalar/.style={
+    thick,
+    dashed,
+    postaction={
+      decorate,
+      decoration={
+        markings,
+        mark=at position 0.5 with {\arrow{>}}
+      }
+    }
+  },
+  spinning/.style={
+    thick,
+    postaction={
+      decorate,
+      decoration={
+        markings,
+        mark=at position 0.5 with {\arrow{>}}
+      }
+    }
+  },
+  scalar no arrow/.style={
+    thick,
+    dashed,
+  },
+  spinning no arrow/.style={
+    thick,
+  },
+  finite/.style={
+    decoration={
+      snake,
+      amplitude=1pt,
+      segment length=6pt,
+    },
+    decorate,
+    thick
+  },
+  axis/.style={
+    thick,
+    postaction={
+      decorate,
+      decoration={
+        markings,
+        mark=at position 1 with {\arrow{>}}
+      }
+    }
+  },
+}
+
+
+%---------------- Tikz command from Sourav -----------------------------
+
+\tikzset{snake it/.style={decorate, decoration=snake}}
+
+
+
+
+
+%-------------------------------------------------------------------------------------------------------
+%-------------------New commands and shortcuts by Tobias--------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------------
+
+\newcommand{\bea}{\begin{equation}\begin{aligned}}
+\newcommand{\eea}[1]{\label{#1}\end{aligned}\end{equation}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand   \xb  {\bar{x}}
+\newcommand   \zb  {\bar{z}}
+\newcommand   \wb  {\bar{w}}
+\newcommand   \pb  {{\bar{p}}}
+\newcommand   \kb  {\bar{k}}
+\newcommand   \vb  {\bar{v}}
+\newcommand   \Deb  {\bar{\De}}
+\newcommand   \ellb  {\bar{\ell}}
+\newcommand   \nb  {\bar{n}}
+\DeclareMathOperator\Disc{Disc}
+\newcommand{\dDisc}{\text{dDisc}}
+\def\Cut{{\mathbf{Cut}}}
+\def\hCut{\widehat\Cut}
+\def\1{{\rm 1-loop}}
+
+\newcommand{\diagramEnvelope}[1]{#1}
+
+
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%---------Other authors if you have your own shortcut commands, make sure they're not in conflict with any of the existing ones and add them here in separate sections mentioning your name on top-----
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+%\usepackage{accents}
+\newcommand{\non}{\nonumber}
+%\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+\newcommand{\ubar}[1]{\underline{#1}}
+\newcommand   \bnu  {\boldsymbol{\nu}}
+\newcommand   \bmu  {\boldsymbol{\mu}}
+\newcommand   \brho  {\boldsymbol{\rho}}
+
+%------------ from António-----------------
+\newcommand   \balpha  {\boldsymbol{\alpha}}
+\newcommand   \bbeta  {\boldsymbol{\beta}}
+\newcommand   \bgamma  {\boldsymbol{\gamma}}
+\newcommand   \bdelta  {\boldsymbol{\delta}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  MAIN BODY  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+
+\input{~/Thesis/PhD_Thesis/OpticalPaper/sections/1_introduction.tex}
+\input{~/Thesis/PhD_Thesis/OpticalPaper/sections/2_cft_optical_theorem.tex}
+\input{~/Thesis/PhD_Thesis/OpticalPaper/sections/3_cuts_flat_space.tex}
+\input{~/Thesis/PhD_Thesis/OpticalPaper/sections/4_cuts_ads.tex}
+\input{~/Thesis/PhD_Thesis/OpticalPaper/sections/5_cft_data.tex}
+\input{~/Thesis/PhD_Thesis/OpticalPaper/sections/6_flat_space_limit.tex}
+\input{~/Thesis/PhD_Thesis/OpticalPaper/sections/7_match_string_theory.tex}
+\input{~/Thesis/PhD_Thesis/OpticalPaper/sections/conclusions.tex}
+
+\appendix
+
+\input{~/Thesis/PhD_Thesis/OpticalPaper/sections/Appendix_sec6.tex}
+\input{~/Thesis/PhD_Thesis/OpticalPaper/sections/Appendix_tensorprod_projectors.tex}
+\input{~/Thesis/PhD_Thesis/OpticalPaper/sections/Appendix_branching_projectors.tex}
+
+\bibliographystyle{JHEP}
+\bibliography{regge_1loop}
+
+\end{document}

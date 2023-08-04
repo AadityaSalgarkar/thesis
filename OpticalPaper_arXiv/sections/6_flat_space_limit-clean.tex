@@ -1,0 +1,255 @@
+
+\section{Flat space limit}
+\label{sec:flat_space_limit}
+
+Having fixed the general form of the impact parameter representation of the one-loop correlator from first principles in section \ref{sec:ads},
+we now want to fix part of the dynamical data by taking the flat space limit,
+which relates it to the known flat space amplitudes.
+The prescription to achieve this was discovered in
+\cite{Cornalba:2007fs}, where it was applied to scalar tree-level amplitudes.
+This limit is taken by sending the AdS radius $R$ to infinity while scaling the relevant quantities in order to match them to flat space quantities in a sensible way.
+The dimensionless quantities $S$ and $L$ are sent to dimensionless combinations of $R$ with the flat space center of mass energy $s$ and impact parameter $b$ as
+\beq
+ S = \frac{R^2 s}{4}\,, \qquad  L=\frac{b}{R}\,.
+\eeq
+Note that $L$ is the AdS impact parameter, as it describes the geodesic distance on $H_{d-1}$ between the impact points in transverse space.
+If we impose the identification of Casimir eigenvalues
+\beq
+\De (\De-d) = R^2 m^2\,,
+\label{eq:casimirdeltam}
+\eeq
+for the states on the leading Regge trajectory and take this equation off-shell,
+it becomes
+\beq
+\nu^2 + \left( \frac{d}{2} \right)^2 =  R^2 q^2\,,
+\eeq
+so for large $R$ we further impose
+\beq
+\nu^2 = R^2 q^2\,.
+\eeq
+Our expressions in AdS are integrals in $\nu$, while in flat space we have vector integrals in $q$,
+where we recall that $q$ is a vector in the transverse space $\mathbb{R}^{D-2}$.
+In order to compare the expressions, it is instructive to do the flat space angular integrals and keep only the integral over the modulus $|q|$.
+In this way, the exponential is replaced by the harmonic function $\omega_q(b)$ according to 
+\beq
+\int\limits_{\mathbb{R}^{D-2}} \frac{d q}{(2\pi)^{D-2}} \, e^{i b \cdot q}
+= 2 \int\limits_0^{\infty} d|q| \, \omega_q(b)\,,
+\label{eq:exp_to_harmonic}
+\eeq
+so that \cite{Costa:2014kfa}
+	\bea
+\omega_{q} (b) = q \int\limits_{\mathbb{R}^{D-2}} \frac{d p}{(2\pi)^{D-2}} \, e^{i b \cdot p}\, \delta(p^2 - q^2) = \frac{1}{2 (2\pi)^{\frac{D-2}{2}}}\frac{|q|^\frac{D-2}{2}}{|b|^{\frac{D-4}{2}}} J_{\frac{D-4}{2}}(|q| |b|)\,,
+	\eea{eq:harmonic_flat}
+where $J$ denotes the Bessel $J$-function and we recall that $\omega_{q} (b)$ only depends on the modulus of the vectors $q$ and $b$.
+One can check that the flat space limit of the $H_{d-1}$ harmonic function \eqref{eq:Omega} yields the flat space harmonic function
+\beq
+R^{3-D} \Omega_{i \nu} (L) \to \omega_{q} (b)\,, \qquad \nu \geq 0\,.
+\label{eq:Omega_fsl}
+\eeq
+For even $d$ this can be checked directly, while for general $d$ it is convenient to use an integral representation for the hypergeometric function which under the limit is related to an integral representation for the Bessel function \cite{Carmi:2018qzm}.
+For even $d$ the relation is also valid for $\nu < 0$.
+
+In the context of string theory we further have the dimensionless coupling $\lambda$ which is expressed in terms of $\alpha'$ and $R$ as
+\beq
+\sqrt{\l} = \frac{R^2}{\a'}\,,
+\eeq
+meaning we can also express $S$ as
+\beq
+S= \frac{\sqrt{\lambda}\,  \alpha's}{4}\,.
+\label{eq:Stos}
+\eeq
+To summarize, the flat space limit is taken by
+sending the AdS radius $R$ to infinity while replacing
+\beq
+S = \frac{\sqrt{\lambda} \alpha' s}{4}, \quad L=\frac{b}{R}, \quad	\nu^2 = R^2 q^2, \quad \nu_1^2 = R^2 q_1^2, \quad  \nu_2^2 = R^2 q_2^2, \quad \sqrt{\l} = \frac{R^2}{\a'}  \,,
+		\label{eq:flat_space_limit}
+\eeq
+and impact parameter representations can be compared by using \eqref{eq:Omega_fsl}.
+We can also use these relations to relate $\Delta_{gap}$ to $\lambda$ taking as reference a string state of mass $m^2=4/\alpha'$, therefore
+\beq
+\Delta^2_{\text{gap}}=\frac{4 R^2}{\alpha'} = 4 \sqrt{\lambda}\,.
+\eeq
+
+\subsection{Matching in impact parameter space}
+\label{sec:matching_impact_parameter}
+Let us now see what we can learn when we apply the flat space limit to the impact parameter representations studied in section \ref{sec:ads}. We begin with the tree-level correlator of four scalars for which the limit was originally imposed in \cite{Cornalba:2007fs}.
+The flat space limit of the AdS result $\cB$ in \eqref{eq:B} should match the flat space impact parameter representation $i \de$ from \eqref{eq:impact_flat} of the amplitude \eqref{eq:A_tree_regge}\footnote{The relative factor $i$ in $\cB \to i \de$ can be determined by matching the exponents in the eikonal approximation for $\lambda \to \infty$.}
+\beq
+\cB_{\text{tree}}(p,\pb) = 4 \pi i \int\limits_{0}^{\oo} d\nu \, \b(\nu)\,S^{j(\nu)-1}\, \Omega_{i\nu} (L)
+\ \to \ 
+i\de_{\text{tree}} (s,b) = 2i \int\limits_0^{\oo} d|q|\, \b(t) \left(\frac{\alpha's}{4}\right)^{j(t)-1} \omega_q(b) \,.
+\label{eq:flat_space_limit_dilatons}
+\eeq
+Here and below we do not always write the overall factors of $R$ as in \eqref{eq:Omega_fsl}, but they do work out correctly when including the expansion parameters from
+\eqref{eq:loop_expansion} and \eqref{eq:amplitude_loop_expansion} and using the relation
+\beq
+\frac{1}{N^2} = \frac{1}{R^{D-2}} \frac{2 G_N}{\pi}\,.
+\eeq
+From \eqref{eq:Omega_fsl} and \eqref{eq:Stos} we see that
+this does indeed match, provided  the flat space limit of the AdS Regge trajectory and spectral function are sent to the flat space Regge trajectory and Pomeron propagator%
+\footnote{$j(\nu)$, $j(t)$ and $\b(\nu)$, $\b(t)$ are different functions and not the same function with different arguments.}
+\beq
+j(\nu)\, \to\,  j(t)\,, \qquad \lambda^{\frac{j(\nu)-1}{2}}\b(\nu)\, \to\,  \frac{1}{2 \pi} \,\b(t)\,.
+\label{eq:lim_beta}
+\eeq
+The power of $\lambda$ in the relation of $\beta$'s is necessary to cancel the powers of $\lambda$ in the relation between $S$ and $\alpha' s$.
+It is compatible with the expectation that each derivative in the couplings of the spin $J$ operators forming the Pomeron comes at least with a power of $\lambda^{-\frac{1}{4}}$.
+
+Next we consider the optical theorem in AdS \eqref{eq:gluing_stripped} and flat space \eqref{eq:impact_optical_theorem}
+\beq
+- \Re \cB_{\text{1-loop}} = \frac{1}{2}
+\sum\limits_{\substack{\De_5,\rho_5\\\De_6,\rho_6}}
+\cB^{3652\, *}_\text{tree}  \cB^{1564}_\text{tree}
+\ \to \ 
+		\Im \de_{\text{1-loop}} (b) 
+		= \frac{1}{2} \sum\limits_{\substack{m_5,\rho_5,\e_5\\m_6,\rho_6,\e_6}}
+		\de_\text{tree}^{3652\,*} \de_\text{tree}^{1564}\,.
+\eeq
+The similarity is striking, however we have to make sure  the sums and summands are in fact related by the flat space limit.
+The additional sums over polarizations can be evaluated using completeness relations such as 
+\eqref{eq:completeness_relation}, which evaluate to contractions just as in the AdS equation.
+We also have to make sure that the labels $\rho$ on both sides are irreducible representations of the same group $SO(d)$. This is indeed the case for massive particles if we consider the flat space limit $AdS_{d+1} \to \mathbb{R}^{1,d}$, which has the massive Little group $SO(d)$.
+
+The next step is to match the tree-level correlators \eqref{eq:Btree_differential} and amplitudes \eqref{eq:A_tree_regge} that involve spinning particles 5 and 6. In this case the flat space limit gives
+\begin{align}
+&\cB^{(\De_5,\rho_5),(\De_6,\rho_6)}_{\mathbf{m} \mathbf{n}}  (p,\bar{p}) 
+		= 4 \pi i \int\limits_{0}^\infty d\nu \, S^{j(\nu)-1} 
+		\,\mathfrak{D}^{(\De_5,\rho_5),(\De_6,\rho_6)}_{\mathbf{m} \mathbf{n}} (\nu)
+		\,\Omega_{i \nu} (L)\ \to
+		\label{eq:flat_space_limit_spinning}
+\\
+\to\ &
+i \de^{(m_5,\rho_5),(m_6,\rho_6)}_{\mathbf{m} \mathbf{n}} (s,b) 
+= i \int\limits_{\mathbb{R}^{D-2}} \frac{dq}{(2\pi)^{D-2}} \left(\frac{\alpha's}{4}\right)^{j(t)-1} A^{12P}_{m_5,\rho_5,\mathbf{m}} (q,v)\, \beta(t) A^{34P}_{m_6,\rho_6,\mathbf{n}}(q,v)\, e^{i q\cdot b}
+\nonumber \\
+& \qquad \qquad = 2i \int\limits_0^{\oo} d|q| \left(\frac{\alpha's}{4}\right)^{j(t)-1} A^{12P}_{m_5,\rho_5,\mathbf{m}} (-i\partial_{b},v)\, \beta(t) A^{34P}_{m_6,\rho_6,\mathbf{n}}(-i\partial_{b},v)\, \omega_q(b)\,,
+\nonumber
+\end{align}
+where the derivative $\partial_{b}$ is with respect to the components of the transverse vector $b$.
+The difference compared to \eqref{eq:flat_space_limit_dilatons} is that in AdS we  have differential operators that generate tensor structures, while  in flat space the tensor structures are the ones of the on-shell three-point amplitudes. As discussed in section \ref{sec:3pt_amplitudes}, these three-point amplitudes are given in terms of the Pomeron momentum $q$ and, for massive particles, the longitudinal polarization vector $v$, which is transverse to $q$.
+We will now study the relation of these two kinds of tensor structures to the flat space limit.
+
+We begin with the covariant derivatives and will argue that they become derivatives in  impact parameter in flat space, i.e.
+	\beq
+		\nabla_p^{m} \Omega_{i \nu} (L)  \ \to\  
+		R \partial_b^m e^{i b \cdot q} = R i q^m e^{i b \cdot q}\,.
+		\label{eq:nabla_fsl}
+	\eeq
+In order to show this, we will act with two contracted covariant derivatives either on a single harmonic function or on two different ones, covering all situations that can occur.
+Acting on a single harmonic function we obtain, from \eqref{eq:nabla} and \eqref{eq:flat_space_limit},
+	\beq
+		\frac{1}{\sqrt{\l}}\, \nabla_p^2 \, \Omega_{i \nu_{1,2}} (L) \ \to\  - \alpha' q_{1,2}^2\, \omega_{i \nu_{1,2}} (b)\,.
+\label{eq:laplace_flat_space_limit}
+	\eeq
+The action of contracted covariant derivatives on two different harmonic functions is captured by the functions $W_k$ in \eqref{eq:Wk}, which is given in the flat space limit by the leading term \eqref{eq:Wk_leading}
+	\bea
+		\frac{W_{k} \big(\nu_1^2,\nu_2^2,\nu^2\big)}{\big(\sqrt{\l}\big)^k}\  \to\ 
+		\left( \frac{\nu_1^2+\nu_2^2 - \nu^2}{2\sqrt{\l}} \right)^k
+		\ \to \ \left(  \alpha'\, \frac{q_1^2+q_2^2 - q^2}{2} \right)^k
+		= (\alpha')^{k} (- q_{1}\cdot q_2)^k\,, 
+	\eea{eq:Wk_fs}
+where we used that $q = q_1 + q_2$. This implies that the flat space limit of \eqref{eq:Wk} is
+	\begin{align}
+	&
+\frac{1}{\big(\sqrt{\l}\big)^k}
+		{\nabla_{p}}_{m_1} \ldots {\nabla_{p}}_{m_k}   \Omega_{i \nu_1} (L)
+		\nabla_p^{m_1} \ldots \nabla_p^{m_k} \Omega_{i \nu_2} (L)
+		\ \to
+		\\
+		\to \ & 
+		(-\a')^k q_{1 \, m_1} \ldots q_{1 \, m_k}   e^{i b \cdot q_1}
+		q_2^{m_1} \ldots q_2^{m_k} e^{i b \cdot q_2}\,.
+\label{eq:cov_flat_12}
+	\end{align}
+We conclude that both \eqref{eq:laplace_flat_space_limit} and \eqref{eq:cov_flat_12} are compatible with \eqref{eq:nabla_fsl}.
+Apart from the covariant derivative, tensor structures depend also on the direction $\hat{p}$, which is normal to the transverse space $H_{d-1}$ and satisfies $\hat{p}^2=-1$. In flat space the only possible direction for polarizations that is normal to the transverse space is the unit vector $v$, hence we have to require that in the flat space limit
+	\beq
+		\hat{p}^m \,\to\, i v^{m}\,.
+		\label{eq:phat_fsl}
+	\eeq
+
+With the identifications \eqref{eq:nabla_fsl} and \eqref{eq:phat_fsl}, the matching in \eqref{eq:flat_space_limit_spinning} works provided that the spectral functions $\beta^{k_5,k_6}_{(\De_5,\rho_5),(\De_6,\rho_6)} (\nu)$ in \eqref{eq:Dfrak} are such that
+	\beq
+		\lambda^{\frac{j(\nu)-1}{2}}\mathfrak{D}^{(\De_5,\rho_5),(\De_6,\rho_6)}_{\mathbf{m} \mathbf{n}} (\nu)\, \Omega_{i \nu} (L) \, \to\, 
+\frac{1}{2 \pi}
+		A^{12P}_{m_5,\rho_5,\mathbf{m}} (-i\partial_{b},v) \,\beta(t)\, A^{34P}_{m_6,\rho_6,\mathbf{n}} (-i\partial_{b},v)
+		\,\omega_{q}(b)\,.
+\label{eq:flat_space_limit_ts}
+	\eeq
+Using the explicit tensor structures for three-point amplitudes in \eqref{eq:3pt_spinning}, the matching \eqref{eq:flat_space_limit_ts} can also be expressed for the spectral function for any given tensor structure
+\beq
+ \lambda^{\frac{j(\nu)-1}{2}} \lambda^{\frac{|\rho_5|-k_5}{4}}\lambda^{\frac{|\rho_6|-k_6}{4}}\beta^{k_5,k_6}_{(\De_5,\rho_5),(\De_6,\rho_6)} (\nu)
+\ \to\ 
+\frac{1}{2 \pi}\,
+a_{m_5,\rho_5}^{k_5}(t) \,a_{m_6,\rho_6}^{k_6}(t) \,\b(t)\,.
+\label{eq:flat_space_limit_beta_spinning}
+\eeq
+The powers of $\lambda$ are again compatible with a factor of $\lambda^{-\frac{1}{4}}$ in $\beta^{k_5,k_6}_{(\De_5,\rho_5),(\De_6,\rho_6)} (\nu)$ for each derivative in the coupling.
+Such a scaling is expected from the general arguments of \cite{Costa:2017twz,Meltzer:2017rtf}.
+We have now shown that all tree-level phase shifts appearing in the AdS and flat space optical theorems can be related by the flat space limit. 
+
+Let us also compare the vertex functions that appear in both  AdS and flat space impact parameter representations of the one-loop amplitudes. 
+The flat space limit of   \eqref{eq:Bt_SL_vertex}  is given by the impact parameter transform of \eqref{eq:optical_theorem_V_flat}, i.e.
+\begin{equation}
+- \Re \cB_{\text{1-loop}} (p,\pb) \ \to\  \Im \delta_{\text{1-loop}} (s, b)\,,
+\end{equation}
+becomes
+\bea
+		& 2 \pi^2  \int\limits_{-\infty}^\infty d\nu d\nu_1 d\nu_2 \, \beta(\nu_1)^* \beta(\nu_2)
+		  \, V(\nu_1,\nu_2,\nu)^2 S^{j(\nu_1)+j(\nu_2)-2} \Phi(\nu_1,\nu_2,\nu) \, \Omega_{i \nu} (L) \ \to\\
+\to \ & \frac{1}{2}
+\int\limits_{\mathbb{R}^{D-2}} \frac{d q d q_1  d q_2}{(2\pi)^{2(D-2)}} 
+\, \b(t_1)^* \b(t_2) \, V(q_1,q_2)^2 \left(\frac{\alpha's}{4}\right)^{j(t_1) + j(t_2)-2} 
+\de(q-q_1-q_2) \, e^{i q\cdot b}\,.
+\eea{eq:flat_space_limit_with_V}
+In this case we can use the delta function to write all the other scalar functions in terms of $q_1^2$, $q_2^2$ and $q^2$, however we need to do the angular integral over the delta function itself. To this end we can define
+\beq
+\int\limits_{\mathbb{R}^{D-2}}  \frac{dq_1 dq_2}{(2\pi)^{D-2}} \, \de(q-q_1-q_2)
+= 4\int\limits_{0}^{\oo} d|q_1| d|q_2|\, \phi(q_1, q_2, q)\,.
+\label{eq:flat_phi}
+\eeq
+Using this and \eqref{eq:exp_to_harmonic}, we can compute the angular integrals in
+	\beq
+\int\limits_{\mathbb{R}^{D-2}}  \frac{dq_1 dq_2}{(2\pi)^{2(D-2)}} \, e^{i b \cdot (q_1 + q_2)} = \int\limits_{\mathbb{R}^{D-2}}  \frac{dq_1 dq_2 dq}{(2\pi)^{2(D-2)}} \, \de(q-q_1 -q_2)\, e^{i b \cdot q} \,,		\label{eq:Wk_flat}
+	\eeq
+to find the flat space version of \eqref{eq:Omega_prod}
+\beq
+\omega_{q_1}(b)\,  \omega_{q_2}(b) = 2 \int\limits_{0}^{\infty} d|q| \, \phi(q_1, q_2, q) \, \omega_{q}(b)\,.
+\eeq
+Using the explicit expressions for $\Phi$ and $\phi$ (which can be found for instance in appendix E of  \cite{Penedones:2010ue}), one can further check that under the flat space limit
+\beq
+R^{4-D} \Phi(\nu_1, \nu_2, \nu) \ \to\  \phi(q_1, q_2, q)\,.
+\eeq
+With this relation is clear that the expressions in
+\eqref{eq:flat_space_limit_with_V} are indeed related by the flat space limit provided that the vertex functions are related by
+\beq
+V(\nu_1,\nu_2,\nu)\  \to\  V(q_1,q_2) = V(t_1, t_2, t)\,.
+\eeq
+
+\subsection{Constraining AdS quantities}
+\label{eq:constraining_from_flat_space_limit}
+
+We saw above that all elements of the impact parameter optical theorems in AdS and flat space are related by the flat space limit provided that $j(\nu)$, $\beta(\nu)$, $\beta^{k_5,k_6}_{(\De_5,\rho_5),(\De_6,\rho_6)} (\nu)$ and $V\big(\nu_1^2,\nu_2^2,\nu^2\big)$ are given by their flat space counterparts in the limit.
+In this subsection, we briefly review how the limit actually constrains these functions.  All of these objects depend on two dimensionless quantities, the spectral parameters $\nu$ and the t'Hooft coupling $\lambda$.  Let us discuss this for a generic function $f(\nu)$ that is required to satisfy the flat space limit
+\beq
+f(\nu,\lambda) \, \to \,  f(t)\,.
+\eeq
+Existence of the  gravity limit requires the function to have an expansion in negative powers of $\sqrt{\lambda}$ of the form
+\beq
+f(\nu,\lambda) = \sum\limits_{n=0}^{\infty} \frac{f_n(\nu)}{\lambda^{n/2}}\,.
+\eeq
+In order for the flat space limit \eqref{eq:flat_space_limit} of the function to be finite, the functions $f_n(\nu)$ must  have an expansion in large $\nu$ with leading power not larger than $2n$,
+\beq
+f_n(\nu) = a_{n,n} \nu^{2n} + a_{n,n-1} \nu^{2(n-1)} + a_{n,n-2} \nu^{2(n-2)} + \ldots\,,
+\eeq
+which ensures finiteness of the limit order by order in the large $\lambda$ expansion.
+The flat space limit of $f(\nu,\lambda)$ is then
+\beq
+f(\nu,\lambda)\  \to\  \sum\limits_{n=0}^{\infty} a_{n,n} \left(\frac{\nu^{2}}{\sqrt{\lambda}}\right)^n \to\
+\sum\limits_{n=0}^{\infty} a_{n,n} (\a' q^2)^n\,.
+\eeq
+At every order in $1/\sqrt{\l}$ the leading power of $\nu$ survives and is fixed by the flat space limit, while all the other powers are subleading, and cannot be determined from this condition. 
+These considerations hold for $j(\nu)$, $\beta(\nu)$, $\beta^{k_5,k_6}_{(\De_5,\rho_5),(\De_6,\rho_6)} (\nu)$ and $V(\nu_1,\nu_2,\nu)$, fixing part of these functions. These facts have been explored in detail for the functions  $j(\nu)$ and $\beta(\nu)$ in \cite{Cornalba:2008qf,Costa:2012cb}.
+
+
+

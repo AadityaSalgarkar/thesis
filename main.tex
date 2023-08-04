@@ -1,0 +1,524 @@
+
+%-----------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-----------------------------------------------------------------------------------
+\documentclass[11pt, twoside,hidelinks]{Thesis}
+% The default font size and two-sided printing 
+% For a one-sided printing change the flag "twoside" to "oneside" 
+
+\graphicspath{{Figures/},{Logos/}}
+
+% \usepackage[dvipsnames]{xcolor}
+\usepackage{tikzit}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{tkz-euclide}
+\usepackage{caption}
+\usepackage{subcaption}
+\newcommand\hmmax{0}
+\newcommand\bmmax{0}
+\usepackage{lipsum} % For dummy text
+\usepackage{graphicx,float}% Include figure files
+\usepackage{epsfig}		
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{amsmath}
+\usepackage{etoolbox}
+\usepackage[boxsize=1em,centertableaux]{ytableau}
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+\usepackage{upgreek}
+\usepackage{todonotes}
+\usepackage{amssymb}
+\usepackage{braket}
+%\usepackage{mciteplus}
+\usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
+\usepackage{mathtools}
+\usepackage{nameref}
+\usepackage{notoccite}
+\usepackage{enumerate}
+\usepackage{dsdshorthand}
+\usepackage{array, booktabs, makecell}
+\usepackage{siunitx, mhchem}
+
+
+\hypersetup{
+  colorlinks=False,
+  % citecolor=Blue,
+  % linkcolor=Red,
+  % urlcolor=Blue
+  }
+%-----------------------------------------------------------------------------------
+% BIBLIOGRAPHY STYLE
+%-----------------------------------------------------------------------------------
+
+% \usepackage{natbib}
+% \setcitestyle{square, numbers, comma, sort&compress}
+\usepackage[square, numbers, comma, sort&compress]{natbib}
+% \usepackage{chapterbib}
+
+%%% BST STYLES
+% \bibliographystyle{apsrev4-1}
+% \bibliographystyle{apsrev4-1-etal}
+% \bibliographystyle{unsrt}
+% With emphasized titles and no comma in the last author
+%TIKZ
+
+\usetikzlibrary{arrows,calc,shapes,decorations.pathmorphing,decorations.markings}
+\tikzset{
+>=stealth',
+help lines/.style={dashed, thick},
+axis/.style={<->},
+important line/.style={thick},
+connection/.style={thick, dotted},
+  cross/.style={
+    cross out,
+    draw=black, 
+    minimum size=7pt, 
+    inner sep=0pt,
+    outer sep=0pt
+  },
+  branchcut/.style={
+    decoration={
+      snake,
+      amplitude=1pt,
+      segment length=6pt,
+    },
+    decorate,
+    thick
+  },
+->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{>}}},postaction={decorate}},
+  twopt/.style={
+    circle,
+    draw,
+    fill=black,
+    inner sep=1pt,
+    minimum size=1pt
+  },
+  scalar/.style={
+    thick,
+    dashed,
+    postaction={
+      decorate,
+      decoration={
+        markings,
+        mark=at position 0.5 with {\arrow{>}}
+      }
+    }
+  },
+  spinning/.style={
+    thick,
+    postaction={
+      decorate,
+      decoration={
+        markings,
+        mark=at position 0.5 with {\arrow{>}}
+      }
+    }
+  },
+  scalar no arrow/.style={
+    thick,
+    dashed,
+  },
+  spinning no arrow/.style={
+    thick,
+  },
+  finite/.style={
+    decoration={
+      snake,
+      amplitude=1pt,
+      segment length=6pt,
+    },
+    decorate,
+    thick
+  },
+  axis/.style={
+    thick,
+    postaction={
+      decorate,
+      decoration={
+        markings,
+        mark=at position 1 with {\arrow{>}}
+      }
+    }
+  },
+}
+
+\tikzset{snake it/.style={decorate, decoration=snake , samples = 100}}
+%-----------------------------------------------------------------------------------
+% FONTS & SPECIAL CHARACTERS
+%-----------------------------------------------------------------------------------
+
+\usepackage{mathpazo}% default 
+% \usepackage[notextcomp]{stix}% Times font like package with math support 
+% \usepackage{fourier}
+% \usepackage{palatino}% ( mathpazo on text + Computer Modern on math )
+%\usepackage{newpxtext,newpxmath}
+
+
+%-----------------------------------------------------------------------------------
+%	DOCUMENT VARIABLES
+%-----------------------------------------------------------------------------------
+
+\thesistitle[Header title]{Topics in Conformal Regge theory} % Thesis title
+\author[mailto:salgarkaraaditya@fc.up.pt]{Aaditya \textsc{Salgarkar}} % Your name
+% \address{} % Your address
+% \subject{} % Your subject area
+\keywords{ conformal field theory, AdS-CFT correspondence, holography , Regge theory , high energy scattering } % Keywords for your thesis 
+\supervisor[mailto:]{Prof. Miguel \textsc{Costa}} % Your supervisor's name
+%\cosupervisor[mailto:name@host.com]{John \textsc{Doe}} % Your co-supervisor's name
+% To hide the co-supervisor field, just comment out \cosupervisor[<url>]{<name>}  
+\degree{Doctor of Philosophy}{Doctoral} % Your degree name
+\university[http://www.univesityurl.com]{University of Porto} % Your university's name
+\department[http://www.departmenturl.com]{Departament of Physics and Astronomy} % Your department's name 
+% To hide the Department field, just comment out \department[<url>]{<name>}         
+\group[http://www.groupurl.com]{Centro de Física do Porto} % Your research group's name
+% To hide the Group field, just comment out \group[<url>]{<name>}    
+\faculty[http://www.facultyurl.com]{Faculty of Sciences} % Your faculty's name
+% To hide the Faculty field, just comment out \faculty[<url>]{<name>}  
+\logos[15mm]{{Logos/up2},{Logos/fc}}
+% To hide the logos, just comment out \logos{<relative location>}  
+
+
+%-----------------------------------------------------------------------------------
+%	NOTATION VARIABLES
+%-----------------------------------------------------------------------------------
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\fractd}[2][]{\frac{\dd #1}{\dd #2}}
+\newcommand{\fracpd}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\uu}[3][]{\,{}_{#1} #2_{#3}}
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\Im}{\mathrm{Im}}
+\def\bb#1{\mbox{\footnotesize $(#1)$}}
+\def\bkR{{\rm I\kern-.17em R}}
+\def\half{{\textstyle{1\over 2}}}
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+           \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+           =}
+\newcommand{\bea}{\begin{equation}\begin{aligned}}
+\newcommand{\eea}[1]{\label{#1}\end{aligned}\end{equation}}
+\DeclareMathOperator \Disc {Disc}
+
+
+
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand   \xb  {\bar{x}}
+\newcommand   \zb  {\bar{z}}
+\newcommand   \wb  {\bar{w}}
+\newcommand   \pb  {{\bar{p}}}
+\newcommand   \kb  {\bar{k}}
+\newcommand   \vb  {\bar{v}}
+\newcommand   \Deb  {\bar{\De}}
+\newcommand   \ellb  {\bar{\ell}}
+\newcommand   \nb  {\bar{n}}
+\newcommand{\dDisc}{\text{dDisc}}
+\def\Cut{{\mathbf{Cut}}}
+\def\hCut{\widehat\Cut}
+\def\1{{\rm 1-loop}}
+
+\def\TODO#1{{\bf[TODO: #1]}}
+\def\THnote#1{{\bf[TH: #1]}}
+
+
+\newcommand{\diagramEnvelope}[1]{#1}
+
+
+
+
+
+
+
+
+
+
+\newcommand{\non}{\nonumber}
+\newcommand{\ubar}[1]{\underline{#1}}
+\newcommand   \bnu  {\boldsymbol{\nu}}
+\newcommand   \bmu  {\boldsymbol{\mu}}
+\newcommand   \brho  {\boldsymbol{\rho}}
+
+\newcommand   \balpha  {\boldsymbol{\alpha}}
+\newcommand   \bbeta  {\boldsymbol{\beta}}
+\newcommand   \bgamma  {\boldsymbol{\gamma}}
+\newcommand   \bdelta  {\boldsymbol{\delta}}
+
+%-----------------------------------------------------------------------------------
+%	DOCUMENT
+%-----------------------------------------------------------------------------------
+
+\begin{document}
+
+\frontmatter % Use roman page numbering style for the pre-content pages
+
+% \maketitle % Make title page
+%region
+
+%-----------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%-----------------------------------------------------------------------------------
+% \vspace{1cm}
+% \quotepage{Richard Feynman}{%
+  % It doesn’t make any difference how beautiful your guess is, it doesn’t make any difference how smart you are, who made the guess, or what his name is. If it disagrees with experiment, it’s wrong. That’s all there is to it.}
+% \vspace{1cm}
+% \vfill
+% \cleardoublepage
+%-----------------------------------------------------------------------------------
+%	Sworn statement
+%-----------------------------------------------------------------------------------
+
+\begin{frontchapter}{Sworn statement} \label{sworn_statement}
+
+  I, Aaditya Salgarkar, enrolled in the Doctor’s Degree of Physics at the Faculty of Sciences of the
+University of Porto hereby declare, in accordance with the provisions of paragraph a) of
+Article 14 of the Code of Ethical Conduct of the University of Porto, that the content of
+this thesis reflects perspectives, research work and my own interpretations at the time
+of its submission.
+By submitting this thesis, I also declare that it contains the results of my own research
+work and contributions that have not been previously submitted to this or any other
+institution.
+I further declare that all references to other authors fully comply with the rules of
+attribution and are referenced in the text by citation and identified in the bibliographic
+references section. This thesis does not include any content whose reproduction is
+protected by copyright laws.
+I am aware that the practice of plagiarism and self-plagiarism constitute a form of
+academic offense.
+\end{frontchapter}
+\cleardoublepage
+
+
+%-----------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%-----------------------------------------------------------------------------------
+
+\begin{acknowledgements}
+
+  First, I would like to thank my advisor, Professor Miguel Costa, for giving me the opportunity do work in the group.
+  I would specially like to thank for making part of the Simons Collaboration on nonperturbative bootstrap which helped me understand the important ideas in the field by joining stimulating discussions in the conferences.
+  His high standards for the research were instrumental in my development as a researcher and the work in this thesis.
+  I thoroughly enjoyed working with him and I am grateful for his guidance, support and specially his patience.
+  
+  I would also like to thank the Simons foundation (grant ID 488637) for providing me the funding throughout my PhD as well as several conferences.
+  
+  I was fortunate to have several amazing collaborators during my PhD.
+  I am grateful to them for the exchange of ideas and discussions about finished projects, as well as the several ideas for future projects.
+  Therefore, I would like to thank António, Balt VR, Vasco, João P, João VB, Sourav, Miguel.
+  
+  I would like to thank all the friends I have made during my time in Porto inside and outside the university.
+  
+  Finally, I would like to thank my parents for all the support they have provided me throughout my life and specially the patience during my PhD, without which this work would not have been possible.
+  This thesis is dedicated to them.
+\end{acknowledgements}
+
+
+%-----------------------------------------------------------------------------------
+%	DEDICATORY
+%-----------------------------------------------------------------------------------
+
+\begin{dedicatory}
+  To 
+  Aai, Baba
+\end{dedicatory}
+
+\addvspacetoc{3mm} % Add a gap in the Contents, for aesthetics
+
+%-----------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%-----------------------------------------------------------------------------------
+
+\begin{abstract}
+  %\lipsum[10-20]
+  In this thesis, we discuss two aspects of conformal field theory, more specifically, the conformal Regge theory.
+  Conformal field theories are a special class of quantum field theories with enhanced symmetry under the group of conformal transformations.
+  Regge limit is a special kinematical limit of observables in conformal field theories analogous to the high energy limit of the flat space scattering amplitude.
+  First, we discuss the generalization of Optical theorem from flat space to $ AdS $ space, in the Regge limit.
+  We discuss its relation to the flat space optical theorem in the appropriate limit.
+  Second, we discuss the generalization of conformal Regge theory to higher point correlation functions.
+  In particular, we propose the kinematics in the position space for the higher point correlation functions and show that they are equivalent to a natural generalization from the multi Regge limit of the flat space scattering amplitude.
+\end{abstract}
+
+%-----------------------------------------------------------------------------------
+%	ABSTRACT PAGE (PORTUGUESE)
+%-----------------------------------------------------------------------------------
+
+\begin{abstract}[title={Resumo},thesistitle={Tópicos em teoria de Regge conforme},degree={Doutor de Ciência},nameconnector={por}]
+  
+  Nesta dissertação, discutimos dois aspetos da teoria de campos conformes, particularmente, a teoria de Regge conforme.
+  As teorias de campos conformes são uma classe especial de teorias de campos quânticos com simetria aprimorada sob o grupo de transformações conformes.
+  O limite de Regge é um limite cinemático especial de observáveis em teorias de campos conformes, análogo ao limite de alta energia da `Scattering amplitude' de espaço plano.
+  Em primero lugar, discutimos a generalização do teorema ótico de espaço plano para o espaço $AdS$, no limite de Regge.
+  Adicionalmente, discutimos a sua relação com o teorema ótico de espaço plano no limite apropriado.
+  Em segundo lugar, discutimos a generalização da teoria conforme de Regge para funções de correlação com mais de quatro pontos.
+  Em particular, propomos a cinemática no espaço de posição para funções de correlação de mais de quatro pontos e mostramos que são equivalentes a uma generalização natural do limite multi Regge da `Scattering amplitude' de espaço plano. 
+  
+\end{abstract}
+
+
+%-----------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES
+%-----------------------------------------------------------------------------------
+
+\addvspacetoc{3mm} % Add a gap in the Contents, for aesthetics
+
+\tableofcontents % Write out the Table of Contents
+
+\listoffigures % Write out the List of Figures
+
+\listoftables % Write out the List of Tables
+
+%\addvspacetoc{3mm} % Add a gap in the Contents, for aesthetics
+
+
+%-----------------------------------------------------------------------------------
+%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
+%-----------------------------------------------------------------------------------
+
+% \begin{listofcontants}
+% 	\const{My little ponny test of magical rainbow}{$m_n/m_p$}{$2.997\ 924\ 58\times10^{8}\ \text{m\,s}^{-1}$}
+% 	\const{Vaccuum permeability test of magical rainbow for a specific case of condensed matter physics}{$\epsilon_0$}{$2.997\ 924\ 58\times10^{8}\ \text{m\,s}^{-1}$}
+% 	\const{Speed of Light test of magical rainbow}{$c$}{$2.997\ 924\ 58\times10^{8}\ \text{m\,s}^{-1}$}
+% \end{listofcontants}
+
+
+%-----------------------------------------------------------------------------------
+%	SYMBOLS
+%-----------------------------------------------------------------------------------
+
+% \begin{listofsymbols}
+% 	\symb{$F_{\mu\nu}$}{Maxwell tensor}{F}
+% 	\symb{$a$}{distance}{m}
+% 	\\
+% 	\symb{$\omega$}{angular frequency}{rads$^{-1}$}
+% \end{listofsymbols}
+
+
+%-----------------------------------------------------------------------------------
+%	NOTATION
+%-----------------------------------------------------------------------------------
+
+% \begin{frontchapter}{Notation and Conventions} \label{notation}
+%   \begin{align}
+%     z,\bar{z}         & \quad \text{cross ratios for the four point functions in CFT }                               \\ 
+%     s, t              & \quad \text{Mandelstam invariants for the two to two scattering in QFT}                      \\ 
+%     \rho , \bar{\rho} & \quad \text{Radial coordinates}                                                              \\ 
+%     \dDisc            & \quad \text{double discontinuity}                                                            \\ 
+%     G_{\Delta,J}      & \quad \text{Conformal block of operator with the representation $ \left( \Delta,J \right) $} \\
+%     g_{\Delta,J}      & \quad \text{pure Conformal block, a single solution to Casimir equation}
+%   \end{align}
+  
+  
+% \end{frontchapter}
+
+%-----------------------------------------------------------------------------------
+%	NOTATION
+%-----------------------------------------------------------------------------------
+
+\begin{frontchapter}{Publications} \label{Publications}
+During the period of his PhD, the author contributed to the publication of the three works
+below.
+This thesis focuses on the first and the last publication of this list
+\begin{enumerate}
+  \item A. Antunes, M. S. Costa, T. Hansen, A. Salgarkar, and S. Sarkar, The perturbative CFT optical
+theorem and high-energy string scattering in AdS at one loop, JHEP 04 (2021) 088,
+[arXiv:2012.0151],
+\item 
+A. Antunes, M. S. Costa, J. a. Penedones, A. Salgarkar, and B. C. van Rees, Towards
+bootstrapping RG flows: sine-Gordon in AdS, JHEP 12 (2021) 094, [arXiv:2109.1326],
+\item 
+M. S. Costa, V. Gon\c{c}alves, A. Salgarkar, and J. Vilas Boas, 
+Conformal multi-Regge theory, To appear.
+\end{enumerate}
+
+\end{frontchapter}
+
+%-----------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%-----------------------------------------------------------------------------------
+
+\begin{glossary}
+  \textbf{CFT} & Conformal Field Theory\\
+  \textbf{QFT} & Quantum Field Theory\\
+  \textbf{AdS} & Anti de-Sitter\\
+  \textbf{SYM} & super Yang-Mills\\
+\end{glossary}
+%%% NOTE
+% "\b Word" is equivalent to "\textbf{W}ord"
+% "\b{Word}" is equivalent to "\textbf{Word}"
+
+
+\addvspacetoc{3mm} % Add a gap in the Contents, for aesthetics
+%-----------------------------------------------------------------------------------
+%	THESIS CONTENT - PARTS/CHAPTERS/APPENDICES
+%-----------------------------------------------------------------------------------
+
+% \addvspacetoc{3mm} % Add a gap in the Contents, for aesthetics
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+% \resetpartcounters % After each \part all chapters, etc. start from 0
+
+%endregion
+%%% PART I %%%
+%\part{First project}
+
+%  \part{Introduction}
+\input{Chapters/Chapter_1}
+% \input{Chapters/Chapter_2}
+%  \part{Optical theorem in AdS}
+\input{Chapters/chapter_Optical.tex}
+% \input{Folder/Filename}
+
+\begin{appendices}
+  \input{Appendices/appendix1.tex}
+  % 	% \input{Folder/Filename}
+\end{appendices}
+
+
+% \configbibliography[part]{Bibliography}
+%%% PART II %%%
+% \part{Conformal multi-Regge theory}
+
+\input{Chapters/chapter_MultiRegge.tex}
+%\input{Folder/Filename}
+
+\begin{appendices}
+  \input{Appendices/appendix2.tex}
+  % 	% \input{Folder/Filename}
+\end{appendices}
+
+% \configbibliography[]{Bibliography}
+% \begin{appendices}
+% 	\input{Appendices/AppendixB}
+% 	% \input{Folder/Filename}
+% \end{appendices}
+% \part{Conclusions}
+\input{Chapters/conclusions.tex}
+
+% Another approach to appendices, all appendices as chapters the final thesis part
+%%% APPENDICES %%%
+%\appendixpage
+% \input{Folder/Filename}
+
+
+%-----------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%-----------------------------------------------------------------------------------
+
+\backmatter % End front matter
+
+% \addvspacetoc{5mm} % Add a gap in the Contents, for aesthetics
+
+% \configbibliography[chapter|part]{<name of bib header>} 
+
+%\nocite{*}
+\bibliographystyle{unsrt}
+%\bibliographystyle{apsrev4-1-etal} % Use the utphys, apsrev4-1, kp and more BibTeX style for formatting the Bibliography
+\bibliography{Bibliography}
+% The references are stored in the file "Bibliography.bib"
+
+
+\end{document}

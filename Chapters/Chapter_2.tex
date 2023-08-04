@@ -1,0 +1,386 @@
+% % Chapter Template
+
+% \chapter{Conformal field theory and Regge limit} % Main chapter title
+% \label{Conformal field theory and Regge limit}
+
+% \section{Kinematics of conformal field theory}
+% In this section, we discuss the kinematics of conformal field theory.
+% Conformal field theories in $ d $ dimensions are a class of quantum field theories with additional symmetries that are not present in the standard quantum field theories.
+% In the Euclidean space, the conformal field theories are invariant under the Euclidean conformal group, $ SO(d+1,1) $, while in the Lorentzian space they are invariant under the Lorentzian conformal group, $ SO(d,2) $.
+% The generators of the Euclidean conformal group can be written in terms of the spacetime derivative $ \partial_{\mu} $.
+% \begin{align}
+% 	\text{Translations}                      &  & P_{\mu} & = \partial_{\mu}                                                             \\
+% 	\text{Rotations}                         &  & M_{\mu} & =  i\left( x_\mu \partial_\nu - x_\nu \partial_\mu \right)                   \\
+% 	\text{Dilatations}                       &  & D       & = i x^\nu \partial_\nu                                                       \\
+% 	\text{Special conformal transformations} &  & K_{\mu} & = i\left( 2x_\mu \left( x^\nu \partial_\nu \right) -x^2 \partial_\mu \right)
+% 	.
+% \end{align}
+% However, some of these generators act nonlinearly on the spacetime points.
+% Therefore, it is useful to consider `Embedding space':
+% \begin{align}
+% 	X^A = \left( \frac{1+x^2}{2},\frac{1-x^2}{2},x^\mu  \right)  ,
+% \end{align}
+% with the signature $ \left( -,+,\dots,+ \right) $.
+% The Euclidean conformal group acts linearly on $ X $.
+% This simplifies several calculations, for instance, the inner product in the physical space $ \left( x_\mu -y_\mu \right) \left( x_\nu - y_\nu \right) \delta^{\mu\nu} $ becomes $ X\cdot Y =X_A Y_B \eta^{A B} $.
+% Here, $ X,Y $ are respective embedding coordinates for $ x,y $.
+% This allows us to identify the dependence on the spacetime variables of the correlations functions.
+
+% The physical observables in conformal field theory are the correlation functions of the local operators in the theory.
+% The local operators are characterized by quantum numbers of the generators of the conformal group.
+% We consider a special set of operators, called `primary' operators.
+% They are precisely the operators which are annihilated by special conformal transformations $ K_\mu O =0 $.
+% All the other operators are `descendants' of one of these operators, namely, they are of the form: $ \left( P_\mu \right)^n O $.
+% In particular, the operators are labeled by the quantum numbers for dilatations: $ \Delta $  and rotations: $ \lambda $, a Young tableux diagram for the representation.
+% Thus, a representation of the conformal group $ R $ is labeled by $ \left( \Delta,\lambda \right) $.
+% In the simple case of symmetric traceless representation, $ \lambda $ can be replaced by the number of boxes in $ \lambda $, representing the spin.
+
+% Two and three points correlation functions of scalars, the operators with spin $ 0 $ and scaling dimensions $ \Delta_i $ can be written in terms of the embedding space as follows.
+% \begin{align}
+% 	\langle\phi\left( X \right) \phi\left( Y \right) \rangle                      & =\frac{\delta_{\Delta_1 \Delta_2}}{\left( X \cdot Y \right)^{\Delta_1}}                                                          \\
+% 	\langle\phi\left( X \right) \phi\left( Y \right)\phi\left( Z \right)  \rangle & =\frac{c}{\left( X \cdot Y \right)^{\alpha_{123}}\left( Y \cdot Z \right)^{\alpha_{231}}\left( Z \cdot X \right)^{\alpha_{132}}}
+% 	.
+% \end{align}
+% We have chosen the normalization of the operators such that the two point function numerators are $ 1 $.
+% The numerator in the three point function, $ c $,  is called `operator product expansion coefficient' (OPE coefficient).
+% We have also used $ \alpha_{ijk} = \left( \Delta_i + \Delta_j - \Delta_k \right)/2 $ .
+
+% The set of representations $ R $'s of the local primary operators and their respective OPE coefficients $ c_{R_1,R_2, R_3} $ consitute a useful characterization of the observables in conformal field theory, called `\emph{CFT data}'.
+
+% While it is easy to see that the spactime dependence of the two and three point functions are fully characterized by the conformal invariance, the situation changes for higher point functions.
+% The four point function is not fixed by the conformal invariance because there exist conformal invariant `cross ratios'
+% \begin{align}
+% 	U=\frac{X_{12} X_{34}}{X_{13} X_{24}}, \,\, & V= \frac{X_{14}X_{23}}{X_{13}X_{24}}.
+% 	\label{eq:crossRatios}
+% \end{align}
+% The dependence on these cross ratios can't be fixed by conformal invariance alone.
+% This allows us to write the four point correlation function of identical scalars as
+% \begin{align}
+% 	\langle\phi\left( X_1 \right) \phi\left( X_2 \right)\phi\left( X_3 \right) \phi\left( X_4 \right) \rangle = \frac{1}{X_{12}^\Delta X_{34}^\Delta} A\left( U,V \right).
+% \end{align}
+% $ A $ denotes an unknown function of cross ratios.
+% However, since the operators $ \phi $'s are identical, their correlation function is permutation invariant.
+% It is easy to see that this leads to a constraint on $ A $, namely
+% \begin{align}
+% 	A\left( U,V \right) \left( \frac{V}{U} 	 \right)^\Delta & = A\left( V,U \right) .
+% \end{align}
+% This is called as the `\emph{crossing constraint}'
+
+% The goal of conformal bootstrap is to use the consistency conditions of the conformal field theory to constrain the CFT data.
+% In particular, we use consistency of the four point function to arrive at constraint on the lower point functions.
+
+% In conformal field theories, one can use `\emph{operator product expansion}'.
+% \begin{align}
+% 	\phi\left( x \right) \phi\left( y \right) = \sum_{\textit{primary } O} c_{\phi \phi O}\left( x-y,\partial_{x-y} \right) O\left( y \right)	.
+% \end{align}
+% Unlike a generic quantum field theory, this expansion has a finite radius of convergence.
+% This is an operator level statement and therefore is valid in all correlation functions.
+% In particular, it can be used to write down a four point correlation function in terms of the lower point correlation function.
+% \begin{align}
+% 	\langle\phi\left( x \right) \phi \left( y \right)\times \phi \dots \phi \rangle &
+% 	= \sum_{\textit{primary } O} c_{\phi \phi O}\left( x-y,\partial_{x-y} \right) \langle O\left( y \right) \phi \dots \phi\rangle	.
+% \end{align}
+% Note that the right hand side correlation function has fewer operator insertions than the left hand side correlation function.
+
+% All quantum field theories are unitary.
+% Unitarity of conformal field theory, which is also a conformal field theory imposes constraint on the CFT data.
+% The OPE coefficient is a real number.
+% This leads to a nontrivial constraint on the four point correlation function when expanded in terms of the lower point correlation functions.
+
+% These constraints are used in the program of Euclidean conformal bootstrap.
+% However, in this thesis, we are mainly concerned with the constraints coming from the Lorentzian consistency of the conformal field theory.
+% In the following, we discuss the necessary tools to discuss correlation function in the Lorentzian setup and its relation to the Euclidean correlation function.
+
+% % \todo[inline]{
+% % 	Describe the conformal group and its action of the spacetime transformations.
+
+% % 	representation theory
+
+% % 	define primary descendants
+
+% % 	Constraints from Unitarity mentioned above.
+% % }
+
+% % \section{Constraints on the correlation functions}
+% % \todo[inline]{
+
+% % 	Four points are not.
+
+% % 	Crossing symmetry
+
+% % 	Bootstrap comes from constraints from Unitarity along with crossing symmetry.
+% % }
+
+
+% % Definitions relevant for the Regge limit: Lightcones , dDisc
+
+
+% \section{Wightman functions}
+% In this section, we discuss the Wightman functions and their properties.
+% The Wightman functions are useful in going back and forth between the properties of Lorentzian correlators and their Euclidean counterparts.
+
+% % \todo[inline]{
+% % 	Add discussion of Wightman functions etc
+% % }
+% For concreteness, we consider the correlation function of four identical scalars $ \phi $.
+% First, we discuss the Euclidean correlation function in the Euclidean space with time direction denoted by $ \tau $ and space directions labelled by $ y_i $.
+% As discussed before, such a correlation function is fixed up a function, $ A $, of two cross ratios $ U,V $.
+% We define a rewriting of the cross ratios $ U  = z \bar{z}$ and $ V = \left( 1-z \right) \left( 1-\bar{z} \right) $.
+% This rewriting is especially useful when we use the conformal symmetry to fix three out of the four points to be at $ 0,1,\infty $.
+% The point that is not fixed can be brought to the same plane as the other three points by a conformal transformation.
+% The location of this point is precisely $ z $ in the complex plane $i \tau + y $ .
+% We choose the second point to be written in terms of $ z $.
+% Thus, the Euclidean correlation function is given by $ A\left( z,\bar{z}=z^* \right) $.
+% Note that in the Euclidean setup, we have $ \bar{z} = z^* $, since $ \tau $ is real.
+% Now, we would like to discuss the procedure to convert this correlation function to a Lorentzian correlation function.
+% In this case, the Euclidean time becomes purely imaginary.
+% Therefore, $ z,\bar{z} $ are no longer complex conjugates of each other, but are in fact complex numbers with imaginary part being small.
+
+% In the Lorentzian setup, commutator of two operators spacelike separated.
+% \begin{align}
+% 	\left[ O_1\left( x_1 \right),O_2\left( x_2 \right) \right] = 0 &  & x_1 \approx x_2.
+% \end{align}
+% In particular, if we move the point $ x_2 $ from the region spacelike separated from $ x_1 $ to the region timelike separated from $ x_1 $, the commutator encounters a jump.
+% This jump is reminiscant of branch cut behaviour.
+% In fact, the correlation function in the Lorentzian setup is given by an appropriate analytic continuation of the Euclidean correlation function.
+% One expects that the function $ A $ admits a branch cut when two of the points in the correlation function become lightlike separated.
+
+% We study the correlation function by first starting in the Euclidean setup with points fixed at
+% \begin{align}
+% 	x_1 & = \left( 0,0,\dots,0 \right) & x_2 & = \left( \tau_2,y_2,\dots,0 \right) \nonumber \\
+% 	x_3 & = \left( 0,1,\dots,0 \right) & x_4 & = \left( 0,\infty,\dots,0 \right)
+% 	.
+% \end{align}
+% Now, the idea is to move the second point away from the Euclidean space positions to Lorentzian space positions.
+% This involves a Wick rotation $ \tau \rightarrow i t $ with appropriate $ i\epsilon $ prescription.
+% While doing so, one can encounter a branch cut due to the presence of the lightcones in the Lorentzian spacetime.
+% It is easy to see that the location of the branch cuts in $ \tau_2 $ is as depicted in figure \ref{fig:cutsInTau}.
+% Going from Euclidean to Lorentzian, the value of $ \tau_2 $ goes from a real number to a purely imaginary number.
+
+% One can study the implications of this branch cuts on the correlation function as a function of the cross ratios.
+% This branch cuts implies a branch cut in the correlation function at $ z,\bar{z} \in \left( 1,\infty \right)  $.
+
+% \begin{figure}[t]
+% 	\centering
+% 	\begin{tikzpicture}
+% 		%name
+% 		\draw[] (-5.2,3) -- (-5.2,2.5) -- (-5.7,2.5);
+% 		\node[left] at (-5.2,2.8) {$\tau_2$};
+% 		%axis
+% 		\draw[->,opacity=0.3,-latex'] (0,0) -- (-5,0);
+% 		\draw[->,opacity=0.3,-latex'] (0,0) -- (0,3);
+% 		\draw[->,opacity=0.3,-latex'] (0,0) -- (0,-3);
+% 		\draw[->,opacity=0.3,-latex'] (0,0) -- (5,0);
+% 		%drawing points 
+% 		\draw[fill=black] (0,1) circle (0.05);
+% 		\draw[fill=black] (0,2) circle (0.05);
+% 		\draw[fill=black] (0,-1) circle (0.05);
+% 		\draw[fill=black] (0,-2) circle (0.05);
+% 		%labelling
+% 		\node[left] at (-0.4,1) {$i(y_2-y_1)$};
+% 		\node[right] at (0,2) {$i(y_3-y_2)$};
+
+% 		\node[left] at (0,-2) {$-i(y_3-y_2)$};
+% 		\node[left] at (0,-1) {$-i(y_2-y_1)$};
+% 		%drawing cuts
+% 		\draw[red,opacity=0.8,dashed] (0,1) -- (-0.3,3);
+% 		\draw[red,opacity=0.8,dashed] (0,2) -- (-0.3,4);
+
+% 		\draw[red,opacity=0.8,dashed] (0,-2) -- (0.3,-4);
+% 		\draw[red,opacity=0.8,dashed] (0,-1) -- (0.3,-3);
+% 		\draw[black,opacity=0.8] (3,0) -- (-0.3,0.5);
+% 		\draw[black,opacity=0.8] (3,0) -- (0,2) -- (-0.3,0.5);
+% 	\end{tikzpicture}
+% 	\caption{Location of cuts in the complex $\tau$ plane.
+% 		The grey lines are the possible path, with or without crossing the branch cuts.}
+% 	\label{fig:cutsInTau}
+% \end{figure}
+
+% This exotic branch structure allows us to probe more constraints on the correlation function.
+% In particular, there are constraints coming from the Lorentzian consistency which are hard to see from the Euclidean CFT understanding.
+% Euclidean correlation functions are simplified in the `OPE limit', when two of the points are colliding.
+% This is a somewhat singular limit, but allows us to study the correlation function analytically.
+% This corresponds to $ z \rightarrow 0,1 \text{ or }  \infty $ limit in the correlation function $ A $.
+% The complicated structure of cuts allows us access to a bigger set of singular structure of the correlation function.
+% We can choose to cross some of these branch cuts \emph{before} taking the limit $ z \rightarrow 0,1 \text{ or }  \infty $.
+% Study of such limits of the correlation function is called `Regge theory'.
+
+% % \subsection{Chaos bound}
+% % Implications such as Regge boundedness and chaos bound.
+% \section{Regge theory}
+% We discuss some aspects of Regge theory in this section.
+% Regge theory concerns the study of the correlation function in the `Regge limit'.
+% This is a generalization of the `Regge limit' in the scattering amplitudes, which concerns the high energy limit.
+
+% Consider the case of two to two scattering amplitudes.
+% They are described in terms of the momenta of the external particles, $p_1, p_2, p_3, p_4$.
+% However, due to conservation of momenta as well as Lorentz invariance of the theory, they depend only on the two invariants, $s = \left( p_1 + p_2 \right)^2$ and $ t = \left( p_1 + p_3 \right)^2 $.
+% Regge limit concerns an extreme high energy scattering limit wherein $ s $ is large while $ t $ is fixed.
+
+% Analogously, the correlation functions of four operators in a Lorentzian conformal field theory depend on two cross ratios, $ U,V $, defined in equation \ref{eq:crossRatios}.
+% In terms of these cross ratios, one can consider various limits.
+% One can consider the `OPE limit' where two of the four operators approach each other.
+% This amounts to $ U \rightarrow 0, V \rightarrow 1 $ with $ \left( V-1 \right)/\sqrt{U} $ fixed.
+% The latter, $ \xi $, is the analogue of the scattering angle in the S-matrix case.
+% One can also consider the limit where one of the operators approach the lightcone of the other.
+% This is called the `lightcone limit'.
+% This amounts to $ U\rightarrow 0 $ for any $ V $.
+
+% In the Regge limit, we are concerned with a certain generalization of the OPE limit.
+% As described in the previous section, the correlation function has interesting analytic structure.
+% Therefore, one has a lot more freedom to consider the generalization of the lightcone limit.
+% Several lightcones of the form $ x_{ij}^2 = 0 $ are related to nontrivial analytic structure such as branch points and branch cuts in terms of the cross ratio space $ U,V $.
+% Regge limit concerns the OPE limit, however, it is taken after crossing the cuts in $ V $ cross ratio at $ V = 1 $.
+
+% In the following, we study the effect of this limit on the correlation function of four operators, $ \phi $.
+% Using conformal symmetry, we first represent the correlation function in terms of the cross ratios, $ A\left( U,V \right) $.
+% It admits an expansion in terms of certain kinematical functions of cross ratios called `conformal blocks', denoted by $ G $.
+% \begin{align}
+% 	A\left( U,V \right) & = \displaystyle\sum_{O} \lambda_{\phi \phi O}^2 G_{O}\left( U,V \right).
+% \end{align}
+% These objects are defined for each primary $ O $ and come from summing over all the descendants of a given primary $ O $.
+% Each primary is a representation of the Euclidean conformal group, and therefore labeled by scaling dimensions, $ \Delta $ and the representation of the rotation group, $ \Lambda $.
+% For the symmetric traceless representation of the rotation group, it is just the spin quantum number.
+% While these are interesting objects themselves, it is useful to rewrite the expansion in terms of `conformal partial waves', $ F_{O} $.
+% Similar to the S-matrix partial waves, these partial waves have a well defined orthogonality properties.
+% They can be expressed as a linear combination of the conformal block as follows.
+% \begin{align}
+% 	F_{O} = G_O + \frac{\kappa_{\tilde{O} }}{ \kappa_{O}} G_{\tilde{O}}
+% 	.\end{align}
+% The orthogonality holds for the operators on the `principle series representations'.
+% These are operators whose scaling dimensions is $ d/2 + i \mathbb{R} $.
+% orthogonality relation can be written in terms of some weight function $ w $ as
+% \begin{align}
+% 	\int dU dV \, w\left( U,V \right) F_{O}\left(U,V \right) F_{O'}\left(U,V \right) = n_{O} \delta_{O \, O'}
+% 	.
+% \end{align}
+
+% Now, we consider the Regge limit of the partial wave expansion in the spacetime dimensions $ d = 2 h $.
+% \begin{align}
+% 	A\left( U,V \right) & = \displaystyle\sum_{J} \displaystyle\int_{h+ i \mathbb{R}}
+% 	\frac{
+% 		d\nu}{2\pi i }
+% 	b_{\nu,J} F_{\nu,J}\left( U,V \right),                                                    \\
+% 	b_{\nu,J}           & =\frac{ \lambda_{\phi \phi O}^2}{\nu^2 - \left( \Delta-h \right)^2}
+% 	.
+% \end{align}
+% Here, we have introduced the `OPE function' $ b_{\nu,J} $.
+% It is an analytic function of $ \nu $ with poles at the location of the physical operators.
+
+% We discuss the analytic structure of the correlation function in the Regge limit as a function of $ V $.
+% The lightcones result in two branch point singularities at $ V = 1 $ and $ V= \infty $.
+% To separate them, we write a decomposition of the correlator as follows
+% \begin{align}
+% 	A & =
+% 	A_+ +
+% 	A_-
+% 	,\end{align}
+% such that the first one has no nontrivial monodromy around $ V =1  $, whereas the later has no nontrivial monodromy around $ V= \infty $.
+% Corresponding to each, we define the `signatured OPE function'.
+% They are the coefficient of the partial wave expansion of the signatured correlator.
+% \begin{align}
+% 	A^{\theta }\left( U,V \right) & = \displaystyle\sum_{J} \displaystyle\int_{h+ i \mathbb{R}}
+% 	\frac{
+% 		d\nu}{2\pi i }
+% 	b_{\nu,J}^{\theta} F_{\nu,J}\left( U,V \right)
+% 	.
+% \end{align}
+% They get contributions from even and odd spins, respectively.
+% It is now known that these `signatured OPE functions' are also analytic functions of $ J $ \cite{Caron-Huot:2017vep}.
+% Thus, even and odd spins form `Regge trajectories'.
+% These are interesting analytic manifolds with analyticity in $ J $.
+
+% First, we discuss the limiting behaviour of the conformal partial wave in the Regge limit. 
+% This limit can be written as $ \sigma \rightarrow 0 $ with fixed $ \xi  $ where we use
+% \begin{align}
+% 	\sigma^2 = z \bar{z}, \,  && \xi =\frac{1}{2} \left(
+% \sqrt{\frac{z}{\bar{z}}} + \sqrt{\frac{\bar{z}}{z}}
+% 	  \right) 
+% .\end{align}
+% As we will discuss later in the thesis, the Regge limit of the partial wave in generic dimensions is $ \sigma^{1-J}  $.
+% Thus, the leading contribution to the correlator comes from the operators with higher spins.
+% However, operators with arbitrarily large spin appear in the spectrum. 
+% To make sense of this sum over spins, we use the techniques from complex analysis.
+
+
+% We will use the analyticity in spin in the following.
+% We discuss the evaluation of the correlator in the Regge limit described above.
+% First, we replace the sum over spins by a contour integral over the positive real line, shown in blue in \cref{fig:polesInJ}.
+% Then, we consider deforming this contour to the red contour.
+% In the process, we pick any pole that we may encounter.
+% This pole is called `the pomeron'.
+% Thus, the leading behaviour of the correlator in the Regge limit is given by 
+% \begin{align}
+% \sigma^{1-j^{*}}
+% ,\end{align}
+% where $ j^{*} $ is the location of the circled pole in \cref{fig:polesInJ}.
+
+
+% \begin{figure}[ht!]
+% 	\centering
+% 	\begin{tikzpicture}
+% 		%name
+% 		\draw[] (-1.2,3) -- (-1.2,2.5) -- (-1.7,2.5);
+% 		\node[left] at (-1.2,2.8) {$J$};
+% 		%axis
+% 		\draw[->,opacity=0.3,-latex'] (0,0) -- (-1.5,0);
+% 		\draw[->,opacity=0.3,-latex'] (0,0) -- (0,3);
+% 		\draw[->,opacity=0.3,-latex'] (0,0) -- (0,-3);
+% 		\draw[->,opacity=0.3,-latex'] (0,0) -- (5.8,0);
+% 		%drawing points 
+% 		\draw[fill=black] (0,0) circle (0.05);
+% 		\draw[fill=black] (1,0) circle (0.05);
+% 		\draw[fill=black] (2,0) circle (0.05);
+% 		\draw[fill=black] (3,0) circle (0.05);
+% 		\draw[fill=black] (4,0) circle (0.05);
+% 		\draw[fill=black] (5,0) circle (0.05);
+% 		\draw[fill=black] (0.3,1) circle (0.05);
+
+% 		% \draw[] (-0.662,0.830591) -- (-0.331,1.16178);
+% 		% \draw[] (-0.822,0.771524) -- (-0.272,1.32161);
+% 		% \draw[] (-0.9416,0.752275) -- (-0.252,1.44162);
+% 		% \draw[] (-1.0434,0.751257) -- (-0.251,1.5434);
+% 		% \draw[] (-1.133,0.761969) -- (-0.262,1.63345);
+% 		% \draw[] (-1.215,0.78141) -- (-0.281,1.71478);
+% 		% \draw[] (-1.289,0.807926) -- (-0.308,1.78902);
+% 		% \draw[] (-1.357,0.84052) -- (-0.341,1.85719);
+% 		% \draw[] (-1.420,0.878568) -- (-0.379,1.91991);
+% 		% \draw[] (-1.478,0.921687) -- (-0.422,1.97755);
+% 		% \draw[] (-1.530,0.96967) -- (-0.470,2.03033);
+% 		% \draw[] (-1.578,1.02245) -- (-0.522,2.07831);
+% 		% \draw[] (-1.621,1.08009) -- (-0.580,2.12143);
+% 		% \draw[] (-1.659,1.14281) -- (-0.643,2.15948);
+% 		% \draw[] (-1.692,1.21098) -- (-0.711,2.19207);
+% 		% \draw[] (-1.719,1.28522) -- (-0.785,2.21859);
+% 		% \draw[] (-1.738,1.36655) -- (-0.867,2.23803);
+% 		% \draw[] (-1.749,1.4566) -- (-0.9566,2.24874);
+% 		% \draw[] (-1.748,1.55838) -- (-1.0584,2.24772);
+% 		% \draw[] (-1.728,1.67839) -- (-1.178,2.22848);
+% 		% \draw[] (-1.669,1.83822) -- (-1.338,2.16941);
+% 		%drawing circles
+% 		\draw[<-,line width=0.7,blue] (0.2,0) to[out=90,in=0] (0,0.2) to[out=180,in=90] (-0.2,0) to[out=-90,in=180] (0,-0.2) to[out=0,in=-90] (0.2,0);
+% 		\draw[<-,line width=0.7,blue] (1.2,0) to[out=90,in=0] (1,0.2) to[out=180,in=90] (0.8,0) to[out=-90,in=180] (1,-0.2) to[out=0,in=-90] (1.2,0);
+% 		\draw[<-,line width=0.7,blue] (2.2,0) to[out=90,in=0] (2,0.2) to[out=180,in=90] (1.8,0) to[out=-90,in=180] (2,-0.2) to[out=0,in=-90] (2.2,0);
+% 		\draw[<-,line width=0.7,blue] (3.2,0) to[out=90,in=0] (3,0.2) to[out=180,in=90] (2.8,0) to[out=-90,in=180] (3,-0.2) to[out=0,in=-90] (3.2,0);
+% 		\draw[<-,line width=0.7,blue] (4.2,0) to[out=90,in=0] (4,0.2) to[out=180,in=90] (3.8,0) to[out=-90,in=180] (4,-0.2) to[out=0,in=-90] (4.2,0);
+% 		\draw[<-,line width=0.7,blue] (5.2,0) to[out=90,in=0] (5,0.2) to[out=180,in=90] (4.8,0) to[out=-90,in=180] (5,-0.2) to[out=0,in=-90] (5.2,0);
+
+% 		\node[below] at (0.2,-0.1) {$0$};
+% 		\node[below] at (1.2,-0.1) {$1$};
+% 		\node[below] at (2.2,-0.1) {$2$};
+% 		\node[below] at (3.2,-0.1) {$3$};
+% 		\node[below] at (4.2,-0.1) {$4$};
+% 		\node[below] at (5.2,-0.1) {$5$};
+% 		%main contour before deforming
+% 		\draw[->,line width=0.7,red] (0.5,1) to[out=90,in=0] (0.3,1.2) to[out=180,in=90] (0.1,1) to[out=-90,in=180] (0.3,0.8) to[out=0,in=-90] (0.5,1);
+% 		\draw[->,line width=0.7,red,-latex'] (-1,-3) -- (-1,3);
+
+% 		\node[above right] at (0.3,1.1) {$j(\nu)$};
+% 	\end{tikzpicture}
+% 	\caption{Location of poles in the complex $ J$ plane.}
+% 	\label{fig:polesInJ}
+% \end{figure}
+
+% This sets the stage for the rest of the thesis concerning the applications of the Regge theory.
+% Now, we turn to the application of these ideas to optical theorem in AdS.
+% \cleardoublepage

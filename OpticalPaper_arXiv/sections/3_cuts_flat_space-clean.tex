@@ -1,0 +1,436 @@
+
+\section{Review of flat space amplitudes}
+\label{sec:flat_space}
+
+
+
+In this section we review the Regge limit in $D$-dimensional flat space. Then we review 
+the optical theorem in impact parameter space and explain how the notion of a one-loop vertex function arises. 
+Not only does this serve as a hopefully more familiar introduction before discussing the same concepts in AdS, but it also provides the results we need later when we take the flat space limit of our AdS results and match them to known flat space expressions. To mimic the $1/N$ expansion in the CFT, it will be convenient to define an expansion in $G_N$ for the flat space scattering amplitude
+\beq
+A(s,t) =
+\frac{2 G_N}{\pi} 
+A_{\text{tree}}(s,t) +
+ \left( \frac{2 G_N}{\pi}\right)^2 
+A_{\text{1-loop}}(s,t)+ \dots \,,
+\label{eq:amplitude_loop_expansion}
+\eeq
+and we use an identical expansion for the phase shifts $\delta(s,b)$ defined below.
+\subsection{Regge limit and Regge theory}
+\label{sec:regge_limit_flat}
+We start by introducing the impact parameter representation, following \cite{Camanho:2014apa}.
+Let us consider a tree-level scattering process with incoming momenta $k_1$ and $k_3$ that have large momenta along different lightcone directions.
+For simplicity we assume for now that all external particles are massless scalars. This process is dominated by $t$-channel exchange diagrams of the type
+	\beq
+	\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+		\node (vertL) at (-1,0) [twopt] {};
+		\node (vertR) at ( 1,0) [twopt] {};
+		\node (opO1) at (-1.2,-1.6) [] {};
+		\node (opO2) at (-1.2, 1.6) [] {};
+		\node (opO3) at ( 1.2, 1.6) [] {};
+		\node (opO4) at ( 1.2,-1.6) [] {};
+		\node at (-1.5,-0.8) {$k_1$};
+		\node at (-1.5,0.8) {$k_2$};
+		\node at (1.5,0.8) {$k_3$};
+		\node at (1.5,-0.8) {$k_4$};
+		\node at (0,-0.4) {$q$};
+		\draw [spinning] (opO1) -- (vertL);
+		\draw [spinning] (vertL)-- (opO2);
+		\draw [spinning] (vertL)-- (vertR);
+		\draw [spinning] (opO3) -- (vertR);
+		\draw [spinning] (vertR)-- (opO4);
+	\end{tikzpicture}}
+	\eeq
+and the amplitude can be expressed in terms of the Mandelstam variables
+	\beq
+		s=-(k_1+k_3)^2\,, \qquad t= -(k_1-k_2)^2\,.
+	\eeq
+The amplitude now depends only on $s$ and the momentum exchange $q$ in the transverse directions, because we are considering the following configuration of null momenta, written in light-cone coordinates $p=(p^u,p^v,p_\perp)$
+	\bea
+		k_1^\mu &= \left( k^u, \frac{q^2}{4 k^u},\frac{q}{2} \right)\,, \qquad
+		&& k_3^\mu = \left( \frac{q^2}{4k^v},k^v,-\frac{q}{2} \right)\,, \\
+		k_2^\mu &= \left( k^u, \frac{q^2}{4 k^u},-\frac{q}{2} \right)\,, \qquad
+		&& k_4^\mu = \left( \frac{q^2}{4 k^v},k^v,\frac{q}{2} \right)\,.
+	\eea{eq:external_momenta} 
+Notice that we reserve the letter $q$ for $(D-2)$-dimensional vectors in the transverse momentum space.
+In the Regge limit $k^u \sim k^v \to \infty$ the  Mandelstams are given by 
+	\beq
+		s\approx k^u k^v \,, \qquad t=-q^2\,.
+		\label{eq:impact_mandelstams}
+	\eeq
+The tensor structures in such amplitudes are fixed in terms of the on-shell three-point amplitudes.
+For the case with two external scalars
+and an intermediate particle (labeled $I$) with spin $J$
+there is only one possible tensor structure for the three-point amplitudes given by
+	\beq
+		  \tilde{A}^{12I} = a_J (\e_I \cdot k_1)^{J}\,, \qquad \qquad
+		  \tilde{A}^{34I} = a_J (\e_I \cdot k_3)^{J}
+		\,,
+	\eeq
+where we encode traceless and transverse polarization tensors in terms of
+vectors satisfying $\e_i^2 =  \e_i \cdot k_i = 0$.
+We can then   write the four-point amplitude as
+	\beq
+		 A_{(m,J)} (s,t)=  
+		\frac{\sum_{\e_I} \tilde{A}^{12I} \tilde{A}^{34I}}{t-m^2}\approx
+		  \frac{a_J^2\, s^J}{t-m^2} \,,
+		\label{eq:A_spinning_flat}
+	\eeq
+where  we used that for large $s$ the sum over polarizations is dominated by $\e_{Iu} k_1^u \sim k^u$ and $\e_{Iv} k_3^v \sim k^v$.
+The $s^J$ behavior is naively problematic at high energies, especially if the spectrum contains particles of large spin, as is the case in string theory. However, boundedness of the amplitude in the Regge limit means there is a delicate balance between the infinitely many contributions in the sum over spin.\footnote{The couplings $a_J$  are dimensionful,  $[a_J]= 3- D/2 -J$, and accommodate for higher derivatives in the couplings to higher spin fields. In string theory the dimensionful scale is $\alpha'$ and the dimensionless couplings are all proportional to the string coupling $g_s$.} The precise framework to describe this phenomenon is Regge theory \cite{Regge:1959mz}, which was reviewed for flat space in \cite{Costa:2012cb,Caron-Huot:2020nem}.
+
+In the Regge limit one has to consider the particle with the maximum spin $j(m^2)$ for each mass. The function $j(m^2)$ is called the leading Regge trajectory and the contributions from these particles get resummed into an effective particle with continuous spin $j(t)$.
+In this work we will focus on the leading trajectory with   vacuum  quantum numbers known as the Pomeron.
+At tree-level the amplitude for Pomeron exchange factorizes into three-point amplitudes involving a Pomeron and the universal Pomeron propagator $\b(t)$. For example,  in the case of 4-dilaton scattering in type IIB strings we have
+\beq
+ A_\text{tree} (s,t)  =   \frac{8 }{\alpha'} A^{12P} \beta(t) A^{34P} \left(\frac{\alpha's}{4}\right)^{j(t)}\,,
+\label{eq:A_tree_regge}
+\eeq
+with
+	\beq
+		\beta(t) =   2 \pi^2 \frac{\G(- \frac{\a'}{4} t)}{\G(1+\frac{\a'}{4} t)}\,
+		e^{- \frac{i \pi \a'}{4} t} \,.
+		\label{eq:pomeron_propagator}
+	\eeq
+$A^{ijP}$ are the three-point amplitudes between the external scalars and the Pomeron with the 
+ $s$-dependence factored out and normalized such that in the case of 4-dilaton scattering   $A^{ijP}=1$. 
+ This is convenient since later on, when we consider more general string states with spin, 
+the string three-point amplitudes defined this way will contain just tensor structures.
+Diagrammatically we can write (\ref{eq:A_tree_regge}) as
+\beq
+	\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+		\node (vertL) at (-0.8,0.1) [twopt] {};
+		\node (vertR) at ( 0.8,0.1) [twopt] {};
+		\node (opO1) at (-1.2,-1.2) [] {$1$};
+		\node (opO2) at (-1.2, 1.2) [] {$2$};
+		\node (opO3) at ( 1.2, 1.2) [] {$3$};
+		\node (opO4) at ( 1.2,-1.2) [] {$4$};
+		\node at (0,-0.4) {$P$};
+		\draw [spinning no arrow] (opO1) -- (vertL);
+		\draw [spinning no arrow] (vertL)-- (opO2);
+		\draw [finite] (vertL)-- (vertR);
+		\draw [spinning no arrow] (opO3) -- (vertR);
+		\draw [spinning no arrow] (vertR)-- (opO4);
+	\end{tikzpicture}}
+=
+	\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+		\node (vertL) at (-0.8,0.1) [twopt] {};
+		\node (vertR) at ( 0.5,0.1) [] {};
+		\node (opO1) at (-1.2,-1.2) [] {$1$};
+		\node (opO2) at (-1.2, 1.2) [] {$2$};
+		\node at (0,-0.4) {$P$};
+		\draw [spinning no arrow] (opO1) -- (vertL);
+		\draw [spinning no arrow] (vertL)-- (opO2);
+		\draw [finite] (vertL)-- (vertR);
+	\end{tikzpicture}}
+\times
+	\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+		\node (vertL) at (-0.5,0.1) [] {};
+		\node (vertR) at ( 0.8,0.1) [twopt] {};
+		\node (opO3) at ( 1.2, 1.2) [] {$3$};
+		\node (opO4) at ( 1.2,-1.2) [] {$4$};
+		\node at (0,-0.4) {$P$};
+		\draw [finite] (vertL)-- (vertR);
+		\draw [spinning no arrow] (opO3) -- (vertR);
+		\draw [spinning no arrow] (vertR)-- (opO4);
+	\end{tikzpicture}}
+\times \frac{2 G_N}{\pi}  \frac{8 }{\alpha'}
+\,\b(t) \left(\frac{\alpha's}{4}\right)^{j(t)}
+\,.
+\label{eq:Pomeron_factorization}
+\eeq
+Amplitudes involving a Pomeron can be computed in string theory using the Pomeron vertex operator \cite{Ademollo:1989ag,Ademollo:1990sd,Brower:2006ea}. The factorization into three-point functions and a Pomeron propagator holds for general external string states \cite{Brower:2006ea,DAppollonio:2013mgj}.
+
+\subsection{Optical theorem and impact parameter space}
+\label{sec:impact_optical_theorem_flat}
+
+Next we consider the expression for the two-line cut of the one-loop amplitude in the impact parameter representation, which will be given in terms of the tree-level pieces we have discussed so far.
+The two-line cut receives a contribution from two-Pomeron exchange, which is the leading term in the Regge limit of the one-loop amplitude.
+Consider the following configuration of momenta
+	\beq
+	\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+		\node (vert1) at (-1,-1) [twopt] {};
+		\node (vert2) at (-1, 1) [twopt] {};
+		\node (vert3) at ( 1, 1) [twopt] {};
+		\node (vert4) at ( 1,-1) [twopt] {};
+		\node (opO1) at (-1.2,-2.6) [] {};
+		\node (opO2) at (-1.2, 2.6) [] {};
+		\node (opO3) at ( 1.2, 2.6) [] {};
+		\node (opO4) at ( 1.2,-2.6) [] {};
+		\node at (-1.5,-1.8) {$k_1$};
+		\node at (-1.5,1.8) {$k_2$};
+		\node at (1.5,1.8) {$k_3$};
+		\node at (1.5,-1.8) {$k_4$};
+		\node at (0,-1.4) {$l_1$};
+		\node at (0,0.6) {$l_2$};
+		\node at (-1.3,0) {$k_5$};
+		\node at (1.3,0) {$k_6$};
+		\draw [spinning] (opO1) -- (vert1);
+		\draw [spinning] (vert2) -- (opO2);
+		\draw [spinning] (opO3) -- (vert3);
+		\draw [spinning] (vert4) -- (opO4);
+		\draw [spinning] (vert1) -- (vert2);
+		\draw [spinning] (vert1) -- (vert4);
+		\draw [spinning] (vert2) -- (vert3);
+		\draw [spinning] (vert3) -- (vert4);
+	\end{tikzpicture}}\,.
+\label{fig:momenta_1loop}
+	\eeq
+The external momenta are again in the configuration \eqref{eq:external_momenta} with Mandelstams \eqref{eq:impact_mandelstams}.
+The optical theorem tells us to cut the internal lines of the diagram, putting the corresponding legs on-shell. This implies the following equation for the discontinuity of the amplitude
+	\beq
+	2 \Im A_{\text{1-loop}}(s,q) = \! \sum\limits_{\substack{m_5,\rho_5,\e_5\\m_6,\rho_6,\e_6}}
+	\int \! \frac{d l_1}{(2 \pi)^{D}} \, 2\pi i \de(k_5^2 + m_5^2) \, 2\pi i \de(k_6^2 + m_6^2) 
+	A_\text{tree}^{3652} (s,l_2)^*
+	A_\text{tree}^{1564} (s,l_1)\,,
+	\label{eq:optical_theorem_start}
+	\eeq
+where one sums over all possible particles 5 and 6 with masses $m$, in Little group representations $\rho$ and with 
+polarization tensors $\e$. The sums over polarizations can be evaluated using completeness relations.
+In order to remove the delta functions we express $k_5$ and $k_6$ in terms of $l_1$ and the external momenta \eqref{eq:external_momenta}.
+Then we write the loop momentum as $l_1^\mu = (l^u,l^v,q_1)$
+and use the delta-functions to fix the forward components of the loop momentum $l_u$ and $l_v$ to
+\bea
+l^u = \frac{m_6^2 +q_1^2 +q \cdot q_1}{ k^v}\,,
+		    \qquad\qquad
+l^v = -\frac{m_5^2 +q_1^2 -q \cdot q_1}{ k^u}\,,
+\eea{eq:onshell_solutions_flat}
+leaving only the transverse integration over $q_1$.
+We arrive at the equation
+	\beq
+		\Im A_{\text{1-loop}}(s,q) = \sum\limits_{\substack{m_5,\rho_5,\e_5\\m_6,\rho_6,\e_6}}
+		\int \frac{dq_1 dq_2}{(2 \pi)^{D-2}}  \, \frac{\de(q-q_1-q_2)}{4 s}
+		A_\text{tree}^{3652} (s,q_2)^*
+		A_\text{tree}^{1564} (s,q_1)\,,
+		\label{eq:optical_theorem_flat}
+	\eeq
+where we introduced the transverse momentum $q_2=q-q_1$  to write the expression 
+in a more symmetrical way. 	
+Using that the tree-level amplitudes are given 
+in the Regge limit by Pomeron exchange, we can write (\ref{eq:optical_theorem_flat}) diagrammatically as in figure \ref{fig:optical_theorem_flat}.
+\begin{figure}
+\begin{equation*}
+	\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+        \draw [thick,fill=cyan,fill opacity=0.4] (-0.8,0.1) ellipse (0.25 and 0.8);
+        \draw [thick,fill=cyan,fill opacity=0.4] (0.8,0.1) ellipse (0.25 and 0.8);
+		\node (vert1) at (-.8,-.7) [twopt] {};
+		\node (vert2) at (-.8, .9) [twopt] {};
+		\node (vert3) at ( .8, .9) [twopt] {};
+		\node (vert4) at ( .8,-.7) [twopt] {};
+        \node (cut1) at (-2,.1) [] {};
+        \node (cut2) at (2,.1) [] {};
+		\node (opO1) at (-1.2,-2) [] {$1$};
+		\node (opO2) at (-1.2, 2) [] {$2$};
+		\node (opO3) at ( 1.2, 2) [] {$3$};
+		\node (opO4) at ( 1.2,-2) [] {$4$};
+		\node at (0,-1.1) {$P_1$};
+		\node at (0,0.5) {$P_2$};
+		\draw [spinning no arrow] (opO1) -- (vert1);
+		\draw [spinning no arrow] (vert2) -- (opO2);
+		\draw [spinning no arrow] (opO3) -- (vert3);
+		\draw [spinning no arrow] (vert4) -- (opO4);
+		\draw [finite] (vert1) -- (vert4);
+		\draw [finite] (vert2) -- (vert3);
+		\draw [scalar no arrow] (cut1) -- (cut2);
+	\end{tikzpicture}}
+\sim
+\sum\limits_{\substack{m_5,\rho_5,\e_5\\m_6,\rho_6,\e_6}} \int
+	\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+		\node (vertL) at (-0.8,0.1) [twopt] {};
+		\node (vertR) at ( 0.8,0.1) [twopt] {};
+		\node (opO1) at (-1.2,-1.2) [] {$1$};
+		\node (opO2) at (-1.2, 1.2) [] {$5$};
+		\node (opO3) at ( 1.2, 1.2) [] {$6$};
+		\node (opO4) at ( 1.2,-1.2) [] {$4$};
+		\node at (0,-0.4) {$P_1$};
+		\draw [spinning no arrow] (opO1) -- (vertL);
+		\draw [spinning no arrow] (vertL)-- (opO2);
+		\draw [finite] (vertL)-- (vertR);
+		\draw [spinning no arrow] (opO3) -- (vertR);
+		\draw [spinning no arrow] (vertR)-- (opO4);
+	\end{tikzpicture}}
+\times
+	\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+		\node (vertL) at (-0.8,0.1) [twopt] {};
+		\node (vertR) at ( 0.8,0.1) [twopt] {};
+		\node (opO1) at (-1.2,-1.2) [] {$5$};
+		\node (opO2) at (-1.2, 1.2) [] {$2$};
+		\node (opO3) at ( 1.2, 1.2) [] {$3$};
+		\node (opO4) at ( 1.2,-1.2) [] {$6$};
+		\node at (0,-0.4) {$P_2$};
+		\draw [spinning no arrow] (opO1) -- (vertL);
+		\draw [spinning no arrow] (vertL)-- (opO2);
+		\draw [finite] (vertL)-- (vertR);
+		\draw [spinning no arrow] (opO3) -- (vertR);
+		\draw [spinning no arrow] (vertR)-- (opO4);
+	\end{tikzpicture}}
+\end{equation*}
+\caption{Optical theorem in the Regge limit in terms of Feynman diagrams. The tree-level correlators are dominated by $s$-channel Pomeron exchange. The ellipses on the l.h.s.\ indicate that all string excitations are taken into account.}
+\label{fig:optical_theorem_flat}	
+\end{figure}
+The optical theorem can be simplified even further by transforming it to impact parameter space. To this end the amplitude is expressed in terms of the impact parameter $b$, which is a vector in the transverse impact  parameter space $\mathbb{R}^{D-2}$, using the following transformation
+	\beq
+		\de (s,b) = \frac{1}{2s} \int \frac{d q}{(2\pi)^{D-2}} \,e^{i  q\cdot b}  A(s,t)\,.
+		\label{eq:impact_flat}
+	\eeq
+We can use this definition together with \eqref{eq:optical_theorem_flat} to compute
+	\bea
+		\Im  \de_{\text{1-loop}}(s,b)  %
+		={}& \frac{1}{2} \sum\limits_{\substack{m_5,\rho_5,\e_5\\m_6,\rho_6,\e_6}}
+		\de_\text{tree}^{3652}(s,-b)^* \,\de_\text{tree}^{1564}(s,b)\,.
+	\eea{eq:impact_optical_theorem}
+We conclude that the impact parameter representation absorbs the remaining phase space integrals in the optical theorem, resulting in a purely multiplicative formula. In fact, in the case where the particles on the left and right of the diagram do not change (i.e.\ 1,5,2 and 3,6,4 are identical particles), such a statement holds to all-loops, leading to exponentiation of the tree-level phase shift, which is the basis for the famous eikonal approximation.
+
+\subsection{Vertex function}
+\label{sec:vertex_function_flat}
+
+Another notion we will use is that of the vertex function, which arises when combining
+the optical theorem \eqref{eq:optical_theorem_flat} with the factorization of the tree-level amplitudes \eqref{eq:A_tree_regge} into three-point amplitudes. By combining the two results one sees that the sums over particles and their polarizations factorize into separate sums for particles 5 and 6, which we call the vertex function $V$
+\beq
+V(q_1,q_2) \equiv \sum\limits_{m_5,\rho_5,\e_5} A^{15P_1}(q_1) A^{25P_2}(q_2)\,.
+\label{eq:V_flat_def}
+\eeq
+Moreover, such a sum over representations and polarizations for each mass is given by tree-level unitarity as the residue of the four-point amplitudes with two external Pomerons
+\beq
+\underset{k_5^2=-m_5^2}\Res A^{12 P_1 P_2}(k_5,q_1,q_2) = \sum\limits_{\rho_5,\e_5} A^{15P_1}(q_1) A^{25P_2}(q_2)\,.
+\label{eq:residue_generic}
+\eeq
+In terms of diagrams this reads
+\beq
+V(q_1,q_2) \equiv \sum\limits_{m_5,\rho_5,\e_5}
+	\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+		\node (vertU) at (0,0.9) [] {$5$};
+		\node (vertD) at (0,-0.3) [twopt] {};
+		\node (opO1) at (-1.2,-0.8) [] {$1$};
+		\node (opOP1) at ( 1.2,-0.8) [] {$P_1$};
+		\draw [spinning no arrow] (opO1) -- (vertD);
+		\draw [spinning no arrow] (vertU)-- (vertD);
+		\draw [finite] (vertD)-- (opOP1);
+	\end{tikzpicture}}
+\times
+	\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+		\node (vertU) at (0,0.4) [twopt] {};
+		\node (vertD) at (0,-0.8) [] {$5$};
+		\node (opO2) at (-1.2, 0.9) [] {$2$};
+		\node (opOP2) at ( 1.2, 0.9) [] {$P_2$};
+		\draw [spinning no arrow] (vertU)-- (opO2);
+		\draw [spinning no arrow] (vertU)-- (vertD);
+		\draw [finite] (opOP2) -- (vertU);
+	\end{tikzpicture}}
+=\sum\limits_{m_5} \underset{k_5^2=-m_5^2}\Res
+	\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+		\node (vertU) at (0,0.7) [twopt] {};
+		\node (vertD) at (0,-0.7) [twopt] {};
+		\node (opO1) at (-1.2,-1.2) [] {$1$};
+		\node (opO2) at (-1.2, 1.2) [] {$2$};
+		\node (opOP2) at ( 1.2, 1.2) [] {$P_2$};
+		\node (opOP1) at ( 1.2,-1.2) [] {$P_1$};
+		\node at (-.3,0) {$5$};
+		\draw [spinning no arrow] (opO1) -- (vertD);
+		\draw [spinning no arrow] (vertU)-- (opO2);
+		\draw [spinning no arrow] (vertU)-- (vertD);
+		\draw [finite] (opOP2) -- (vertU);
+		\draw [finite] (vertD)-- (opOP1);
+	\end{tikzpicture}}\,.
+\label{eq:V_diagrams}
+\eeq
+The vertex function combines all information about the exchanges of possibly spinning particles 5 and 6 into a single scalar function. In terms of the vertex function the optical theorem \eqref{eq:optical_theorem_flat} in the Regge limit becomes
+\begin{align}
+\Im A_{\text{1-loop}}(s,q) =  -\frac{1}{4s} 
+&\int  \frac{dq_1  dq_2}{(2\pi)^{D-2}} \, \de(q-q_1-q_2)
+\label{eq:optical_theorem_V_flat}
+\\
+&\left( \frac{8}{\alpha'}\right)^2 \b(t_1)^* \b(t_2) V(q_1,q_2)^2 \left(\frac{\alpha's}{4}\right)^{j(t_1) + j(t_2)}\,,
+\nonumber
+\end{align}
+where $t_i = -q_i^2$.
+
+\subsection{Spinning three-point amplitudes}
+\label{sec:3pt_amplitudes}
+
+
+
+
+
+
+
+
+
+Since it will be important later to compare tensor structures in AdS and flat space, we will provide here some more details on the tensor structures of the three-point amplitudes that appear in the unitarity cut of the four-point amplitude $A^{12 P_1 P_2}$ discussed above.
+The external momentum $k_1$ and the exchanged momentum $l_1$, with light-cone components given in the Regge limit by
+(\ref{eq:onshell_solutions_flat}), fix the momentum $k_5=k_1-l_1$ as shown in the figure below. We may, however, change frame such that 
+$k_5$ has no transverse momentum \cite{DAppollonio:2013mgj}. Such change of frame does not alter the fact that the light-cone components of $l_1$ are 
+subleading. The same applies to $l_2$. Thus in the Regge limit we can safely write
+\beq
+	\diagramEnvelope{\begin{tikzpicture}[anchor=base,baseline]
+		\node (vertU) at (0,0.7) [twopt] {};
+		\node (vertD) at (0,-0.7) [twopt] {};
+		\node (opO1) at (-1.2,-1.2) [] {$k_1$};
+		\node (opO2) at (-1.2, 1.2) [] {$k_2$};
+		\node (opOP2) at ( 1.2, 1.2) [] {$l_2$};
+		\node (opOP1) at ( 1.2,-1.2) [] {$l_1$};
+		\node at (-.3,0) {$k_5$};
+		\draw [spinning] (opO1) -- (vertD);
+		\draw [spinning] (vertU)-- (opO2);
+		\draw [spinning] (vertD)-- (vertU);
+		\draw [spinning] (vertU) -- (opOP2);
+		\draw [spinning] (vertD)-- (opOP1);
+	\end{tikzpicture}}
+\qquad \quad
+\begin{aligned}
+k_5 &\approx  \left( k_5^u ,\frac{m_5^2}{k_5^u},0 \right)\,, &\\
+l_2 &\approx  (0,0, q_2)\,, \qquad& k_2 = k_5 - l_2\,, \\
+l_1 &\approx  (0,0, q_1)\,, \qquad& k_1 = k_5 + l_1 \,.
+\end{aligned}
+\eeq
+We focus on the three-point amplitude $A^{15P_1}(q_1)$, which is related to the four-point amplitude via the tree-level unitarity \eqref{eq:residue_generic}.
+In this relation we have a sum over a basis of possible polarizations $\e_5$,
+which can be evaluated using completeness relations, e.g.\ for massive bosons \cite{Boels:2014dka}
+	\beq
+		\sum\limits_{\e_5} \e_{5}^{\mu_1 \ldots \mu_{|\rho|}}
+		\e_{5}^{\nu_1 \ldots \nu_{|\rho|}} 
+		= P^{\mu_1}_{5 \g_1} \ldots P^{\mu_{\rho}}_{5 \g_{\rho}}
+		\pi_\rho^{\g_1 \ldots \g_{|\rho|}; \,\s_1 \ldots \s_{|\rho|}}
+		P^{\nu_1}_{5 \s_1} \ldots P^{\nu_{\rho}}_{5 \s_{\rho}} \,,
+		\label{eq:completeness_relation}
+	\eeq
+where $\pi_\rho$ is the projector to the irreducible $SO(D-1)$ representation $\rho$ and
+	\beq
+		P_{5 \nu}^{\mu} = \de^{\mu}_{\nu} - \frac{k_{5}^{\mu} k_{5 \nu}}{k_5^2}\,,
+	\eeq
+is a projector to the space transverse to $k_5$.
+We will always absorb the projectors $P_{5 \nu}^{\mu}$ into the three-point amplitudes, i.e.\ consider amplitudes in a transverse configuration. That means that the indices corresponding to particle 5 have to be constructed from the projected momenta of the other particles, which are identical
+\beq
+P_{5 \nu}^{\mu} l_{1\mu} = P_{5 \nu}^{\mu} k_{1\mu}\,.
+\label{eq:P5l}
+\eeq
+Apart from that, massive particles can also have a longitudinal polarization $v$ which satisfies
+\beq
+v \cdot k_5 = 0 \,, \qquad v^2 = 1\,,
+\eeq
+and is given in this frame explicitly by
+\beq
+v_\mu =\frac{1}{m_5} \left(  k_5^u, - \frac{m_5^2}{k_5^u},  0 \right)\,.
+\eeq
+For the case that particle 1 is a scalar, we can then construct $A^{15P}$ in terms of the following manifestly transverse tensor structures
+	\beq
+		A^{15P}_{m_5,\rho_5,\bmu} = \sum\limits_{k=0}^{|\rho_5|} 
+		a_{m_5,\rho_5}^{k}(t_1) \,
+i^{|\rho_5|} \sqrt{\a'}^{|\rho_5|-k}
+v_{\mu_1} \ldots v_{\mu_k} q_{1\mu_{k+1}} \ldots q_{1\mu_{|\rho_5|}}\,,
+		\label{eq:3pt_spinning}
+	\eeq
+where we introduced boldface indices $\bmu$ as multi-indices that stand for the $|\rho|$ indices for the irrep $\rho$.	
+By abuse of language we defined the vector $q_1\equiv(0,0,q_1)$, since $q_1$ is transverse.
+If particle 1 carries spin as well, as will be the case for the gravitons considered later on, we construct the polarization tensors out of the vector $\xi_1=(\xi_1^u, \xi_1^v, \e_1)$. In this case, again defining
+$\epsilon_1\equiv (0,0,\epsilon_1)$, the amplitudes take the following form in the Regge limit
+	\bea
+		A^{15P}_{m_5,\rho_5,\bmu} =  \sum\limits_{n=0}^{\ell_1}  \sum\limits_{k=0}^{|\rho_5|-n}
+		&a_{m_5,\rho_5}^{k,n}(t_1) \,
+i^{|\rho_5|} 
+\sqrt{\a'}^{|\rho_5|+\ell_1-2n-k}
+(\e_1\cdot q_1)^{\ell_1 - n}
+\\
+& \e_{1\mu_1} \ldots \e_{1\mu_n}  v_{\mu_{n+1}} \ldots v_{\mu_{n+k}} q_{1\mu_{n+k+1}} \ldots q_{1\mu_{|\rho_5|}}\,,
+	\eea{eq:3pt_spinning_more}
+as can be checked by comparing with the explicit amplitudes computed in \cite{DAppollonio:2013mgj}. These choices for the tensor structures are particularly convenient since $q_1 \cdot v = \e_1 \cdot v = 0$. Contact with the momentum frame used in the previous subsections is made by identifying the Lorentz invariant $A^{12 P_1 P_2}$.

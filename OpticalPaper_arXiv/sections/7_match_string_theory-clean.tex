@@ -1,0 +1,355 @@
+
+\section{Relating type IIB string theory in AdS and flat space}
+\label{sec:IIB_AdS_flat}
+
+Let us now apply our general ideas to a concrete example, the scattering of four dilatons in type IIB superstring theory on $AdS_5 \times S^5$. In the flat space limit this is related to
+type IIB superstring theory on 10-dimensional flat space where the kinematics is restricted to the five dimensions arising from AdS. This happens since both the dilatons and the Pomerons are $R$-symmetry singlets, meaning the tidal excitations they couple to also have to be singlets.
+As a consequence, the Regge limit does not probe the 10 dimensional nature of the string scattering process, as we consider only states with the vacuum quantum numbers associated to the compact manifold $S^5$.
+ For this case the discontinuity of the (finite $\alpha'$) one-loop amplitude in the Regge limit was computed in \cite{Amati:1987uf} and is precisely of the form \eqref{eq:optical_theorem_V_flat} with $D=5$. The regime of validity of this description was discussed in detail in \cite{Amati:1987uf}.
+All we need to specify are the four dynamic quantities that we already discussed in the previous section. For the Regge trajectory and Pomeron propagator we have
+\beq
+j(t) = 2 + \frac{\a'}{2}\,t\,, \qquad
+\beta(t) = 2 \pi^2 \frac{\G\big(- \frac{\a'}{4} t\big)}{\G\big(1+\frac{\a'}{4} t\big)}
+		\,e^{- \frac{i \pi \a'}{4} t}\,.
+\eeq
+As discussed in section \ref{sec:vertex_function_flat} the vertex function can be obtained from the scattering amplitude of two dilatons and two Pomerons. This amplitude was computed in 
+\cite{Amati:1987uf} and reads
+	\beq
+		A^{12P_1P_2} (k, q_1, q_2) = - \frac{\Gamma(1+\alpha'q_{12}/2) \,\Gamma\big(-\alpha'\frac{k^2}{4}-\alpha'q_{12}/2\big)\, \Gamma\big(\alpha'\frac{k^2}{4}\big)}{2 \Gamma(-\alpha'q_{12}/2) \,\Gamma\big(1+\alpha'q_{12}/2+\alpha'\frac{k^2}{4}\big) \,\Gamma\big(1-\alpha'\frac{k^2}{4}\big)}\,,
+		\label{eq:Aa1a2}
+	\eeq
+where $q_{12} = q_1\cdot q_2$.
+This amplitude has poles at the masses ($m^2=4n/\alpha'$) of the string states with residues
+	\beq
+		\underset{k^2=-4n/\alpha'}{\Res} A^{12P_1P_2} (k, q_1, q_2)
+		= \left( \frac{(-\alpha'q_{12}/2)_n}{n!} \right)^2\,, \qquad n=0,1,2,\ldots\,,
+		\label{eq:3pt_A_calculated}
+	\eeq
+and the resulting vertex function is given by \eqref{eq:V_diagrams}
+\beq
+V(q_1,q_2) = 
+\sum\limits_{n=0}^\infty \left( \frac{(-\alpha'q_{12}/2)_n}{n!} \right)^2
+=\frac{\Gamma\big(1+\alpha'\frac{t_1+t_2-t}{2}\big)}{\Gamma\big(1+\alpha'\frac{t_1+t_2-t}{4}\big)^2}\,.
+\label{eq:V_flat}
+\eeq
+Using the reasoning of section \ref{eq:constraining_from_flat_space_limit}, this immediately fixes the leading terms in $\nu, \nu_i$ of the AdS vertex function at every order in $\lambda$
+	\beq
+		V(\nu_1,\nu_2,\nu) = \frac{\Gamma\Big(1-\frac{\nu_1^2+\nu_2^2-\nu^2}{2 \sqrt{\l}}\Big)}{\Gamma\Big(1-\frac{\nu_1^2+\nu_2^2-\nu^2}{4 \sqrt{\l}}\Big)^2}
+		+ \text{vanishing in flat space limit}\,.
+		\label{eq:V_from_flat_space}
+	\eeq
+Thus, the first two corrections from expanding \eqref{eq:V_from_flat_space} at large $\lambda$ are
+	\begin{align}
+V(\nu_1,\nu_2,\nu) &= 1+\Big(0\cdot\big( \nu_1^2+\nu_2^2-\nu^2 \big) + c_{1,0}\Big) \frac{1}{\sqrt{\l}} 
+\label{eq:V_polynomial}\\
+&+\left( \frac{\pi^2}{96} \left( \nu_1^2+\nu_2^2-\nu^2 \right)^2 +c_{2,1} \big(\nu_1^2  + \nu_2^2\big)  + c'_{2,1} \nu^2 + c_{2,0} \right) \frac{1}{\l} + \ldots\,,
+		\nonumber
+	\end{align}
+where we also included the constants  that are not fixed by the flat space limit. We note that the constants multiplying the leading power of $\nu$ at order $\big(\sqrt{\lambda}\big)^{-n}$ have a uniform transcendentality of weight $n$, which can be seen by explicitly expanding \eqref{eq:V_from_flat_space}. It would be interesting to understand the relation of this property with features of maximal transcendentality in $\mathcal{N}=4$ SYM \cite{Kotikov:2002ab,Kotikov:2007cy}.
+
+
+Finally, all the spectral functions $\beta^{k_5,k_6}_{(\De_5,\rho_5),(\De_6,\rho_6)} (\nu)$ of tree-level correlators that contribute to the optical theorem are constrained 
+by the flat space limit. Their flat space limit \eqref{eq:flat_space_limit_beta_spinning} is parameterized by on-shell three-point amplitudes in flat space.
+These amplitudes are in principle encoded in the result \eqref{eq:3pt_A_calculated},
+which separates the contributions of particles with different masses, but not the ones of particles in different representations $\rho$. 
+The attempt to expand \eqref{eq:3pt_A_calculated} into products of three-point amplitudes for different $\r$ and tensor structures $k$ using \eqref{eq:residue_generic} shows that this does not fully fix the $a_{m_5,\rho_5}^{k}(t)$ in \eqref{eq:3pt_spinning} because the equations are quadratic.
+However the three-point amplitudes can of course be computed in string theory, which is what the next subsection is about.
+We will start with the 10D open superstring amplitudes of a massless vector, a Pomeron and an open string state up to mass level 2 which were computed in \cite{DAppollonio:2013mgj} by studying string-brane scattering. These amplitudes have to be squared to obtain closed string amplitudes. Then the irreducible representations of the 10D massive Little group $SO(9)$ have to be branched into irreducible representations of $SO(4)$ to match with the CFT irreps and account for the fact that we have five non-compact dimensions.
+
+
+
+
+\subsection{Massive tree amplitudes in flat space}
+\label{sec:massive_tree_flat}
+
+Now we will discuss the flat space three-point amplitudes that take part in the process and that will fix part of the tree-level correlators with external spinning legs in AdS via the flat space limit. 
+The goal is to derive the three-point amplitudes that appear in the unitarity cut \eqref{eq:3pt_A_calculated} of the
+four-point amplitude of two dilatons and two Pomerons \eqref{eq:Aa1a2}. It will be convenient to consider the more general case of two gravitons instead of dilatons, with polarizations $\epsilon_i^{\mu\nu}=\epsilon_i^{\mu}\epsilon_i^{\nu}$, and obtain the dilaton amplitudes in the very end by replacing $\epsilon_i^{\mu\nu}$ with $\eta^{\mu\nu}$.
+By using explicitly transverse three-point amplitudes and the completeness relation \eqref{eq:completeness_relation}, we can write tree-level unitarity \eqref{eq:residue_generic}
+in the form
+	\beq
+		\underset{k^2=-4n/\alpha'}{\Res} A^{12P_1 P_2} (k, q_{12})
+		= \left( \frac{(-\alpha'q_{12}/2)_n}{n!} \right)^2 (\epsilon_1\cdot \epsilon_2)^2
+		= \sum\limits_{\rho,i} A^{15P_1}_{n,\r,i,\mathbf{m}}
+\pi^{\mathbf{m},\mathbf{n}}_{\rho}
+		A^{52P_2}_{n,\r,i,\mathbf{n}} \,,
+		\label{eq:A12_cut}
+	\eeq
+where for the massive levels, on which we will mostly focus, $\rho$ is summed over irreducible representations of $SO(4)$ and $i$ is summed over degenerate states in the same representation.
+
+Our starting point will be the open string three-point amplitudes of a massless vector, a Pomeron and an arbitrary massive state up to mass level 2 (we give some simpler explicit examples in Appendix \ref{sec:examples}). These amplitudes were computed in \cite{DAppollonio:2013mgj} by studying string-brane scattering.
+Since in flat space there is no interaction between the left- and right-moving string modes, the closed string amplitudes factorize into products of open string amplitudes.
+We can indeed check that the square root of the residues \eqref{eq:A12_cut} matches the expansion in terms of the open string three-point amplitudes of \cite{DAppollonio:2013mgj}
+	\beq
+		\sqrt{\underset{k^2=-4n/\alpha'}{\Res} A^{12P_1P_2} (k, q_{12})} = \frac{(-\alpha'q_{12}/2)_n}{n!} (\epsilon_1\cdot \epsilon_2)
+		= \sum\limits_{\rho_L} A^{15P_1}_{n,\r_L,\balpha} 
+\pi^{\balpha,\bgamma}_{\rho_L}
+		A^{52P_2}_{n,\r_L,\bgamma} \,.
+		\label{eq:A12_cut_chiral}
+	\eeq
+We did this consistency check for the first three mass levels, for which $\r_L$ is summed over
+the bosonic part (NS sector) of the chiral superstring spectrum in 10 dimensions, given by \cite{Hanany:2010da}
+	\bea
+		n&=0:&&\qquad\ydiagram{1}_{\,8}\,,\\
+		n&=1:&&\qquad\ydiagram{2}_{\,9} \oplus \, \ydiagram{1,1,1}_{\,9}\,,\\
+		n&=2:&&\qquad\ydiagram{3}_{\,9} \oplus \, \ydiagram{2,1,1}_{\,9}
+		\oplus \, \ydiagram{2,1}_{\,9}
+		\oplus \, \ydiagram{1,1}_{\,9}
+		\oplus \, \ydiagram{1}_{\,9}\,.
+	\eea{eq:chiral_spectrum_10d}
+In order to obtain three-point amplitudes for closed strings in $10D$, we need to square \eqref{eq:A12_cut_chiral} and expand again in irreducible representations.
+The first step is trivial
+	\beq
+		\underset{k^2=-4n/\alpha'}{\Res} A^{12P_1 P_2} (k, q_{12})
+		= \sum\limits_{\rho_L,\rho_R} 
+A^{15P_1}_{n,\r_L,\balpha} \ A^{15P_1}_{n,\r_R,\bbeta} \
+\pi^{\balpha,\bgamma}_{\rho_L} \ \pi^{\bbeta,\bdelta}_{\rho_R} \ 
+		A^{52P_2}_{n,\r_L,\bgamma} \ A^{52P_2}_{n,\r_R,\bdelta}\,,
+		\label{eq:A12_cut_chiral_squared}
+	\eeq
+however expanding this into irreducible representations requires some more work.
+On an abstract level this is easily done in terms of the tensor product
+\beq
+\r_L \otimes \r_R = \bigoplus\limits_{\rho_C} \rho_C\,,
+\label{eq:tensor_product}
+\eeq
+which can be computed explicitly in terms of characters using e.g.\ the WeylCharacterRing implementation in SageMath \cite{sagemath}. For example, the closed string spectrum for the first two mass levels is
+	\begin{align}
+		&n=0:\ \ydiagram{1}_{\,8}\otimes \, \ydiagram{1}_{\,8} = \ydiagram{2}_{\,8}\oplus \ydiagram{1,1}_{\,8}\oplus \bullet \,,\label{eq:closed_string_spectrum_10d}\\
+		&n=1:\ \left(\ydiagram{2}_{\,9} \oplus \, \ydiagram{1,1,1}_{\,9}\right)^{2} = 
+		     \ydiagram{2,2,2}_{\,9}
+		\oplus \,      \ydiagram{2,2,1,1}_{\,9}
+		\oplus \, 2 \, \ydiagram{3,1,1}_{\,9}
+		\oplus \, 3 \, \ydiagram{2,1,1,1}_{\,9}
+		\oplus \,      \ydiagram{4}_{\,9}\nonumber\\
+		&\oplus \,      \ydiagram{3,1}_{\,9}
+		\oplus \, 2 \, \ydiagram{2,2}_{\,9}
+		\oplus \,      \ydiagram{2,1,1}_{\,9}
+		\oplus \,      \ydiagram{1,1,1,1}_{\,9}
+		\oplus \, 2 \, \ydiagram{2,1}_{\,9}
+		\oplus \, 3 \, \ydiagram{1,1,1}_{\,9}
+		\oplus \, 2 \, \ydiagram{2}_{\,9}
+		\oplus \, 2 \, \ydiagram{1,1}_{\,9}
+		\oplus \, 2 \, \bullet
+		\,.\nonumber
+	\end{align}
+	
+To use the tensor product in explicit calculations requires considerably more work and can be done by formulating \eqref{eq:tensor_product} as an equation in terms of projectors to irreducible representations
+\beq
+\pi_{\rho_L}^{\balpha;\bgamma}\pi_{\rho_R}^{\bbeta;\bdelta}
+= \sum_{\rho_C \subset \rho_L \otimes \rho_R}
+p^{\balpha \bbeta}_{\rho_L \otimes \rho_R \to \rho_C,\bmu}
+\pi_{\rho_C}^{\bmu;\bnu}
+p^{\bgamma \bdelta}_{\rho_L \otimes \rho_R \to \rho_C,\bnu}\,.
+\label{eq:general_tensorproduct_identity}
+\eeq
+The tensors $p_{\rho_L \otimes \rho_R \to \rho_C}$ are constructed from Kronecker deltas and are uniquely determined by this equation. By inserting \eqref{eq:general_tensorproduct_identity} into \eqref{eq:A12_cut_chiral_squared}
+we find the expansion of the residue
+	\beq
+		\underset{k^2=-4n/\alpha'}{\Res} A^{12P_1 P_2} (k, q_{12})
+		= \sum\limits_{\rho_L,\rho_R,\rho_C} A^{15P_1}_{n,\rho_L \otimes \rho_R \to \rho_C,\bmu}
+\pi^{\bmu,\bnu}_{\rho_C}
+		A^{52P_2}_{n,\rho_L \otimes \rho_R \to \rho_C,\bnu} \,,
+		\label{eq:A12_cut_closed_string}
+	\eeq
+in terms of the closed string amplitudes
+\beq
+A^{15P_1}_{n,\rho_L \otimes \rho_R \to \rho_C,\bmu}
+= A^{15P_1}_{n,\r_L,\balpha} \ A^{15P_1}_{n,\r_R,\bbeta} \
+p^{\balpha \bbeta}_{\rho_L \otimes \rho_R \to \rho_C,\bmu}\,.
+\label{eq:closed_string_3pt_10d}
+\eeq
+
+The final step is to restrict the indices of the amplitudes to five dimensions and expand once again into irreducible representations, this times for the massive Little group $SO(4)$.
+In terms of representation theory, this is done by using branching rules to expand the $SO(9)$ representations in terms of irreps of the product $SO(4) \times SO(5)$,
+\beq
+\r_C = \bigoplus\limits_{(\r,\s) \subset \r_C} (\r,\s)\,,
+\eeq
+where, for massive levels, $\r$ is an irreducible representation of $SO(4)$ and $\s$ of $SO(5)$. Since we consider Pomeron exchange, which caries the vacuum quantum numbers, 
+we project onto the singlets of $SO(5)$
+\beq
+\r_C |_{\bullet_5} = \bigoplus\limits_{(\r,\bullet) \subset \r_C} (\r,\bullet)\,.
+\label{eq:branching}
+\eeq
+ This step is also abstractly implemented in SageMath. For example, we have
+\beq
+\ydiagram{2}_{\,9} = 
+\Big(\ydiagram{2}_{\,4} , \bullet_{5}  \Big) \oplus
+\Big(\ydiagram{1}_{\,4} , \ydiagram{1}_{\,5}  \Big) \oplus
+\Big(\bullet_{4} , \ydiagram{2}_{\,5}  \Big) \oplus
+\Big(\bullet_{4} ,  \bullet_{5} \Big)\,.
+\eeq
+and after projection to $SO(5)$ singlets
+\beq
+\ydiagram{2}_{\,9} \Big|_{\bullet_{5}} = \ydiagram{2}_{\,4} \oplus \bullet_{4}\,.
+\label{eq:branching_example_spin2}
+\eeq
+In this way we find the  $SO(5)$ singlets for the closed string spectrum in terms of $SO(3)$ or $SO(4)$ irreps for the first two levels
+	\begin{align}
+		n&=0:&\ & \ydiagram{2}_{\,3}\oplus \, \ydiagram{1}_{\,3} \, \oplus \,\,2\,\bullet \,,
+		\nonumber\\
+		n&=1:&\ &
+		\ydiagram{4}_{\,4}
+		\oplus \,      \ydiagram{3,1}_{\,4}
+		\oplus \, 2 \, \ydiagram{2,2}_{\,4}
+		\oplus \, 2 \, \ydiagram{3}_{\,4}
+		\oplus \, 4 \, \ydiagram{2,1}_{\,4}
+		\oplus \, 8 \, \ydiagram{2}_{\,4}
+		\nonumber\\
+		&&&\oplus \, 5 \, \ydiagram{1,1}_{\,4}
+		\oplus \, 10 \, \ydiagram{1}_{\,4}
+		\oplus \, 9 \, \bullet_{\,4}\,.
+		\label{eq:closed_string_spectrum_5d}
+	\end{align}
+
+As for the tensor product, we can rephrase \eqref{eq:branching} as an equation in terms of projectors.
+In this case we get an equation for the $SO(9)$ projector with indices restricted to the $SO(4)$ directions $a=1,\ldots,4$
+\beq
+\pi_{\rho_C}^{\mathbf{a};\mathbf{b}}
+= \sum_{\rho \subset \rho_C |_{\bullet_5}}
+b^{\mathbf{a}}_{\rho_C \to \rho,\mathbf{m}} \ 
+\pi_{\rho}^{\mathbf{m};\mathbf{n}} \ 
+b^{\mathbf{b}}_{\rho_C \to \rho,\mathbf{n}}\,,
+\label{eq:general_branching_identity}
+\eeq
+where the tensors $b_{\rho_C \to \rho}$ are uniquely determined by this equation and can be expressed in terms of Kronecker deltas and the $SO(4)$ Levi-Civita symbol.
+Since we are assuming the flat space limit kinematics to be restricted to five dimensions, we can simply insert this into \eqref{eq:A12_cut_closed_string} and obtain the residue in the anticipated form \eqref{eq:A12_cut}
+	\beq
+		\underset{k^2=-4n/\alpha'}{\Res} A^{12P_1 P_2} (k, q_{12})
+		= \sum\limits_{\rho_L,\rho_R,\rho_C,\rho} A^{15P_1}_{n,\rho_L \otimes \rho_R \to \rho_C \to \rho,\mathbf{m}}
+\pi^{\mathbf{m},\mathbf{n}}_{\rho}
+		A^{52P_2}_{n,\rho_L \otimes \rho_R \to \rho_C \to \rho,\mathbf{n}} \,,
+		\label{eq:A12_cut_closed_string_5d}
+	\eeq
+with the $5D$ closed string amplitudes given by
+\beq
+A^{15P_1}_{n,\rho_L \otimes \rho_R \to \rho_C \to \rho,\mathbf{m}} =
+A^{15P_1}_{n,\rho_L \otimes \rho_R \to \rho_C,\mathbf{a}}  
+b^{\mathbf{a}}_{\rho_C \to \rho,\mathbf{m}}\,.
+\label{eq:closed_string_3pt_5d}
+\eeq
+
+
+\subsubsection{Example}
+\label{sec:3pt_example}
+
+Let us now give a specific example of the procedure outlined above. We will consider the following chain of expansions at mass level 1, starting from the product of two open string massive spin 2 fields that 
+give rise to a $5D$ scalar 
+\beq
+\ydiagram{2}_{\,9} \otimes \ydiagram{2}_{\,9} \to \ydiagram{2}_{\,9} \to \bullet_{4}\,.
+\eeq
+In this example we discard the $5D$ massive spin 2 field that also appears in the projection (\ref{eq:branching_example_spin2}).
+We alert the reader that whenever we write explicit amplitudes they are neither appropriately symmetrized nor traceless in order to write them more compactly. All explicit amplitudes should be understood as objects to be contracted with the projector for the associated representation.
+
+We start with the open string amplitude for the state $(1,\ydiagram{2}_{\,9})$ from \cite{DAppollonio:2013mgj}
+	\beq
+A^{15P_1}_{1,[2]_9,\a_1 \a_2}
+		=-\sqrt{\frac{\alpha'}{2}}\left(\epsilon_{1 \alpha_1} q_{1 \alpha_2} + \frac{1}{2} (q_1 \cdot \epsilon_1) \, v_{\alpha_1}v_{\alpha_2} \right) \,.
+	\eeq
+Squaring this amplitude produces the following closed string states
+\beq
+\ydiagram{2}_{\,9} \otimes \ydiagram{2}_{\,9} =
+\ydiagram{4}_{\,9} \oplus
+\ydiagram{3,1}_{\,9} \oplus
+\ydiagram{2,2}_{\,9} \oplus
+\ydiagram{1,1}_{\,9} \oplus
+\ydiagram{2}_{\,9} \oplus
+\bullet_{\,9}\,.
+\eeq
+To construct the relation \eqref{eq:general_tensorproduct_identity} we need the projectors for all the representations in this list. They can be found in \cite{Costa:2016hju,Costa:2018mcg}, however here we just remind the reader of two of the most familiar ones
+\beq
+\pi_{[2]_d}^{\mu_1 \mu_2,\nu_1 \nu_2}
+= \frac{1}{2}\big(\eta^{\mu_1 \nu_1}\eta^{\mu_2 \nu_2}+\eta^{\mu_1 \nu_2}\eta^{\mu_2 \nu_1} \big)-\frac{1}{d} \, \eta^{\mu_1 \mu_2}\eta^{\nu_1 \nu_2}\,, \qquad
+\pi_{\bullet} = 1\,,
+\label{eq:projectors_example}
+\eeq
+and state that the closed string state $\ydiagram{2}_{\,9}$ comes in \eqref{eq:general_tensorproduct_identity} with the tensor
+\beq
+p^{\a_1 \a_2 \b_1 \b_2}_{[2]_9 \otimes [2]_9 \to [2]_9,\mu_1 \mu_2} = \sqrt{\frac{36}{91}} \, \pi_{[2]_9}^{\alpha_1 \alpha_2;\gamma_1 \gamma_2}\pi_{[2]_9}^{\beta_1 \beta_2;\delta_1 \delta_2}\eta_{\gamma_2 \delta_1} \eta_{\gamma_1\mu_1}\eta_{\delta_1\mu_2} \,,
+\eeq
+where we introduced additional projectors contracted with metrics in order to have the correct index properties. This determines the following closed string amplitude via \eqref{eq:closed_string_3pt_10d}
+\bea
+A^{15P_1}_{1,[2]_9 \otimes [2]_9 \to [2]_9,\mu_1 \mu_2} &= 
+\frac{\alpha '}{4 \sqrt{91}}
+\Big[ \big(q_{1,\mu_1} (\epsilon _{1,\mu_2} q_1\cdot \epsilon _1+3 q_{1,\mu_2} )
+\\
+&
++\epsilon
+_{1,\mu_1} (q_{1,\mu_2} q_1\cdot \epsilon _1-3 t_1 \epsilon _{1,\mu_2} )+v_{\mu_1} v_{\mu_2}
+(q_1\cdot \epsilon _1){}^2\big) \Big]\,.
+\eea{eq:closed_string_3pt_10d_ex}
+The branching rule for $\ydiagram{2}_{\,9}$ was already considered in \eqref{eq:branching_example_spin2}. Using the projectors \eqref{eq:projectors_example} it is easy to see that we can write explicitly
+\beq
+\pi_{[2]_9}^{a_1 a_2,b_1 b_2} = 
+\de^{a_1}_{m_1} \de^{a_2}_{m_2} \pi_{[2]_4}^{m_1 m_2,n_1 n_2} \de^{b_1}_{n_1} \de^{b_2}_{n_2}
++ \frac{5}{36} \, \de^{a_1 a_2} \pi_{\bullet} \de^{b_1 b_2}\,,
+\eeq
+from which we read off
+\beq
+b^{a_1 a_2}_{[2]_9 \to [2]_4,m_1 m_2} = \de^{a_1}_{m_1} \de^{a_2}_{m_2}\,, \qquad
+b^{a_1 a_2}_{[2]_9 \to \bullet_4} = \sqrt{\frac{5}{36}} \, \de^{a_1 a_2}\,.
+\label{eq:b_tensor_ex}
+\eeq
+Finally, inserting \eqref{eq:closed_string_3pt_10d_ex} and \eqref{eq:b_tensor_ex} into \eqref{eq:closed_string_3pt_5d} we compute the $5D$ closed string amplitude
+\beq
+A^{15P_1}_{1,[2]_9 \otimes [2]_9 \to [2]_9 \to \bullet_4} = \frac{1}{8} \sqrt{\frac{5}{91}} \alpha ' \left( (q_1\cdot \epsilon _1)^2-2 t_1\right)
+\label{eq:3pt_example_graviton}
+\eeq
+We derive the complete list of such level 1  three-point amplitudes  in appendices \ref{sec:tensorprodprojs} and \ref{sec:branchingprojs}.
+
+
+ \subsection{Constraints on spinning AdS amplitudes}
+ \label{sec:constraints_spinning_amplitude}
+ In this section we use the flat-space string amplitudes to constrain the high-energy, tree-level AdS$_5$ amplitudes with two dilatons and two spinning operators $\langle \phi \phi \mathcal{O}_5 \mathcal{O}_6\rangle$. Since the operators in question are of stringy nature (i.e. the bulk fields have $m^2 \sim 4n/\alpha'$ for a very large AdS radius),  their dimensions grow with the 't Hooft coupling ($\Delta\sim \lambda^{1/4}$) and transform in the $SO(4)$ representations discussed above in the flat space case. This means that generically $\mathcal{O}_5$ and $\mathcal{O}_6$ are in bosonic mixed-symmetry representations.
+
+As discussed in section \ref{sec:matching_impact_parameter}, the spectral functions that determine the spinning AdS correlators \eqref{eq:Btree_differential} via \eqref{eq:Dfrak} are determined in the flat space limit by the three-point amplitudes \eqref{eq:3pt_spinning}
+\beq
+ \lambda^{\frac{j(\nu)-1}{2}} \lambda^{\frac{|\rho_5|-k_5}{4}}\lambda^{\frac{|\rho_6|-k_6}{4}}\beta^{k_5,k_6}_{(\De_5,\rho_5),(\De_6,\rho_6)} (\nu)
+ \ \to\ 
+ \frac{1}{2 \pi}\,
+ a_{m_5,\rho_5}^{k_5}(t)  \, a_{m_6,\rho_6}^{k_6}(t) \b(t)\,.
+\eeq
+In other words, the leading term in $\nu$ at each order in $\lambda$ is fixed by the flat space expression (see section \ref{eq:constraining_from_flat_space_limit})
+\beq
+\lambda^{\frac{j(\nu)-1}{2}} \lambda^{\frac{|\rho_5|-k_5}{4}}\lambda^{\frac{|\rho_6|-k_6}{4}}\beta^{k_5,k_6}_{(\De_5,\rho_5),(\De_6,\rho_6)} (\nu)
+= \frac{1}{2 \pi} a_{m_5,\rho_5}^{k_5}(t)  \,a_{m_6,\rho_6}^{k_6}(t) \b(t) \Big|_{\a't = - \frac{\nu^2}{\sqrt{\lambda}}} + \ldots
+\,,
+\eeq
+where $\ldots$ are terms that vanish in the flat space limit.
+Let us now use this to study some specific examples. We begin with the example of section \ref{sec:3pt_example} where we computed an amplitude involving a graviton, a Pomeron and a particular scalar at mass level 1 in \eqref{eq:3pt_example_graviton}.
+In this result $\epsilon_{1,\mu}$ is such that $\epsilon_{\mu\nu}=\epsilon_{1,\mu}\epsilon_{1,\nu}$ parametrizes a general graviton polarization which must be replaced by the metric $\epsilon_{\mu \nu}\rightarrow \eta_{\mu\nu}$ to obtain the dilaton amplitude
+ \beq
+A_{1,[2]_9\otimes[2]_9 \rightarrow[2]_9\rightarrow \bullet_4}^{D 5 P_1}=
+ a_{4/\alpha',[2]_9\otimes[2]_9 \rightarrow[2]_9\rightarrow \bullet_4}^{0}(t)= -\frac{3}{8}\sqrt{\frac{5}{91}} \, \a't \,,
+ \eeq
+ where we used that $(q_1\cdot\epsilon_1)^2=-t_1$ for the dilaton case.
+ Thus, for the AdS correlator of this particular scalar and three dilatons we have
+ \beq 
+ \beta^{0,0}_{(2 \l^{\frac{1}{4}} + \ldots,\bullet),(4,\bullet)}(\nu) =
+\frac{3}{8}\sqrt{\frac{5}{91}} \frac{\nu^2}{\sqrt{\lambda}}  \, \beta(\nu)
++ \text{vanishing in the flat space limit}\,.
+ \eeq
+Note that with respect to the case of four dilaton scattering we have an extra power of $1/\sqrt{\lambda}$, so the term of order $\l^0$ is absent, confirming that tidal excitations are suppressed at large $\lambda$, which in turn agrees with the considerations of \cite{Meltzer:2019pyl} (we verified this fact for all amplitudes at level 1).
+  In particular, this is consistent with the large $\lambda$ suppression of $c_{\phi_1 \phi_2 j(\nu)}$ for non-identical scalars, since our stringy mode is certainly different from the dilaton. Such a suppression is not a priori obvious from writing a bulk interaction between two different scalars and a spin $J$ field (to be Sommerfeld-Watson transformed into a Pomeron), which makes this a non-trivial realization of the bounds derived in \cite{Costa:2017twz,Meltzer:2017rtf}.
+This example is particularly simple, since there is a unique three-point structure in the case of the scalar. 
+
+
+More generally, we can consider amplitudes with several tensor structures constructed from $v_a$'s and $q_a$'s (equivalently, $\hat{p}$ and $\nabla_p$ in AdS). Let us take as a representative example, the case of the spin 4 operator at level 1. This operator is typically used to define $\Delta_{\text{gap}}$ and sits in the leading Regge trajectory. The corresponding graviton-Pomeron-spin 4 amplitude was worked out in Appendices \ref{sec:tensorprodprojs} and \ref{sec:branchingprojs}, and reads
+\beq
+A_{[2]_9\otimes[2]_9 \rightarrow[4]_9 \rightarrow[4]_4}^{a_1 a_2 a_3 a_4}(\epsilon_1)=\frac{1}{8} \alpha ' \big(2 \epsilon _{1,a _1} q_{1,a _2}+v_{a _1} v_{a _2} q_1\cdot \epsilon _1\big)
+\big(2 \epsilon _{1,a _3} q_{1,a _4}+v_{a _3} v_{a _4} q_1\cdot \epsilon _1\big)\,.
+\eeq 
+We again emphasize that it is understood that the amplitude should be contracted with $\pi_{[4]_4}^{\balpha;\bbeta}$. Furthermore, we are using the simplifying transverse kinematics discussed above. This means that upon doing the dilaton replacement, we have
+\beq
+A_{[2]_9\otimes[2]_9 \rightarrow[4]_9 \rightarrow[4]_4}^{a_1 a_2 a_3 a_4}=\frac{\alpha '}{8} \big(-t_1 v_{a_1}v_{a_2}v_{a_3}v_{a_4} +4v_{a_1}v_{a_2}q_{1,a_3}q_{1,a_4} \big)\,, 
+\eeq
+where we used the symmetry of the indices and note that transverse kinematics ensures that the term proportional to $\epsilon_{1,a_1}\epsilon_{1,a_2}$ gets mapped to a transverse metric which is annihilated by the projector to $[4]_4$.
+In this case we can directly use \eqref{eq:flat_space_limit_ts} to match both tensor structures at once
+\bea
+\mathfrak{D}^{(2 \l^{\frac{1}{4}} + \ldots,[4]_4),(4,\bullet)}_{a_1 a_2 a_3 a_4} (\nu)
+={}& \frac{\beta(\nu)}{8\sqrt{\l}} \big( \nu^2 \hat{p}_{a_1} \hat{p}_{a_2} \hat{p}_{a_3} \hat{p}_{a_4} 
++ 4 \hat{p}_{a_1} \hat{p}_{a_2} \nabla_{p\, a_3} \nabla_{p\, a_4}\big)\\
+&+  \text{vanishing in flat space limit}
+\,.
+\eea{eq:Dfrac_example}
+We again note that these corrections are suppressed at large $\lambda$.

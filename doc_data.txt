@@ -1,0 +1,32 @@
+InfoBegin
+InfoKey: Creator
+InfoValue: LaTeX with hyperref
+InfoBegin
+InfoKey: CreationDate
+InfoValue: D:20230516195934+02&apos;00&apos;
+InfoBegin
+InfoKey: Producer
+InfoValue: xdvipdfmx (20210609)
+PdfID0: f3581c5ee3308aaa83e5866517c39da5
+PdfID1: f3581c5ee3308aaa83e5866517c39da5
+NumberOfPages: 4
+PageMediaBegin
+PageMediaNumber: 1
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.28 841.89
+PageMediaDimensions: 595.28 841.89
+PageMediaBegin
+PageMediaNumber: 2
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.28 841.89
+PageMediaDimensions: 595.28 841.89
+PageMediaBegin
+PageMediaNumber: 3
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.28 841.89
+PageMediaDimensions: 595.28 841.89
+PageMediaBegin
+PageMediaNumber: 4
+PageMediaRotation: 0
+PageMediaRect: 0 0 595.28 841.89
+PageMediaDimensions: 595.28 841.89

@@ -1,0 +1,179 @@
+
+\section{Constraints on CFT data}
+\label{sec:Appendix_tchannel}
+
+
+
+\subsection{Comparison with the large $\De_{\text{gap}}$ limit}
+\label{sec:Dav_match}
+
+In \cite{Meltzer:2019pyl} the Regge limit of the four-point correlator of pairwise identical scalars was studied in an expansion in $1/N$ in the limit of large $\De_{\text{gap}}$. The specific limit considered was $S\gg \De_{\text{gap}}^{2}\gg 1$, so the result is sensitive to all the higher spin interactions in the leading Regge trajectory, but tidal excitations are ignored. Since we have kept $\De_{\text{gap}}$ finite, we should be able to obtain a match between the result for the one-loop correlator in \cite{Meltzer:2019pyl} with our result \eqref{eq:gluing_stripped} after dropping the tidal excitations $\cO_5 \neq \cO_1$ and $\cO_6\neq \cO_3$. 
+
+We pick the term $\De_5=\De_1$ and $\De_6=\De_3$ that is the sole contribution to \eqref{eq:gluing_stripped} in the large $\De_\text{gap}$ limit, and use \eqref{eq:B} to obtain
+\be
+- \Re \cB_{\text{1-loop}}(S,L) = 2\pi^2  \int d\nu_1 d\nu_2 d\nu\, \beta^{*}(\nu_1)\beta(\nu_2) \,\Phi(\nu_1,\nu_2,\nu) \, S^{j(\nu_1)+j(\nu_2)-2}\Omega_{i\nu}(L) \, \Bigg|_{\left[\cO_5\cO_6\right]}  \,.
+\label{eq:tnt1}
+\ee
+Now let us extract the corresponding result from \cite{Meltzer:2019pyl}. Equation (3.15) of  \cite{Meltzer:2019pyl}  
+gives the double discontinuity of the one-loop correlator $\mathcal{G}^{(2)}$ as follows (with $\Delta_\phi = \De_1$ and $\Delta_\psi = \De_3$)
+\bea
+\dDisc_t [\mathcal{G}^{(2)}(z,\zb)] =\ & \frac{\pi^4}{8} \int d\nu_1 d\nu_2 d\nu \, \chi_{j(\nu_1)+j(\nu_2)-1}(\nu) \,\chi_{j(\nu_1)+j(\nu_2)-1}(-\nu) \, \mathcal{N} 
+  \\ 					
+  	&\widehat{\gamma}^{(1)}(\nu_1)\widehat{\gamma}^{(1)}(\nu_2) \, \Phi(\nu_1,\nu_2,\nu) (z\bar{z})^{\frac{2-j(\nu_1)-j(\nu_2)}{2}}\Omega_{i\nu}\left(\frac{1}{2}\log(z/\bar{z})\right)    \,,
+\eea{eq:david1}
+where  $\chi_{j(\nu_1)+j(\nu_2)-1}(\nu)$ is defined in \eqref{eq:chi_definition} but with $j(\nu)$ replaced by $j(\nu_1)+j(\nu_2)-1$, and with $\Delta_2=\Delta_1$ and $\Delta_4=\Delta_3$. It accounts for the double-trace exchanges $[\cO_1 \cO_1]$ and $[\cO_3 \cO_3]$ analytically continued to spin $j(\nu_1)+j(\nu_2)-1$. The operators contributing to the $t$-channel expansion in the large $\De_{\text{gap}}$ limit are the double-traces $[\cO_1 \cO_3]_{n,\ell}$ with dimensions and OPE coefficients given by
+\bea
+\Delta_{h,\bar{h}}&= \Delta^{(0)}_{h,\bar{h}} +\frac{1}{N^{2}} \, \gamma^{(1)}_{h,\bar{h}}+\frac{1}{N^{4}} \,\gamma^{(2)}_{h,\bar{h}}+\cdots\,,
+\qquad \Delta^{(0)}_{h,\bar{h}}&= \De_1 +\De_3 +2n +\ell \,,
+\\ 
+P_{h,\bar{h}}&= P^{MFT}_{h,\bar{h}}\left(1+\frac{1}{N^{2}} \,\delta P^{(1)}_{h,\bar{h}}+\frac{1}{N^{4}}\,\delta P^{(2)}_{h,\bar{h}}+\cdots\right)\,,
+\eea{eq:CFT_data_expansion}
+where $h,\bar{h} = \De\mp\ell$.
+The tree-level anomalous dimensions $\gamma^{(1)}_{h,\bar{h}}$ and tree-level corrections to OPE coefficients $\delta P^{(1)}_{h,\bar{h}}$ can be extracted respectively from $\widehat{\gamma}^{(1)}(\nu)$ and $\widehat{\delta P}^{(1)}(\nu)$  by
+\bea
+\gamma^{(1)}_{h,\bar{h}} &\approx \int\limits_{-\infty}^{\infty}d\nu \, \widehat{\gamma}^{(1)}(\nu) \, (h\bar{h})^{j(\nu)-1}\,\Omega_{i\nu}\big(\log(h/\bar{h})\big)  \,, \\
+\delta P^{(1)}_{h,\bar{h}} &\approx \int\limits_{-\infty}^{\infty}d\nu \, \widehat{\delta P}^{(1)}(\nu) \, (h\bar{h})^{j(\nu)-1}\,\Omega_{i\nu}\big(\log(h/\bar{h})\big)   \,.
+\eea{eq:extract_anom}
+$\widehat{\gamma}^{(1)}(\nu)$ and $\widehat{\delta P}^{(1)}(\nu)$ can be obtained respectively from the real and imaginary parts of the phase shift, and are related to $\beta$ by\footnote{Note that due to difference in conventions, $\mathcal{N}\beta$ for us is equal to $\beta$, as defined in \cite{Meltzer:2019pyl}.}
+\bea
+\widehat{\gamma}^{(1)}(\nu) = &\ 2\, \text{Re} \beta(\nu) \,, \\
+\widehat{\delta P}^{(1)}(\nu) = &-2\pi\, \text{Im} \beta(\nu) \,.
+\eea{eq:gamma_beta}
+Taking the Fourier transform to impact parameter space on \eqref{eq:david1} and then using \eqref{eq:gamma_beta} gives\footnote{In our conventions the Fourier transform takes $\dDisc_t [\mathcal{G}^{(2)}(z,\zb)]$ to $- \mathcal{N} \Re \cB$ upto scaling factors.}
+\bea
+- \Re \cB_{\text{1-loop}}(S,L) = 2\pi^2   \int d\nu_1 d\nu_2 d\nu \, \text{Re}\beta(\nu_1) \, \text{Re}\beta(\nu_2) \, \Phi(\nu_1,\nu_2,\nu) S^{j(\nu_1)+j(\nu_2)-2} \, \Omega_{i\nu}(L) \,.
+\eea{eq:david7}
+We need to compare \eqref{eq:tnt1} with \eqref{eq:david7}. The only difference are the real parts in \eqref{eq:david7}, however $\text{Im} \beta$ in \eqref{eq:tnt1} is related to tree-level corrections to the OPE coefficients and these are suppressed at large $\De_{\text{gap}}$ \cite{Meltzer:2019pyl}. This can be seen for example from \eqref{eq:gamma_beta} and using in it the explicit expression for $\alpha(\nu)$ from \cite{Meltzer:2019pyl}. The result is 
+\beq
+\widehat{\delta P}^{(1)}(\nu) = \frac{- \pi \Im \left( \frac{i e^{i\pi j(\nu)}}{1-e^{i\pi j(\nu)}} \right) }{\Re \left( \frac{i e^{i\pi j(\nu)}}{1-e^{i\pi j(\nu)}} \right)} \,\widehat{\gamma}^{(1)}(\nu) 
+= - \pi \tan\Big( \frac{\pi}{2} j(\nu) \Big)\, \widehat{\gamma}^{(1)}(\nu) \,.
+\label{eq:OPE_supp}
+\eeq
+The suppression is due to the tan factor, since for large $N$ theories it is known that \cite{Brower:2006ea,Cornalba:2007fs,Costa:2012cb}
+\be
+\label{eq:jnu}
+j(\nu) = 2 - 2\,\frac{ \nu^{2} + (d/2)^2}{\De_{\text{gap}}^{2}} + O\big(\De_{\text{gap}}^{-4}\big)    \,.
+\ee
+The anomalous dimensions $\gamma^{(1)}_{h,\bar{h}}$ are order 1, while the the corrections to the OPE coefficients $\delta P^{(1)}_{h,\bar{h}}$ are at order $\De_{\text{gap}}^{-2}$.
+
+Thus we have matched our result for the Regge limit of the dDisc of a one-loop correlator at large $\De_{\text{gap}}$ to that of \cite{Meltzer:2019pyl}. Note that we managed to reproduce the result without the need for any projections to the physical double-traces. Therefore it is reasonable to assume that the gluing of tree-level correlators in the Regge limit does not receive contributions from the double-traces of shadows and we can use the optical theorem \eqref{eq:gluing_stripped} without the projections onto $[\cO_5 \cO_6]$. 
+
+
+
+\subsection{Extracting t-channel CFT data}
+\label{sec:extract_data}
+
+
+Next we shall see how we can extract the CFT data for the double-trace operators exchanged in the $t$-channel to order $1/N^4$ from the vertex function $V(\nu_1^2,\nu_2^2,\nu^2)$. To this end we follow section 3.2 of \cite{Meltzer:2019pyl} and extend the results therein by including tidal excitations, which make our statements valid at finite $\De_{\text{gap}}$.
+As discussed in the previous section, the only operators contributing to the $t$-channel expansion in the large $\De_{\text{gap}}$  limit are the double-traces $[\cO_1 \cO_3]$ \cite{Li:2017lmh}. The three-point function of these double-traces with  their constituent operators $\cO_1$ and  $\cO_3$
+ has the large $N$ behavior
+\beq
+\< \cO_1 \cO_3 [\cO_1 \cO_3] \> \sim 1\,.
+\eeq
+By including tidal excitations we have to include also double-traces $[\cO_5 \cO_6]$ corresponding to additional double-traces coupling to 
+$\cO_1$ and  $\cO_3$. These satisfy
+\beq
+\< \cO_1 \cO_3 [\cO_5 \cO_6] \> \sim \frac{1}{N^2}\,, \qquad
+[\cO_5 \cO_6] \neq [\cO_1 \cO_3]\,,
+\eeq
+so that only their classical dimension and leading OPE coefficient squared\footnote{We are free to insert $P^{\text{MFT}}$ here, defining $\delta P$ accordingly. This will be useful below in \eqref{eq:very_long2}.}
+\beq
+\Delta_{h',\bar{h}'} = \De_{\cO_5} + \De_{\cO_6} +2n + \ell\,, \qquad
+P_{h',\bar{h}'} =%
+\frac{1}{N^{4}} P^{\text{MFT}}_{h',\bar{h}'} \delta P^{(56)}_{h',\bar{h}'}+\ldots\,,
+\eeq
+appear in the one-loop correlator. This is compatible with the large $N$ behavior for single-trace exchange in the direct channel,
+\beq
+\langle \cO_1 \mathcal{O}_5 \mathcal{O}_{\Delta(J)} \rangle \sim \frac{1}{N} ~,~\langle  \mathcal{O}_{\Delta(J)} \mathcal{O}_6 \cO_3 \rangle \sim \frac{1}{N}  \,,
+\eeq
+which justifies that the OPE coefficients $c_{\cO_1 \cO_3 [\mathcal{O}_5\mathcal{O}_6]}$ start at order $1/N^2$.
+As explained in \cite{Meltzer:2019pyl}, the cross channel expansion of the correlator is then dominated by the terms
+\begin{align}
+ \frac{\mathcal{A}_{\text{1-loop}}^{\circlearrowleft}(z,\bar{z})}{(z\bar{z})^{\Delta_{\f}}}
+& \approx  \sum_{h,\bar{h}}
+P^{MFT}_{h,\bar{h}}\bigg[i\pi \gamma^{(2)}_{h,\bar{h}}+\delta P^{(2)}_{h,\bar{h}}+i\pi \gamma^{(1)}_{h,\bar{h}} \, \delta P^{(1)}_{h,\bar{h}}-\frac{\pi^{2}}{2}\left(\gamma^{(1)}_{h,\bar{h}}\right)^{2}\bigg] g_{h,\bar{h}}(1-z,1-\bar{z}) \nonumber\\
+&+\sum_{h',\bar{h}'}
+P^{MFT}_{h',\bar{h}'} \delta P^{(56)}_{h',\bar{h}'} \,g_{h',\bar{h}'}(1-z,1-\bar{z})\,.
+\label{eq:loopCrossingV2}
+\end{align}
+
+We shall now compare with our result for the one-loop correlator in the Regge limit and use it in the light of \eqref{eq:loopCrossingV2} to extract CFT data. We start with the dDisc of the correlator in the impact parameter representation as in \eqref{eq:Bt_SL_vertex}. Doing an inverse Fourier transform on this and taking out the appropriate scale factors gives us the dDisc of the one-loop correlator in the Regge limit
+	\bea
+	\dDisc_t \mathcal{A}_{\text{1-loop}}(z,\zb) = \frac{\pi^4 \mathcal{N}}{4} \int\limits_{-\infty}^\infty d\nu d\nu_1 d\nu_2 \, \big(\beta^{*}(\nu_1) \beta(\nu_2) + \beta(\nu_1) \beta^{*}(\nu_2)\big)
+		  		V(\nu_1,\nu_2,\nu)^2 \\ 
+			\Phi(\nu_1,\nu_2,\nu) \, \chi_{j(\nu_1)+j(\nu_2)-1}(\nu) \, \chi_{j(\nu_1)+j(\nu_2)-1}(-\nu) \, \sigma^{2-j(\nu_1)-j(\nu_2)}\, \Omega_{i\nu}(\rho)    \,,
+	\eea{eq:dDisc_invFT2} 
+where we  symmetrized the product of $\beta$'s by using the symmetry of the expression under $\nu_1 \leftrightarrow \nu_2$. 
+We can now use the Lorentzian inversion formula \cite{Caron_Huot_2017} on \eqref{eq:dDisc_invFT2}, as shown in \cite{Meltzer:2019pyl}, to obtain the one-loop correlator in the Regge limit, and then use \eqref{eq:gamma_beta} to express it as
+	\bea
+	\mathcal{A}_{\text{1-loop}}^{\circlearrowleft}(z,\bar{z})\approx -\frac{\pi^4 \mathcal{N}}{4}\int\limits_{-\infty}^{\infty} d\nu_1 d\nu_2 d\nu \,
+		\frac{1+e^{-i\pi (j(\nu_1)+j(\nu_2)-1)}}{1-e^{-2\pi i (j(\nu_1)+j(\nu_2)-1)}} 	\,	V(\nu_1,\nu_2,\nu)^2  \\
+		\Phi(\nu_1,\nu_2,\nu)\, \chi_{j(\nu_1)+j(\nu_2)-1}(\nu) \, \chi_{j(\nu_1)+j(\nu_2)-1}(-\nu) \,
+ 			\sigma^{2-j(\nu_1)-j(\nu_2)}\, \Omega_{i\nu}(\rho)  \\
+		\left[\widehat{\gamma}^{(1)}(\nu_1)\,\widehat{\gamma}^{(1)}(\nu_2)  + \frac{1}{\pi^2}\widehat{\delta P}^{(1)}(\nu_1)\, \widehat{\delta P}^{(1)}(\nu_2)\right] 	.		
+	\eea{eq:A_1_loop}
+We now take the $t$-channel expansion \eqref{eq:loopCrossingV2}, and use in it \eqref{eq:extract_anom}, \eqref{eq:Omega_prod}, and the following ansatz,
+\bea
+\gamma^{(2)}_{h,\bar{h}}&\approx\int\limits_{-\infty}^{\infty} d\nu_{1}d\nu_2d\nu \, \widehat{\gamma}^{(2)}(\nu_1,\nu_2,\nu) \, (h\bar{h})^{j(\nu_1)+j(\nu_2)-2}\,\Omega_{i\nu}\big(\log(h/\bar{h})\big)\,,\\
+\delta P^{(2)/(56)}_{h,\bar{h}}&\approx\int\limits_{-\infty}^{\infty} d\nu_{1}d\nu_2d\nu \, \widehat{\delta P}^{(2)/(56)}(\nu_1,\nu_2,\nu) \, (h\bar{h})^{j(\nu_1)+j(\nu_2)-2}\,\Omega_{i\nu}\big(\log(h/\bar{h})\big)\,,
+\eea{eq:2loop_CFT_data_spectral}
+to obtain
+\begin{align}
+(z\bar{z})^{-\Delta_{\f}}& \mathcal{A}_{\text{1-loop}}^{\circlearrowleft}(z,\bar{z}) \approx \int\limits_{-\infty}^{\infty} d\nu_{1}d\nu_2d\nu \Bigg[\sum_{h,\bar{h}}  (h\bar{h})^{j(\nu_1) +j(\nu_2) -2}\,\Omega_{i\nu}(\log h/\bar{h})\, P^{MFT}_{h,\bar{h}}  
+\label{eq:very_long}    \\
+		& \bigg[i\pi \widehat{\gamma}^{(2)}(\nu_1,\nu_2,\nu)  + \frac{i\pi}{2}\left(\widehat{\gamma}^{(1)}(\nu_1)\,\widehat{\delta P}^{(1)}(\nu_2) + \widehat{\gamma}^{(1)}(\nu_2)\,\widehat{\delta P}^{(1)}(\nu_1)\right)\Phi(\nu_1,\nu_2,\nu)   \nonumber\\
+		&  \qquad  \qquad -\frac{\pi^2}{2}\,\widehat{\gamma}^{(1)}(\nu_1)\,\widehat{\gamma}^{(1)}(\nu_2)\Phi(\nu_1,\nu_2,\nu) + \widehat{\delta P}^{(2)}(\nu_1,\nu_2,\nu)   \bigg]\, g_{h,\bar{h}}(1-z,1-\bar{z}) \nonumber \\
+		&  + \sum_{h',\bar{h}'} P^{MFT}_{h',\bar{h}'} \,\widehat{\delta P}^{(56)}(\nu_1,\nu_2,\nu) (h'\bar{h}')^{j(\nu_1) +j(\nu_2) -2)}\,\Omega_{i\nu}(\log h'/\bar{h}') \,g_{h',\bar{h}'}(1-z,1-\bar{z}) \Bigg]\,.
+		 \nonumber
+\end{align}
+We can approximate the $h,\bar{h}$ and $h',\bar{h}'$ sums with integrals, $\sum_{h,\bar{h}} \rightarrow \frac{1}{2}\int_{0}^{\infty}dh\, d\bar{h}$, and evaluate them using Bessel function integrals (see section 2.2 of \cite{Meltzer:2019pyl}) to arrive at the result
+\begin{align}
+\mathcal{A}_{\text{1-loop}}^{\circlearrowleft}(z,\bar{z})&\approx \frac{\pi^2 \mathcal{N}}{4}\int\limits_{-\infty}^{\infty} d\nu_{1}d\nu_2d\nu \, \chi_{j(\nu_1)+j(\nu_2)-1}(\nu)\,\chi_{j(\nu_1)+j(\nu_2)-1}(-\nu) \,
+ 			\sigma^{2-j(\nu_1)-j(\nu_2)} \,\Omega_{i\nu}(\rho) \nonumber  \\
+		& \left[ i\pi \widehat{\gamma}^{(2)}(\nu_1,\nu_2,\nu)  -\frac{\pi^2}{2}\,\widehat{\gamma}^{(1)}(\nu_1)\,\widehat{\gamma}^{(1)}(\nu_2)\,\Phi(\nu_1,\nu_2,\nu) + \widehat{\delta P}^{(2)}(\nu_1,\nu_2,\nu) \right.  
+\label{eq:very_long2}  \\
+		&  \left. + \frac{i\pi}{2}\left(\widehat{\gamma}^{(1)}(\nu_1)\,\widehat{\delta P}^{(1)}(\nu_2) + \widehat{\gamma}^{(1)}(\nu_2)\,\widehat{\delta P}^{(1)}(\nu_1)\right)\Phi(\nu_1,\nu_2,\nu) + \widehat{\delta P}^{(56)}(\nu_1,\nu_2,\nu) \right] .
+\nonumber
+\end{align}
+Comparing the real parts of the coefficient of $\chi(\nu)\chi(-\nu)\sigma^{2-j(\nu_1)-j(\nu_2)} \Omega_{i\nu}(\rho)$ in the integrands of \eqref{eq:A_1_loop} and \eqref{eq:very_long2}, and using
+\beq
+\frac{1+e^{-i\pi (j(\nu_1)+j(\nu_2)-1)}}{1-e^{-2\pi i (j(\nu_1)+j(\nu_2)-1)}}
+= \frac{1}{2} + \frac{i}{2} \tan \left( \frac{\pi}{2} \big(j(\nu_1)+j(\nu_2) \big) \right) ,
+\label{eq:trig_ID}
+\eeq
+we conclude that
+\begin{align}
+\widehat{\delta P}^{(2)}(\nu_1,\nu_2;\nu) + \widehat{\delta P}^{(56)}(\nu_1,\nu_2;\nu) & = 
+ -\frac{1}{2}\bigg[\pi^2 \Big(V(\nu_1,\nu_2,\nu)^2 -1\Big) \widehat{\gamma}^{(1)} (\nu_1)\, \widehat{\gamma}^{(1)} (\nu_2)
+\label{eq:deltaP2}\\
+& 
++ V(\nu_1,\nu_2,\nu)^2\, \widehat{\delta P}^{(1)}(\nu_1)\,\widehat{\delta P}^{(1)}(\nu_2) \bigg] \Phi(\nu_1,\nu_2,\nu )  \,.
+\nonumber
+\end{align}
+This is the general result for fixed $\De_{\text{gap}}$ that extracts  OPE data from the AdS vertex function. 
+Let us now take the large $\De_{\text{gap}}$ limit to make contact with \cite{Meltzer:2019pyl}.
+In this limit, $V(\nu_1,\nu_2,\nu)^2 =1$ and $\widehat{\delta P}^{(1)}$, $\widehat{\delta P}^{(56)}$ are suppressed with respect to 
+$\widehat{\gamma}^{(1)}$. Therefore $\delta{P}^{(2)}_{h,\bar{h}}=0$, as was obtained in \cite{Meltzer:2019pyl}. 
+
+Similarly, comparing the imaginary parts 
+ we have
+\begin{align}
+\widehat{\gamma}^{(2)}(\nu_1,\nu_2;\nu)& =-\frac{1}{2}
+\bigg[ \left(\widehat{\gamma}^{(1)} (\nu_1) \widehat{\delta P}^{(1)}(\nu_2)
++ \widehat{\delta P}^{(1)}(\nu_1) \widehat{\gamma}^{(1)} (\nu_2) \right)  + \pi \tan \left( \frac{\pi}{2} (j(\nu_1)+j(\nu_2)) \right)  
+\nonumber\\
+&
+ \!\!
+ V(\nu_1,\nu_2,\nu)^2 \Big( \widehat{\gamma}^{(1)} (\nu_1) \widehat{\gamma}^{(1)} (\nu_2)  
+ +\frac{1}{\pi^2}\widehat{\delta P}^{(1)}(\nu_1)\widehat{\delta P}^{(1)}(\nu_2) \Big) \bigg] \Phi(\nu_1,\nu_2,\nu )\,.
+ \label{eq:gamma2}
+\end{align}
+The term $\widehat{\delta P}^{(1)}(\nu_1)\,\widehat{\delta P}^{(1)}(\nu_2)$ is suppressed by $\De_{\text{gap}}^{-4}$ with respect to 
+the other terms. At leading order in $\De_{\text{gap}}$, we can discard this term and set $V(\nu_1,\nu_2,\nu)^2 =1$. We can then use \eqref{eq:OPE_supp} to simplify the expression to,
+\bea
+\widehat{\gamma}^{(2)}(\nu_1,\nu_2;\nu)&=-\frac{1}{2} \pi \tan \left(\frac{1}{2} \pi  j(\nu_1)\right) \tan \left(\frac{1}{2} \pi  j(\nu_2)\right) \tan \left(\frac{1}{2} \pi (j(\nu_1)+j(\nu_2))\right) 
+\\ & \hspace{2.45in}\times\widehat{\gamma}^{(1)}(\nu_1)   \widehat{\gamma}^{(1)}(\nu_2) \Phi(\nu_1,\nu_2,\nu ) \,.
+\eea{eq:gamma2_meltzer}
+This is the same result as obtained in \cite{Meltzer:2019pyl} for $\widehat{\gamma}^{(2)}(\nu_1,\nu_2;\nu)$.
+More generally, knowledge of the vertex function $V(\nu_1,\nu_2,\nu)^2$ and of the $\langle\cO_1 \cO_3 [\mathcal{O}_5\mathcal{O}_6]\rangle$ OPE coefficients gives additional information about the one-loop CFT data of the $[\cO_1 \cO_3]$ double-trace operators. It would be interesting to 
+analyze these equations order by order in the $1/\De_{\text{gap}}^2$ expansion.

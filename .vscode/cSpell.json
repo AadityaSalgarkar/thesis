@@ -1,0 +1,18 @@
+{
+    "version": "0.1",
+    "language": "en",
+    "words": [
+        "quotepage",
+        "addtocontents",
+        "addtotoc",
+        "cleardoublepage",
+        "eqref"
+    ],
+    "cSpell.ignoreRegExpList": [
+        "\\\\\\w*(\\[.*?\\])?(\\{.*?\\})?",
+        "\\$.+?\\$"
+    ],
+    "flagWords": [
+        "hte"
+    ]
+}

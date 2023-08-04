@@ -1,0 +1,97 @@
+
+
+\section{Tensor products for projectors}
+\label{sec:tensorprodprojs}
+
+In this appendix we explain how to realize the tensor product of open string states into closed string states in terms of the corresponding projectors/tensors. We will consider mass level $n=1$. The chiral spectrum at this level is
+\beq
+n=1:\quad \ydiagram{2}_{\,9} \oplus \, \ydiagram{1,1,1}_{\,9}\,.
+\eeq
+We square the irreps using the tensor product as in the main text and analyze the decomposition term by term. For example, taking $\rho_L= \rho_R = [2]_9$ corresponds to the tensor product
+\beq
+\ydiagram{2}_{\,9} \otimes \, \ydiagram{2}_{\,9}= 
+\ydiagram{4}_{\,9}
+\oplus \,      \ydiagram{3,1}_{\,9}
+\oplus \, \ydiagram{2,2}_{\,9}
+\oplus \,  \ydiagram{2}_{\,9}
+\oplus \,      \ydiagram{1,1}_{\,9}
+\oplus \,      \bullet_{\,9}\,,
+\eeq
+which we want to write in terms of SO(9) tensors as
+\bea
+\pi_{[2]_9}^{\balpha;\bgamma}\pi_{[2]_9}^{\bbeta;\bdelta}&= \sum_{\rho_C \in S}p^{\balpha \bbeta}_{[2]_9 \otimes [2]_9 \to \rho_C,\bmu}
+\pi_{\rho_C}^{\bmu;\bnu}
+p^{\bgamma \bdelta}_{[2]_9 \otimes [2]_9 \to \rho_C,\bnu}\,,\\
+S&=\left\lbrace [4]_9 \,, [3,1]_9 \,, [2,2]_9\,, [2]_9\,, [1,1]_9\,, \bullet_9\right\rbrace\,. 
+\eea{eq:level1_squared_proj}
+It will be useful to manifestly symmetrize the $\balpha$ and $\bbeta$ indices of the tensors $p$, in order to write down these tensors more compactly. Therefore, we will use
+\beq
+p^{\balpha \bbeta}_{\rho_L \otimes \rho_R \to \rho_C,\bmu} \equiv \pi^{\balpha}_{\rho_L;\balpha'} \pi^{\bbeta}_{\rho_R;\bbeta'} \tilde{p}^{\balpha' \bbeta'}_{\rho_L \otimes \rho_R \to \rho_C,\bmu},
+\label{eq:symmetrize_factors}
+\eeq
+and we will present the simpler trial tensors $\tilde{p}$ for each case.
+ In this case $\rho_L=\rho_R=[2]_9$ and we used the trial tensors\footnote{For irreps with the same number of indices as the tensor product we will always take $\tilde{p}^{\balpha \bbeta}_{\bmu} \propto \delta^{\balpha \bbeta}_{\bmu}$.}
+\begin{align}
+\label{eq:tensorprods_2t2}
+\tilde{p}^{\alpha_1\alpha_2\beta_1 \beta_2}_{[2]_9 \otimes [2]_9 \to [4]_9,\mu_1 \mu_2\mu_3\mu_4}&= \delta^{\alpha_1}_{\mu_1} \delta^{\alpha_2}_{\mu_2}\delta^{\beta_1}_{\mu_3}\delta^{\beta_2}_{\mu_4} \equiv \delta^{\balpha \bbeta}_{\bmu}
+\,,&&&
+\tilde{p}^{\balpha\bbeta}_{[2]_9 \otimes [2]_9 \to [3,1]_9,\bmu}&= \delta^{\balpha \bbeta}_{\bmu}\,,\\
+\tilde{p}^{\balpha\bbeta}_{[2]_9 \otimes [2]_9 \to [2,2]_9,\bmu}&= \sqrt{3} \delta^{\balpha \bbeta}_{\bmu}\,, &&&
+\tilde{p}^{\alpha_1\alpha_2\beta_1 \beta_2}_{[2]_9 \otimes [2]_9 \to [2]_9,\mu_1 \mu_2}&    = \sqrt{\frac{36}{91}} \delta^{\alpha_1}_{\mu_1} \delta^{\beta_2}_{\mu_2} \eta^{\alpha_2 \beta_1}\,,
+\nonumber\\
+\tilde{p}^{\alpha_1\alpha_2\beta_1 \beta_2}_{[2]_9 \otimes [2]_9 \to [1,1]_9,\mu_1 \mu_2}&= \sqrt{\frac{4}{11}} \delta^{\alpha_1}_{\mu_1} \delta^{\beta_2}_{\mu_2} \eta^{\alpha_2 \beta_1}\,, &&& \tilde{p}^{\alpha_1\alpha_2\beta_1 \beta_2}_{[2]_9 \otimes [2]_9 \to \bullet_9}&= \sqrt{\frac{1}{44}} \eta^{\alpha_1\beta_1} \eta^{\alpha_2 \beta_2}\,.
+\nonumber
+\end{align}
+The remaining tensor products have some additional subtleties. Taking the cross term in the tensor product
+\beq
+\ydiagram{2}_{\,9} \otimes \, \ydiagram{1,1,1}_{\,9}= 
+\ydiagram{1,1,1}_{\,9}
+\oplus \,      \ydiagram{2,1}_{\,9}
+\oplus \, \ydiagram{2,1,1,1}_{\,9}
+\oplus \,  \ydiagram{3,1,1}_{\,9}\,,
+\eeq
+we note that there is a 4 row tensor appearing. When contracted with the amplitudes, this contribution will vanish, because we have only 3 independent vectors. However, from the point of view of the projector equation, we must still have 
+\bea
+\pi_{[2]_9}^{\balpha;\bgamma}\pi_{[1,1,1]_9}^{\bbeta;\bdelta}&= \sum_{\rho_C \in S'}p^{\balpha \bbeta}_{[2]_9 \otimes [1,1,1]_9 \to \rho_C,\bmu}
+\pi_{\rho_C}^{\bmu;\bnu}
+p^{\bgamma \bdelta}_{[2]_9 \otimes [1,1,1]_9 \to \rho_C,\bnu}\,,\\
+S'&=\left\lbrace [3,1,1]_9 \,, [1,1,1]_9 \,, [2,1]_9\,, [2,1,1,1]_9\right\rbrace\,. 
+\eea{eq:tensorprod_2_111_proj}
+with a non-vanishing $p^{\balpha \bbeta}_{[2]_9 \otimes [1,1,1]_9 \to [2,1,1,1]_9,\bmu}$. However, by contracting 
+directly with the amplitudes $A^{\balpha}_{[2]_9}A^{\bbeta}_{[1,1,1]_9}A^{\bgamma}_{[2]_9}A^{\bdelta}_{[1,1,1]_9}$ we automatically eliminate the contribution of this tensor (this also avoids the computation of a complicated 4 row projector). With this in mind, we use again \eqref{eq:symmetrize_factors}, with the trial projectors
+\bea
+\tilde{p}^{\balpha \bbeta}_{[2]_9 \otimes [1,1,1]_9 \to [3,1,1],\bmu} &= \sqrt{\frac{5}{4}} \delta^{\alpha_1}_{\mu_1} \delta^{\alpha_2}_{\mu_2}\delta^{\beta_1}_{\mu_3}\delta^{\beta_2}_{\mu_4}\delta^{\beta_3}_{\mu_5} \equiv \sqrt{\frac{5}{4}} \delta^{\balpha \bbeta}_{\bmu}\,, \\ \tilde{p}^{\balpha \bbeta}_{[2]_9 \otimes [1,1,1]_9 \to [1,1,1],\bmu} &= \sqrt{\frac{585}{352}} \eta^{\alpha_2 \beta_1} \delta^{\alpha_1}_{\mu_1}\delta^{\beta_2}_{\mu_2}\delta^{\beta_3}_{\mu_3}\,,\,
+\tilde{p}^{\balpha \bbeta}_{[2]_9 \otimes [1,1,1]_9 \to [2,1],\bmu} =  \eta^{\alpha_2 \beta_1} \delta^{\alpha_1}_{\mu_1}\delta^{\beta_2}_{\mu_2}\delta^{\beta_3}_{\mu_3}\,.
+\eea{eq:prod_2_111_trial}
+With these tensors and setting $p^{\balpha \bbeta}_{[2]_9 \otimes [1,1,1]_9 = [2,1,1,1]_9,\bmu}\to0$, which suffices for our purposes, we have that the identity (\ref{eq:tensorprod_2_111_proj}) holds, but only when inserted between the amplitudes.
+
+The remaining tensor product
+\bea
+\ydiagram{1,1,1}_{\,9} \otimes \, \ydiagram{1,1,1}_{\,9}={}& 
+\ydiagram{2,2,1,1}_{\,9}
+\oplus \,      \ydiagram{2,1,1,1}_{\,9}
+\oplus \, \ydiagram{1,1,1,1}_{\,9}
+\oplus \,  \ydiagram{2,2,2}_{\,9}\\
+&\oplus \,  \ydiagram{2,1,1}_{\,9}
+\oplus \,  \ydiagram{2,2}_{\,9}
+\oplus \,  \ydiagram{1,1,1}_{\,9}
+\oplus \,  \ydiagram{2}_{\,9}
+\oplus \,  \ydiagram{1,1}_{\,9}
+\oplus \,  \bullet_{\,9}\,,
+\eea{eq:tensor_111_111}
+can be dealt with similarly, by contracting with only 3 independent polarizations instead of six, eliminating the contributions of the complicated 4 row tensors. The only non-vanishing contributions to projectors turn out to be
+\bea
+\pi_{[1,1,1]_9}^{\balpha;\bgamma}\pi_{[1,1,1]_9}^{\bbeta;\bdelta}&= \sum_{\rho_C \in S''}p^{\balpha \bbeta}_{[1,1,1]_9 \otimes [1,1,1]_9 \to \rho_C,\bmu}
+\pi_{\rho_C}^{\bmu;\bnu}
+p^{\bgamma \bdelta}_{[1,1,1]_9 \otimes [1,1,1]_9 \to \rho_C,\bnu}\,,\\
+S''&=\left\lbrace [2,2,2]_9 \,, [2,2]_9 \,, [2]_9\,, \bullet_9\right\rbrace\,.
+\eea{eq:tensor_111_111_proj}
+where we used \eqref{eq:symmetrize_factors} and the trial projectors
+\bea
+\tilde{p}^{\balpha \bbeta}_{[1,1,1]_9 \otimes [1,1,1]_9 \to [2,2,2]_9,\bmu} &= \sqrt{8} \delta^{\alpha_1}_{\mu_1} \delta^{\alpha_2}_{\mu_2}\delta^{\alpha_3}_{\mu_3}\delta^{\beta_1}_{\mu_4}\delta^{\beta_2}_{\mu_5}\delta^{\beta_3}_{\mu_6} \equiv \sqrt{8} \delta^{\balpha \bbeta}_{\bmu}\,,\\
+\tilde{p}^{\balpha \bbeta}_{[1,1,1]_9 \otimes [1,1,1]_9 \to [2,2]_9,\bmu}& = \sqrt{\frac{12}{5}} \eta^{\alpha_1 \beta_1} \delta^{\alpha_2}_{\mu_1} \delta^{\beta_3}_{\mu_2}\delta^{\alpha_3}_{\mu_3}\delta^{\beta_2}_{\mu_4} \,,\\
+\tilde{p}^{\balpha \bbeta}_{[1,1,1]_9 \otimes [1,1,1]_9 \to [2]_9,\bmu} &= \sqrt{\frac{3}{7}} \eta^{\alpha_1 \beta_1} \eta^{\alpha_2 \beta_3} \delta^{\alpha_3}_{\mu_1}\delta^{\beta_2}_{\mu_2}\,,\\
+\tilde{p}^{\balpha \bbeta}_{[1,1,1]_9 \otimes [1,1,1]_9 \to \bullet_9} &= \sqrt{\frac{1}{84}} \eta^{\alpha_1 \beta_1} \eta^{\alpha_2 \beta_2}\eta^{\alpha_3 \beta_3} \,,
+\eea{eq:naive_proj_111_111}
+where the unusual index ordering is to ensure that the resulting tensor doesn't vanish when we act with $\pi_{[1,1,1]_9}$ on the trial projectors $\tilde{p}$. 
+This turns (\ref{eq:tensor_111_111_proj}) into an identity which holds for two identical $[1,1,1]_9$ tensors, as will be the case for our amplitudes. 

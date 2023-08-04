@@ -1,0 +1,456 @@
+
+\chapter{Appendices for Optical theorem} % Main appendix title
+\label{AppendixRegge}
+
+% Write your Appendix content here.
+
+
+\section{Additional examples of string amplitudes}
+\label{sec:examples}
+In this appendix we provide some additional examples and comments on the chiral and closed string amplitudes.
+\subsection{Chiral Amplitudes}
+
+In the chiral case it is trivial to reproduce level 0. Here we have only the massless particles with residue
+\beq
+\sqrt{\underset{k^2=0}{\Res} A^{12P_1P_2} (k, q_{12})}  = \epsilon_1^{\mu} A^{15P_1}_{\mu \alpha} \pi_{[1]_8}^{\alpha;\beta} A^{52P_2}_{\beta \nu}\epsilon_2^{\nu}=\epsilon_1^{\mu} \eta_{\mu \alpha} \eta^{\alpha \beta}\eta_{\beta \nu} \epsilon_2^\nu= \epsilon_1\cdot \epsilon_2\,,
+\eeq
+where we have used $A^{15P_1}_{\mu \alpha}= \eta_{\mu \alpha}$ and $\pi_{[1]_8}^{\alpha;\beta}=\eta^{\alpha \beta}$. At higher levels we will have non-trivial three-point functions. It will be convenient to absorb the external polarization into the amplitude
+\beq
+\epsilon_1^{\mu} A^{15P_1}_{n,\, \mu,\rho_5, \bnu} \equiv A^{15P_1}_{n,\rho_5, \bnu}\,,
+\eeq
+to be more compact in writing the amplitudes (we are using the integer $n$ to label the mass level of the state).
+
+From the spectrum described above, we will have two amplitudes at level 1 which are $A^{15P_1}_{1,[1,1,1]_9,\balpha}$ and $A^{15P_1}_{1,[2]_9,\balpha}$.\\
+Here we
+will  keep in mind the Young diagrams explained above, along with the index symmetrization that comes with them, packaged in our boldface multi-index notation.
+The explicit level 1 three point amplitudes in the IIB superstring are
+\beq
+A^{15P_1}_{1,[1,1,1]_9,\balpha}= \frac{\sqrt{6}}{m_1} \epsilon_{1 \alpha_1}q_{1 \alpha_2} v_{\alpha_3}~,~ A^{15P_1}_{1,[2]_9,\balpha}
+=-\sqrt{\frac{\alpha'}{2}}\left(\epsilon_{1 \alpha_1} q_{1 \alpha_2} + \frac{1}{2} (q_1 \cdot \epsilon_1) v_{\alpha_1}v_{\alpha_2} \right) \,,
+\eeq
+with $m_1=2/\sqrt{\alpha'}$ being the mass at level 1, and $q_1$ is the transverse momentum carried by the Pomeron $P_1$ (similarly for $q_2$ and the Pomeron $P_2$). All the relative factors between the different tensor structures and the overall normalization are fixed by computing the three-point amplitudes with the correctly normalized vertex operators for the excited NS states in IIB super string theory \cite{DAppollonio:2013mgj}. We can now contract the three-point amplitudes on each side using the projector for the appropriate representation and check the residue
+\bea
+\sqrt{\underset{k^2=-4/\alpha'}{\Res} A^{12P_1P_2} (k, q_{12})}&= A^{15P_1}_{1,\balpha}
+\pi_{[1,1,1]_9}^{\balpha;\bbeta} A^{52P_1}_{1,\bbeta}
++A^{15P_2}_{1,\balpha} \pi_{[2]_9}^{\alpha;\bbeta} A^{52P_2}_{1,\bbeta}\\
+&=\frac{\alpha'}{2} (-q_1\cdot q_2)(\epsilon_1\cdot \epsilon_2),
+\eea{eq:level1_res_flat}
+where we refrained from writing the representation labels in the amplitudes since they are contracted with a projector with the appropriate label.
+This matches what we extracted from $A^{\alpha_1 \alpha_2}(q_{12})$, or equivalently from the vertex function. We can continue this procedure to the second level, where mixed symmetry tensors appear for the first time. For example, the $[2,1,1]_9$ tensor has the amplitude
+\beq
+A^{15P_1}_{2,[2,1,1]_9,\balpha}= \sqrt{\frac{3}{8}} \sqrt{\frac{\alpha'}{2}}
+\left(\frac{4}{m_2}q_{1 \alpha_2} +2 v_{\alpha_2}\right) \epsilon_{1 \alpha_1} q_{1 \alpha_3}v_{\alpha_4},
+\eeq
+where $m_2=\sqrt{8/\alpha'}$ is the mass at level 2. It is important to emphasize that the level 2 amplitude contains a term with more powers of $\alpha'$ than any of the level 1 amplitudes. This would lead to further suppression in $1/\sqrt{\lambda}$ in the AdS theory.\footnote{Clearly, states with higher spin, which can only appear at higher levels, can have higher powers of $\alpha'$ leading to a spin-dependent suppression of couplings, as is expected from the general arguments of \cite{Costa:2017twz,Meltzer:2017rtf}.}
+
+The remaining amplitudes can be found in section 5 of \cite{DAppollonio:2013mgj}. For our purposes it is just important to know that the amplitudes satisfy
+\bea
+\sqrt{\underset{k^2=-8/\alpha'}{\Res} A^{12P_1P_2} (k, q_{12})}&=
+\sum_{\rho \in S}A^{15P_1}_{2,\rho,\balpha}  \pi_{\rho}^{\balpha;\bbeta}A^{52P_2}_{2,\rho,\bbeta} = \frac{(-\frac{\alpha'}{2}q_1\cdot q_2)_2}{2!} (\epsilon_1\cdot \epsilon_2)\,,\\
+S & =\left\lbrace[3]_9 ~,~ [2,1,1]_9 ~,~[2,1]_9 ~,~[1,1]_9 ~,~[1]_9 \right\rbrace  ,
+\eea{eq:level2_res_flat}
+which we explicitly checked. More generally, we can conclude that the square root of the residue at mass level $n$ of $A^{12P_1P_2}(k,q_{12})$ can be recovered by unitarity if we account for all the covariant SO(9) representations corresponding to the massive NS states. This gives a microscopic interpretation for the vertex function at a given mass level. As already mentioned, summing over all these mass levels reconstructs the full vertex function.
+
+
+\subsection{Closed string amplitudes}
+Here we consider the simple but instructive level 0 case for the closed string amplitudes, where the little group is SO(8). The square of the residue reads
+\begin{align}
+	\label{eq:level0_closed_so8}
+	{} & A^{15P_1}_{L1, \alpha}A^{15P_1}_{R1,\beta} \; \left( \pi_{[1]_8}^{\alpha ;\gamma}\pi_{[1]_8}^{\beta ;\delta} \right) \;  A^{52P_2}_{L1,\gamma}A^{52P_2}_{R1\delta} \\
+	   & = \hspace{-.4cm} \sum_{\rho_C=[2]_8,[1,1]_8,\bullet_8} \hspace{-.4cm}   A^{15P_1}_{L1, \alpha}A^{15P_1}_{R1,\beta}(
+	p^{\alpha \beta}_{[1]_8 \otimes [1]_8 \to \rho_C,\mu_1 \mu_2}
+	\pi_{\rho_C}^{\mu_1 \mu_2;\nu_1 \nu_2}
+	p^{\gamma \delta}_{[1]_8 \otimes [1]_8 \to \rho_C,\nu_1 \nu_2})A^{52P_2}_{L1,\gamma}A^{52P_2}_{R1\delta}
+	= (\epsilon_1\cdot \epsilon_2)^2  \,,
+	\nonumber
+\end{align}
+where we used the group theoretical tensor product identity for projectors
+\beq
+\pi_{[1]_8}^{\alpha ;\gamma}\pi_{[1]_8}^{\beta ;\delta} \; = \sum_{\rho_C=[2]_8,[1,1]_8,\bullet_8} p^{\alpha \beta}_{[1]_8 \otimes [1]_8 \to \rho_C,\mu_1 \mu_2}
+\pi_{\rho_C}^{\mu_1 \mu_2;\nu_1 \nu_2}
+p^{\gamma \delta}_{[1]_8 \otimes [1]_8 \to \rho_C,\nu_1 \nu_2}\,.
+\eeq
+We can solve this equation for the tensors $p$ by contracting with polarization vectors for the left and right modes on both sides of the projector ($z_L,z_R$ and $\zb_L,\zb_R$) and equating the polynomials in scalar products of $z$'s. In practice we will always use this procedure, or a similar one where we contract with amplitudes to fix coefficients. In this case it is trivial to directly check that
+\begin{align}
+	\pi_{[1]_8}^{\alpha ;\gamma}\pi_{[1]_8}^{\beta ;\delta} \;
+	 & = \; \eta^{\alpha \gamma}\eta^{\beta \delta}	\;\equiv \;  \pi_{[2]_8}^{\alpha \beta;\gamma \delta} + \pi_{[1,1]_8}^{\alpha \beta;\gamma \delta} + \frac{1}{8} \eta^{\alpha \beta} \eta^{\gamma \delta}
+	\label{eq:level0_closed_check}
+	\\
+	 & = \left(\frac{1}{2}( \eta^{\alpha \gamma}\eta^{\beta \delta}+\eta^{\alpha \delta}\eta^{\beta \gamma})-\frac{1}{8} \eta^{\alpha \beta}\eta^{\gamma \delta}\right)
+	+ \frac{1}{2}(\eta^{\alpha \gamma}\eta^{\beta \delta}-\eta^{\alpha \delta}\eta^{\beta \gamma}) + \frac{1}{8}(\eta^{\alpha \beta}\eta^{\gamma \delta})\,,
+	\nonumber
+\end{align}
+where, obviously $p^{\alpha \beta}_{[1]_8 \otimes [1]_8 \to [2]_8,\mu_1 \mu_2}=\delta^\alpha_{\mu_1}\delta^\beta_{\mu_2} ~,~p^{\alpha \beta}_{[1]_8 \otimes [1]_8 \to [1,1]_8,\mu_1 \mu_2}=\delta^\alpha_{\mu_1}\delta^\beta_{\mu_2}$ and $p^{\alpha \beta}_{[1]_8 \otimes [1]_8 \to \bullet_8}= \sqrt{\frac{1 }{8}}\eta^{\alpha\beta}$ extracts traces, thereby projecting to a singlet state.
+
+\section{Tensor products for projectors}
+\label{sec:tensorprodprojs}
+
+
+In this appendix we explain how to realize the tensor product of open string states into closed string states in terms of the corresponding projectors/tensors. We will consider mass level $n=1$. The chiral spectrum at this level is
+\beq
+n=1:\quad \ydiagram{2}_{\,9} \oplus \, \ydiagram{1,1,1}_{\,9}\,.
+\eeq
+We square the irreps using the tensor product as in the main text and analyze the decomposition term by term. For example, taking $\rho_L= \rho_R = [2]_9$ corresponds to the tensor product
+\beq
+\ydiagram{2}_{\,9} \otimes \, \ydiagram{2}_{\,9}=
+\ydiagram{4}_{\,9}
+\oplus \,      \ydiagram{3,1}_{\,9}
+\oplus \, \ydiagram{2,2}_{\,9}
+\oplus \,  \ydiagram{2}_{\,9}
+\oplus \,      \ydiagram{1,1}_{\,9}
+\oplus \,      \bullet_{\,9}\,,
+\eeq
+which we want to write in terms of SO(9) tensors as
+\bea
+\pi_{[2]_9}^{\balpha;\bgamma}\pi_{[2]_9}^{\bbeta;\bdelta}&= \sum_{\rho_C \in S}p^{\balpha \bbeta}_{[2]_9 \otimes [2]_9 \to \rho_C,\bmu}
+\pi_{\rho_C}^{\bmu;\bnu}
+p^{\bgamma \bdelta}_{[2]_9 \otimes [2]_9 \to \rho_C,\bnu}\,,\\
+S&=\left\lbrace [4]_9 \,, [3,1]_9 \,, [2,2]_9\,, [2]_9\,, [1,1]_9\,, \bullet_9\right\rbrace\,.
+\eea{eq:level1_squared_proj}
+It will be useful to manifestly symmetrize the $\balpha$ and $\bbeta$ indices of the tensors $p$, in order to write down these tensors more compactly. Therefore, we will use
+\beq
+p^{\balpha \bbeta}_{\rho_L \otimes \rho_R \to \rho_C,\bmu} \equiv \pi^{\balpha}_{\rho_L;\balpha'} \pi^{\bbeta}_{\rho_R;\bbeta'} \tilde{p}^{\balpha' \bbeta'}_{\rho_L \otimes \rho_R \to \rho_C,\bmu},
+\label{eq:symmetrize_factors}
+\eeq
+and we will present the simpler trial tensors $\tilde{p}$ for each case.
+In this case $\rho_L=\rho_R=[2]_9$ and we used the trial tensors\footnote{For irreps with the same number of indices as the tensor product we will always take $\tilde{p}^{\balpha \bbeta}_{\bmu} \propto \delta^{\balpha \bbeta}_{\bmu}$.}
+\begin{align}
+	\label{eq:tensorprods_2t2}
+	\tilde{p}^{\alpha_1\alpha_2\beta_1 \beta_2}_{[2]_9 \otimes [2]_9 \to [4]_9,\mu_1 \mu_2\mu_3\mu_4} & = \delta^{\alpha_1}_{\mu_1} \delta^{\alpha_2}_{\mu_2}\delta^{\beta_1}_{\mu_3}\delta^{\beta_2}_{\mu_4} \equiv \delta^{\balpha \bbeta}_{\bmu}
+	\,,                                                                                               &                                                                                                                                             &  &
+	\tilde{p}^{\balpha\bbeta}_{[2]_9 \otimes [2]_9 \to [3,1]_9,\bmu}                                  & = \delta^{\balpha \bbeta}_{\bmu}\,,                                                                                                                                                                                                                                                                            \\
+	\tilde{p}^{\balpha\bbeta}_{[2]_9 \otimes [2]_9 \to [2,2]_9,\bmu}                                  & = \sqrt{3} \delta^{\balpha \bbeta}_{\bmu}\,,                                                                                                &  &   &
+	\tilde{p}^{\alpha_1\alpha_2\beta_1 \beta_2}_{[2]_9 \otimes [2]_9 \to [2]_9,\mu_1 \mu_2}           & = \sqrt{\frac{36}{91}} \delta^{\alpha_1}_{\mu_1} \delta^{\beta_2}_{\mu_2} \eta^{\alpha_2 \beta_1}\,,
+	\nonumber                                                                                                                                                                                                                                                                                                                                                                                                          \\
+	\tilde{p}^{\alpha_1\alpha_2\beta_1 \beta_2}_{[2]_9 \otimes [2]_9 \to [1,1]_9,\mu_1 \mu_2}         & = \sqrt{\frac{4}{11}} \delta^{\alpha_1}_{\mu_1} \delta^{\beta_2}_{\mu_2} \eta^{\alpha_2 \beta_1}\,,                                         &  &   & \tilde{p}^{\alpha_1\alpha_2\beta_1 \beta_2}_{[2]_9 \otimes [2]_9 \to \bullet_9} & = \sqrt{\frac{1}{44}} \eta^{\alpha_1\beta_1} \eta^{\alpha_2 \beta_2}\,.
+	\nonumber
+\end{align}
+The remaining tensor products have some additional subtleties. Taking the cross term in the tensor product
+\beq
+\ydiagram{2}_{\,9} \otimes \, \ydiagram{1,1,1}_{\,9}=
+\ydiagram{1,1,1}_{\,9}
+\oplus \,      \ydiagram{2,1}_{\,9}
+\oplus \, \ydiagram{2,1,1,1}_{\,9}
+\oplus \,  \ydiagram{3,1,1}_{\,9}\,,
+\eeq
+we note that there is a 4 row tensor appearing. When contracted with the amplitudes, this contribution will vanish, because we have only 3 independent vectors. However, from the point of view of the projector equation, we must still have
+\bea
+\pi_{[2]_9}^{\balpha;\bgamma}\pi_{[1,1,1]_9}^{\bbeta;\bdelta}&= \sum_{\rho_C \in S'}p^{\balpha \bbeta}_{[2]_9 \otimes [1,1,1]_9 \to \rho_C,\bmu}
+\pi_{\rho_C}^{\bmu;\bnu}
+p^{\bgamma \bdelta}_{[2]_9 \otimes [1,1,1]_9 \to \rho_C,\bnu}\,,\\
+S'&=\left\lbrace [3,1,1]_9 \,, [1,1,1]_9 \,, [2,1]_9\,, [2,1,1,1]_9\right\rbrace\,.
+\eea{eq:tensorprod_2_111_proj}
+with a non-vanishing $p^{\balpha \bbeta}_{[2]_9 \otimes [1,1,1]_9 \to [2,1,1,1]_9,\bmu}$. However, by contracting
+directly with the amplitudes $A^{\balpha}_{[2]_9}A^{\bbeta}_{[1,1,1]_9}A^{\bgamma}_{[2]_9}A^{\bdelta}_{[1,1,1]_9}$ we automatically eliminate the contribution of this tensor (this also avoids the computation of a complicated 4 row projector). With this in mind, we use again \eqref{eq:symmetrize_factors}, with the trial projectors
+\bea
+\tilde{p}^{\balpha \bbeta}_{[2]_9 \otimes [1,1,1]_9 \to [3,1,1],\bmu} &= \sqrt{\frac{5}{4}} \delta^{\alpha_1}_{\mu_1} \delta^{\alpha_2}_{\mu_2}\delta^{\beta_1}_{\mu_3}\delta^{\beta_2}_{\mu_4}\delta^{\beta_3}_{\mu_5} \equiv \sqrt{\frac{5}{4}} \delta^{\balpha \bbeta}_{\bmu}\,, \\ \tilde{p}^{\balpha \bbeta}_{[2]_9 \otimes [1,1,1]_9 \to [1,1,1],\bmu} &= \sqrt{\frac{585}{352}} \eta^{\alpha_2 \beta_1} \delta^{\alpha_1}_{\mu_1}\delta^{\beta_2}_{\mu_2}\delta^{\beta_3}_{\mu_3}\,,\,
+\tilde{p}^{\balpha \bbeta}_{[2]_9 \otimes [1,1,1]_9 \to [2,1],\bmu} =  \eta^{\alpha_2 \beta_1} \delta^{\alpha_1}_{\mu_1}\delta^{\beta_2}_{\mu_2}\delta^{\beta_3}_{\mu_3}\,.
+\eea{eq:prod_2_111_trial}
+With these tensors and setting $p^{\balpha \bbeta}_{[2]_9 \otimes [1,1,1]_9 = [2,1,1,1]_9,\bmu}\to0$, which suffices for our purposes, we have that the identity (\ref{eq:tensorprod_2_111_proj}) holds, but only when inserted between the amplitudes.
+
+The remaining tensor product
+\bea
+\ydiagram{1,1,1}_{\,9} \otimes \, \ydiagram{1,1,1}_{\,9}={}&
+\ydiagram{2,2,1,1}_{\,9}
+\oplus \,      \ydiagram{2,1,1,1}_{\,9}
+\oplus \, \ydiagram{1,1,1,1}_{\,9}
+\oplus \,  \ydiagram{2,2,2}_{\,9}\\
+&\oplus \,  \ydiagram{2,1,1}_{\,9}
+\oplus \,  \ydiagram{2,2}_{\,9}
+\oplus \,  \ydiagram{1,1,1}_{\,9}
+\oplus \,  \ydiagram{2}_{\,9}
+\oplus \,  \ydiagram{1,1}_{\,9}
+\oplus \,  \bullet_{\,9}\,,
+\eea{eq:tensor_111_111}
+can be dealt with similarly, by contracting with only 3 independent polarizations instead of six, eliminating the contributions of the complicated 4 row tensors. The only non-vanishing contributions to projectors turn out to be
+\bea
+\pi_{[1,1,1]_9}^{\balpha;\bgamma}\pi_{[1,1,1]_9}^{\bbeta;\bdelta}&= \sum_{\rho_C \in S''}p^{\balpha \bbeta}_{[1,1,1]_9 \otimes [1,1,1]_9 \to \rho_C,\bmu}
+\pi_{\rho_C}^{\bmu;\bnu}
+p^{\bgamma \bdelta}_{[1,1,1]_9 \otimes [1,1,1]_9 \to \rho_C,\bnu}\,,\\
+S''&=\left\lbrace [2,2,2]_9 \,, [2,2]_9 \,, [2]_9\,, \bullet_9\right\rbrace\,.
+\eea{eq:tensor_111_111_proj}
+where we used \eqref{eq:symmetrize_factors} and the trial projectors
+\bea
+\tilde{p}^{\balpha \bbeta}_{[1,1,1]_9 \otimes [1,1,1]_9 \to [2,2,2]_9,\bmu} &= \sqrt{8} \delta^{\alpha_1}_{\mu_1} \delta^{\alpha_2}_{\mu_2}\delta^{\alpha_3}_{\mu_3}\delta^{\beta_1}_{\mu_4}\delta^{\beta_2}_{\mu_5}\delta^{\beta_3}_{\mu_6} \equiv \sqrt{8} \delta^{\balpha \bbeta}_{\bmu}\,,\\
+\tilde{p}^{\balpha \bbeta}_{[1,1,1]_9 \otimes [1,1,1]_9 \to [2,2]_9,\bmu}& = \sqrt{\frac{12}{5}} \eta^{\alpha_1 \beta_1} \delta^{\alpha_2}_{\mu_1} \delta^{\beta_3}_{\mu_2}\delta^{\alpha_3}_{\mu_3}\delta^{\beta_2}_{\mu_4} \,,\\
+\tilde{p}^{\balpha \bbeta}_{[1,1,1]_9 \otimes [1,1,1]_9 \to [2]_9,\bmu} &= \sqrt{\frac{3}{7}} \eta^{\alpha_1 \beta_1} \eta^{\alpha_2 \beta_3} \delta^{\alpha_3}_{\mu_1}\delta^{\beta_2}_{\mu_2}\,,\\
+\tilde{p}^{\balpha \bbeta}_{[1,1,1]_9 \otimes [1,1,1]_9 \to \bullet_9} &= \sqrt{\frac{1}{84}} \eta^{\alpha_1 \beta_1} \eta^{\alpha_2 \beta_2}\eta^{\alpha_3 \beta_3} \,,
+\eea{eq:naive_proj_111_111}
+where the unusual index ordering is to ensure that the resulting tensor doesn't vanish when we act with $\pi_{[1,1,1]_9}$ on the trial projectors $\tilde{p}$.
+This turns (\ref{eq:tensor_111_111_proj}) into an identity which holds for two identical $[1,1,1]_9$ tensors, as will be the case for our amplitudes.
+
+
+
+\section{Branching relations for projectors}
+\label{sec:branchingprojs}
+
+
+In this Appendix we provide a detailed account of all the branching relations for closed string state projectors utilized in section \ref{sec:massive_tree_flat}.
+Let us start by recalling the SO(9) closed string states at level 1
+\begin{align}
+	 & \left(\ydiagram{2}_{\,9} \oplus \, \ydiagram{1,1,1}_{\,9}\right)^{2} =
+	\ydiagram{2,2,2}_{\,9}
+	\oplus \,      \ydiagram{2,2,1,1}_{\,9}
+	\oplus \, 2 \, \ydiagram{3,1,1}_{\,9}
+	\oplus \, 3 \, \ydiagram{2,1,1,1}_{\,9}
+	\oplus \,      \ydiagram{4}_{\,9}
+	\oplus \,      \ydiagram{3,1}_{\,9}
+	\nonumber                                                                 \\
+	 & \oplus \, 2 \, \ydiagram{2,2}_{\,9}
+	\oplus \,      \ydiagram{2,1,1}_{\,9}
+	\oplus \,      \ydiagram{1,1,1,1}_{\,9}
+	\oplus \, 2 \, \ydiagram{2,1}_{\,9}
+	\oplus \, 3 \, \ydiagram{1,1,1}_{\,9}
+	\oplus \, 2 \, \ydiagram{2}_{\,9}
+	\oplus \, 2 \, \ydiagram{1,1}_{\,9}
+	\oplus \, 2 \, \bullet
+	\,.
+	\label{eq:closed_states_level_1}
+\end{align}
+We recall that states with more than 3 columns will not contribute as we only have 3 different vectors to anti-symmetrize. We are going to perform the branching
+\beq
+\text{SO(9)} ~\rightarrow~ \text{SO(4)}\times \text{SO(5)}|_\bullet \,,
+\eeq
+where we denote the projection to singlets of SO(5) by $|_\bullet$. Note that certain representations can naturally be restricted to SO(4) by simply taking the 5d subset of 10d indices. It is obvious that
+\beq
+\ydiagram{1,1}_{\,9}\,\,\rightarrow\,\, \ydiagram{1,1}_{\,4}\,,\qquad \bullet_{\,9} \,\, \rightarrow \,\, \bullet_{\,4}\,.
+\eeq
+Additionally, the projector for these representations is identical for SO(9) and SO(4) (up to restriction of the indices $\alpha \to a \,,\, \beta \to b \,,\, \mu \to m \,,\, \dots$)
+\beq
+\pi_{[1,1]_9}^{a_1a_2;b_1b_2} = \pi_{[1,1]_4}^{a_1a_2;b_1b_2}= \frac{1}{2}\left(\eta^{a_1 b_1}\eta^{a_2 b_2}-\eta^{a_1 b_2}\eta^{a_2 b_1} \right) \,.
+\eeq
+Other representations admit a direct restriction, but can also give additional irreps, by the creation of SO(5) singlets, through the contraction of indices with legs on the compact manifold. For example the spin 2 states branch as
+\beq
+\ydiagram{2}_{\,9}\,\,\rightarrow\,\, \ydiagram{2}_{\,4} \,\, \oplus \,\, \bullet_{\,4}\,.
+\eeq
+The spin 2 on the RHS is interpreted as the restriction of indices to the SO(4) and the singlet as a trace over the compact space indices. In terms of projectors the statement is simply
+\beq
+\pi_{[2]_9}^{a_1a_2;b_1b_2} = \pi_{[2]_4}^{a_1a_2;b_1b_2}+ \frac{5}{36}\eta^{a_1 a_2}\eta^{b_1 b_2}\,.
+\eeq
+Similarly, for the spin 4 case
+\beq
+\ydiagram{4}_{\,9}\,\,\rightarrow\,\, \ydiagram{4}_{\,4} \,\, \oplus \,\, \ydiagram{2}_{\,4} \,\, \oplus \,\,\bullet_{\,4},
+\eeq
+and the projector equation is
+\beq
+\pi_{[4]_9}^{\mathbf{a};\mathbf{b}}
+= \sum_{\rho =[4]_4,[2]_4,\bullet_4}
+b^{\mathbf{a}}_{[4]_9 \to \rho,\mathbf{m}} \
+\pi_{\rho}^{\mathbf{m};\mathbf{n}} \
+b^{\mathbf{b}}_{[4]_9 \to \rho,\mathbf{n}}\,.
+\eeq
+It will be again convenient to manifestly symmetrize the tensors, in order to present them more compactly. We define
+\beq
+b^{\mathbf{a}}_{\rho_C \to \rho,\mathbf{m}}\equiv \pi^{\mathbf{a}}_{\rho_C, \mathbf{a}'} \tilde{b}^{\mathbf{a'}}_{\rho_C \to \rho,\mathbf{m}}\,,
+\label{eq:branching_tensors_symmetrization}
+\eeq
+and then present a list of the simpler $\tilde{b}$. In this case we have
+\bea
+\tilde{b}^{a_1 a_2 a_3 a_4}_{[4]_9 \to [4]_4,m_1 m_2 m_3 m_4}&= \delta^{a_1}_{m_1}\delta^{a_2}_{m_2}\delta^{a_3}_{m_3}\delta^{a_4}_{m_4}\equiv \delta^ {\mathbf{a}}_{\mathbf{m}}\\
+\tilde{b}^{a_1 a_2 a_3 a_4}_{[4]_9 \to [2]_4,m_1 m_2 }&= \sqrt{\frac{39}{20}}\delta^{a_1}_ {m_1}\delta^{a_2}_ {m_2}\eta^{a_3 a_4} ~,~ \tilde{b}^{a_1 a_2 a_3 a_4}_{[4]_9 \to \bullet_4}
+= \sqrt{\frac{143}{280}}\eta^{a_1a_2}\eta^{a_3 a_4}\,.
+\eea{eq:branch4}
+The fact that the direct restriction of the irrep $[4]_9 \rightarrow[4]_4$ comes with coefficient 1 is a non-trivial consistency check of the previous procedure.
+
+There are other irreps that don't admit a direct restriction, because they have more than two columns (SO(4) Young tableaux have at most two columns, and traces can vanish by antisymmetry). For this we need to use the SO(4) Levi-Civita tensor. We will simply write it as $\varepsilon^{a_1a_2a_3a_4}$. The simplest case is the 3-form
+\beq
+\ydiagram{1,1,1}_{\,9}\,\,\rightarrow\,\, \ydiagram{1}_{\,4}\,,
+\eeq
+and the corresponding projector equation is
+\beq
+\pi_{[1,1,1]_9}^{\mathbf{a};\mathbf{b}} =\frac{1}{6} \varepsilon^{a_1 a_2 a_3}_{\,\,\,\,\qquad m} \pi_{[1]_4}^{m;n} \, \varepsilon^{\,\,\,b_1 b_2 b_3}_{n}= 4\, \pi_{[1,1,1,1]_4}^{\mathbf
+	{a} m;\mathbf{b} n}\,\pi_{[1]_4,m;n}\,,
+\label{eq:111_to_1}
+\eeq
+From the first equation we can read off
+\beq
+b^{a_1 a_2 a_3}_{[1,1,1]_9\to[1]_4,m}= \sqrt{\frac{1}{6}}\varepsilon^{a_1 a_2 a_3}_{\,\,\,\,\qquad m}\,.
+\eeq
+For the second equality in (\ref{eq:111_to_1}) we used the standard identity
+\beq
+\epsilon^{a_1a_2a_3a_4}\epsilon^{b_1b_2b_3b_4}= 4!\, \pi_{[1,1,1,1]_4}^{\mathbf{a};\mathbf{b}}\,.
+\eeq
+This is convenient to square the three-point amplitudes when computing the residue of the four-point function $A^{12P_1P_2}$.
+Using trace subtractions and products of epsilon tensors we can now derive branching identities for all the relevant irreps. Let us list the remaining identities, where we write the trace subtractions and the Levi-Civita tensors using the trial projectors $\tilde{b}$, but then appropriately symmetrize them through (\ref{eq:branching_tensors_symmetrization})
+\bea
+\ydiagram{2,1,1}_{\,9}\,\,&\rightarrow\,\, \ydiagram{2}_{\,4} \,\, \oplus \,\,  \ydiagram{1,1}_{\,4}\,,\\
+\tilde{b}^{a_1 a_2 a_3 a_4}_{[2,1,1]_9\to[2]_4,m_1 m_2}&=\sqrt{\frac{6}{4!}}  \varepsilon^{a_1a_3a_4}_{\qquad m_1}\delta^{a_2}_{m_2} ~,~ \tilde{b}^{a_1 a_2 a_3 a_4}_{[2,1,1]_9\to[1,1]_4,m_1 m_2}=\sqrt{\frac{42}{4!5}} \varepsilon^{a_1a_3a_4}_{\,\,\,\,\qquad m_1} \delta^{a_2}_{m_2}\,,\\
+\ydiagram{2,1}_{\,9}\,\,&\rightarrow\,\, \ydiagram{2,1}_{\,4} \,\, \oplus \,\,  \ydiagram{1}_{\,4}\,,\\
+\tilde{b}^{\mathbf{a
+}}_{[2,1]_9\to[2,1]_4,\mathbf{m}}&= \delta^{\mathbf{a}}_{\mathbf{m}} ~,~ \tilde{b}^{a_1 a_2 a_3}_{[2,1]_9\to[1]_4,m} = \sqrt{\frac{16}{5}} \delta^{a_1}_{m_1} \eta^{a_2 a_3}\,,\\
+\eea{eq:branching1}
+
+\bea
+\ydiagram{3,1,1}_{\,9}\,\,&\rightarrow\,\, \ydiagram{3}_{\,4} \,\, \oplus \,\,  \ydiagram{2,1}_{\,4}\,\, \oplus \,\,  \ydiagram{1}_{\,4}\,,\\
+\tilde{b}^{\mathbf{a}}_{[3,1,1]_9\to[3]_4,\mathbf{m}} &= \sqrt{\frac{36}{4!5}} \varepsilon^{a_1a_4a_5}_{\,\,\,\, \qquad m_1} \delta^ {a_2}_{m_2} \delta^ {a_3}_{m_3} ~,~ \tilde{b}^{\mathbf{a}}_{[3,1,1]_9\to[2,1]_4,\mathbf{m}} = \sqrt{\frac{1152}{4!25}} \varepsilon^{a_1a_4a_5}_{\,\,\,\, \qquad m_1} \delta^ {a_2}_{m_2} \delta^ {a_3}_{m_3}\,,\\
+\tilde{b}^{a_1 a_2 a_3 a_4 a_5}_{[3,1,1]_9\to[1]_4,m} &= \sqrt{\frac{22}{4! 5}} \varepsilon^{a_1a_4a_5}_{\,\,\,\, \qquad m} \eta^{a_2 a_3}\,,\\
+\ydiagram{3,1}_{\,9}\,\,&\rightarrow\,\, \ydiagram{3,1}_{\,4} \,\, \oplus \,\,  \ydiagram{1,1}_{\,4}\,\, \oplus \,\,  \ydiagram{2}_{\,4}\,,\\
+\tilde{b}^{\mathbf{a
+}}_{[3,1]_9\to[3,1]_4,\mathbf{m}}&= \delta^{\mathbf{a}}_{\mathbf{m}}, \tilde{b}^{\mathbf{a
+}}_{[3,1]_9\to[1,1]_4,\mathbf{m}}= \sqrt{\frac{11}{10}} \delta^{a_1}_{m_1} \eta^{a_2 a_3} \delta^{a_4}_{m_2}, \tilde{b}^{\mathbf{a
+}}_{[3,1]_9\to[2]_4,\mathbf{m}}= \sqrt{\frac{27}{10}} \delta^{a_1}_{m_1} \eta^{a_2 a_4} \delta^{a_3}_{m_2},\\
+\ydiagram{2,2}_{\,9}\,\,&\rightarrow\,\, \ydiagram{2,2}_{\,4} \,\, \oplus \,\,  \ydiagram{2}_{\,4}\,\, \oplus \,\, \bullet_{\,4}\,,\\
+\tilde{b}^{\mathbf{a
+}}_{[2,2]_9\to[2,2]_4,\mathbf{m}}&= \delta^{\mathbf{a}}_{\mathbf{m}} ~,~
+\tilde{b}^{\mathbf{a
+}}_{[2,2]_9\to[2]_4,\mathbf{m}}= \sqrt{\frac{42}{5}}  \delta^{a_1}_{m_1} \eta^{a_2 a_3} \delta^{a_4}_{m_2} ~,~\tilde{b}^{\mathbf{a
+}}_{[2,2]_9\to \bullet_4}= \sqrt{\frac{7}{5}}\eta^{a_1 a_4}\eta^{a_2 a_3} \,,\\
+\ydiagram{2,2,2}_{\,9}\,\,&\rightarrow\,\, \ydiagram{2}_{\,4} \,\, \oplus \,\, \bullet_{\,4}\,,\\
+\tilde{b}^{\mathbf{a
+}}_{[2,2,2]_9\to[2]_4,m_1 m_2}&= \frac{\sqrt{48}}{4!} \varepsilon^ {a_1 a_5 a_3}_{\,\,\,\,\qquad m_1} \varepsilon^ {a_4 a_2 a_6}_{\,\,\,\,\qquad m_2} ~,~
+\tilde{b}^{\mathbf{a
+}}_{[2,2,2]_9\to\bullet_4}= \frac{\sqrt{28}}{4!} \varepsilon^ {a_1 a_5 a_3}_{\,\,\,\,\qquad m} \varepsilon^ {a_4 a_2 a_6 m}  \,.
+\eea{eq:listofbranchings}
+Note that for the last diagram, which has more than 2 boxes in both columns, we are forced to use two pairs of epsilon tensors. Tensors with more than three rows aren't allowed by the 10d kinematics, but even if they were, their branchings do not contain singlets of SO(5) so we can simply discard them.
+\subsection{All 5d closed string amplitudes}
+\label{sec:all_5d_closed}
+Let us first write down in generality the 5d amplitudes using the relations derived in the main text. We have
+\beq
+A^{15P_1}_{n,\rho_L \otimes \rho_R \to \rho_C \to \rho,\mathbf{m}} =
+A^{15P_1}_{\r_L,\balpha} \ A^{15P_1}_{\r_R,\bbeta} \
+p^{\balpha \bbeta}_{\rho_L \otimes \rho_R \to \rho_C,\mathbf{a}}
+b^{\mathbf{a}}_{\rho_C \to \rho,\mathbf{m}}\,.
+\eeq
+With all the group theory identities established, we can enumerate all the amplitudes used in the main text to reproduce the residue at the cut with mass level 1. However, we again emphasize that we have not explicitly symmetrized the amplitudes by contracting with the respective projector, in order to maintain some compactness of the tables below. Namely, all amplitudes are to be contracted with the projector to the SO(4) irrep, and furthermore, amplitudes where $\text{rank}(\rho)=\text{rank}(\rho_L)+\text{rank}(\rho_R)$ are also not explicitly symmetrized with respect to $\rho_L$ and $\rho_R$ as in equation (\ref{eq:symmetrize_factors}).
+Additionally, for amplitudes where the $b$ tensors contain a Levi-Civita symbol, we write the square of the amplitude
+\beq
+\left( A_{\mathbf{m}}^{\rho_L\otimes \rho_R \to \rho_C \rightarrow \rho}\right) ^2 \equiv
+A_{\mathbf{m}}^{\rho_L\otimes \rho_R \to \rho_C \rightarrow \rho}\pi^ {\mathbf{m};\mathbf{n}}_{\rho}A_{\mathbf{n}}^{\rho_L\otimes \rho_R \to \rho_C \rightarrow \rho}\,,
+\eeq
+since the amplitude itself cannot be written nicely in terms of $v_\alpha, q_\alpha,\epsilon_\alpha$.
+With these caveats in mind, we list the amplitudes starting by the ones with the most indices\\
+\bea
+\ydiagram{4}_{\,4}\\
+A^{[2]_9\otimes[2]_9 \rightarrow[4]_9 \rightarrow[4]_4}_{m_1 m_2 m_3 m_4}&=
+\frac{1}{8} \alpha ' \left(2 \epsilon _{1,m _1} q_{1,m _2}+v_{m _1} v_{m _2} q_1\cdot \epsilon _1\right)\\ &\times
+\left(2 \epsilon _{1,m _3} q_{1,m _4}+v_{m _3} v_{m _4} q_1\cdot \epsilon _1\right) \,,\\
+&&\\
+2 \,\ydiagram{2,2}_{\,4}\\
+A^{[2]_9\otimes[2]_9 \rightarrow[2,2]_9 \rightarrow[2,2]_4}_{m_1 m_2 m_3 m_4}&=
+\frac{1}{8} \alpha ' \left(2 \epsilon _{1,m _1} q_{1,m _2}+v_{m _1} v_{m _2} q_1\cdot \epsilon _1\right)\\ &\times
+\left(2 \epsilon _{1,m _3} q_{1,m _4}+v_{m _3} v_{m _4} q_1\cdot \epsilon _1\right)\,,\\
+&&\\
+A^{[1,1,1]_9\otimes[1,1,1]_9 \rightarrow[2,2]_9 \rightarrow[2,2]_4}_{m_1 m_2 m_3 m_4}&=\frac{\alpha'}{4 \sqrt{15}} [ \left(v_{m _1} \epsilon _{1,m _3}-v_{m _3} \epsilon _{1,m _1}\right) \left(q_1\cdot
+\epsilon _1 \left(v_{m _2} q_{1,m _4}-v_{m _4} q_{1,m _2}\right)\right. \\
+&+t_1 \left.\left(v_{m _2} \epsilon
+	_{1,m _4}-v_{m _4} \epsilon _{1,m _2}\right)\right)\\&+q_{1,m _1} \left(\epsilon _{1,m _3} \left(\epsilon
+_{1,m _2} q_{1,m _4}-\epsilon _{1,m _4} q_{1,m _2}\right)\right.\\
+&+\left.v_{m _3} \left(v_{m _4} \left(\epsilon
+_{1,m _2} q_1\cdot \epsilon _1-q_{1,m _2}\right)+v_{m _2} \left(q_{1,m _4}-\epsilon _{1,m _4} q_1\cdot
+\epsilon _1\right)\right)\right)\\
+&+q_{1,m _3} \left(\epsilon _{1,m _1} \left(\epsilon _{1,m _4} q_{1,m
+	_2}-\epsilon _{1,m _2} q_{1,m _4}\right)\right.\\
+&+\left.v_{m _1} \left(v_{m _4} \left(q_{1,m _2}-\epsilon _{1,m
+	_2} q_1\cdot \epsilon _1\right)+v_{m _2} \left(\epsilon _{1,m _4} q_1\cdot \epsilon _1-q_{1,m
+	_4}\right)\right)\right)]\,,\\
+&\\
+\ydiagram{3}_{\,4}\\
+\left( A_{\mathbf{m}}^{[2]_9\otimes[111]_9 \rightarrow[311]_9 \rightarrow[3]_4}\right)^2 &=-\frac{\left(\alpha '\right)^2}{1152}\left(48 \left(q_1\cdot \epsilon _2\right){}^2 \left(3
+\left(q_2\cdot \epsilon _1\right){}^2+t_2\right)\right.\\&+48 t_1 \left(\left(q_2\cdot \epsilon
+	_1\right){}^2+t_2 \left(\epsilon _1\cdot \epsilon _2\right){}^2\right)+48 \left(q_1\cdot
+q_2\right){}^2 \left(1-3 \left(\epsilon _1\cdot \epsilon _2\right){}^2\right)\\&+115
+(q_1\cdot q_2) (\epsilon _1\cdot \epsilon _2) (q_1\cdot \epsilon _1) (q_2\cdot \epsilon _2)\\ &\left.-115
+(q_1\cdot \epsilon _1) (q_1\cdot \epsilon _2) (q_2\cdot \epsilon _1) (q_2\cdot \epsilon
+_2)\right)\,,\\
+&\\
+2\,\ydiagram{1}_{\,4}\\
+\left( A_{\mathbf{m}}^{[2]_9\otimes[111]_9 \rightarrow[311]_9 \rightarrow[1]_4}\right)^2&=-\frac{625 \left(\alpha '\right)^2}{12672} (q_1\cdot \epsilon _1) (q_2\cdot \epsilon _2)\\&\times \left((q_1\cdot
+\epsilon _2) (q_2\cdot \epsilon _1)-(q_1\cdot q_2) (\epsilon _1\cdot \epsilon
+_2)\right)\,,\\
+&\\
+\left( A_{\mathbf{m}}^{[2]_9\otimes[111]_9 \rightarrow[111]_9 \rightarrow[1]_4}\right)^2&=\frac{65 \left(\alpha '\right)^2}{1408} (q_1\cdot \epsilon _1) (q_2\cdot \epsilon _2)\\&\times \left((q_1\cdot
+q_2) (\epsilon _1\cdot \epsilon _2)-(q_1\cdot \epsilon _2) (q_2\cdot \epsilon _1)\right)\,.
+\eea{eq:list_amplitudes_flat}
+And
+\bea
+2\,\ydiagram{2,1}_{\,4}\\
+A_{m_1 m_2 m_3}^{[2]_9\otimes[111]_9 \rightarrow[21]_9 \rightarrow[21]_4}&=
+\frac{\alpha'}{12
+	\sqrt{6}}[ \left(q_{1,m _1} \left(v_{m _3} \left(2 \epsilon _{1,m _2} q_1\cdot \epsilon _1-3 q_{1,m
+		_2}\right)\right.\right.\\&+\left.v_{m _2} \left(3 q_{1,m _3}-2 \epsilon _{1,m _3} q_1\cdot \epsilon _1\right)\right)\\&+2 q_1\cdot
+	\epsilon _1 \left(q_{1,m _3} \left(v_{m _2} \epsilon _{1,m _1}-v_{m _1} \epsilon _{1,m
+		_2}\right)\right.\\&+\left.q_{1,m _2} \left(v_{m _1} \epsilon _{1,m _3}-v_{m _3} \epsilon _{1,m _1}\right)\right)\\&+\left.3
+	t_1 \epsilon _{1,m _1} \left(v_{m _2} \epsilon _{1,m _3}-v_{m _3} \epsilon _{1,\alpha _2}\right)\right)]\,,\\
+&\\
+\left( A_{\mathbf{m}}^{[2]_9\otimes[111]_9 \rightarrow[311]_9 \rightarrow[21]_4}\right)^2&=\frac{5 \left(\alpha '\right)^2 }{1152}\left(6 t_2 \left(q_1\cdot \epsilon _2\right){}^2+6 t_1
+\left(\left(q_2\cdot \epsilon _1\right){}^2+t_2 \left(\epsilon _1\cdot \epsilon
+	_2\right){}^2\right)\right.\\&+(q_1\cdot q_2) (\epsilon _1\cdot \epsilon _2) (q_1\cdot \epsilon _1)
+(q_2\cdot \epsilon _2)\\&-\left.(q_1\cdot \epsilon _1) (q_1\cdot \epsilon _2) (q_2\cdot \epsilon _1)
+(q_2\cdot \epsilon _2)+6 \left(q_1\cdot q_2\right){}^2\right)\,,\\
+&\\
+\eea{eq:21diagrams}
+We also have the sixfold degenerate spin 2 states
+\bea
+6\,\ydiagram{2}_{\,4}\\
+A_{m_1 m_2}^{[2]_9\otimes[2]_9\rightarrow[4]_9\rightarrow[2]_4}&= \frac{\alpha '}{16} \sqrt{\frac{5}{39}}  \left[q_{1,m _1} \left(5 \epsilon _{1,m _2} (q_1\cdot \epsilon _1)+2 q_{1,m
+		_2}\right)\right.\\ &+\epsilon _{1,m _1} \left(5 q_{1,m _2} (q_1\cdot \epsilon _1)-2 t_1 \epsilon _{1,m _2}\right)\\&\left.+5
+	v_{m _1} v_{m _2} \left(q_1\cdot \epsilon _1\right){}^2\right]\,,\\
+&\\
+A_{m_1 m_2}^{[2]_9\otimes[2]_9\rightarrow[2,2]_9\rightarrow[2]_4}&= \frac{\alpha '}{4} \sqrt{\frac{5}{42}}  \left[-q_{1,m _1} \left(q_{1,m _2}-2 \epsilon _{1,m _2} (q_1\cdot \epsilon
+_1)\right)\right.\\&+\epsilon _{1,m _1} \left(2 q_{1,m _2} (q_1\cdot \epsilon _1)+t_1 \epsilon _{1,m _2}\right)\\&+\left.2 v_{m
+		_1} v_{m _2} \left(q_1\cdot \epsilon _1\right){}^2\right]\,,\\
+&\\
+A_{m_1 m_2}^{[2]_9\otimes[2]_9\rightarrow[2]_9\rightarrow[2]_4}&= \frac{\alpha '}{4 \sqrt{91}}[ \left(q_{1,m _1} \left(\epsilon _{1,m _2} (q_1\cdot \epsilon _1)+3 q_{1,m _2}\right)\right.\\&+\epsilon
+_{1,m _1} \left(q_{1,m _2} (q_1\cdot \epsilon _1)-3 t_1 \epsilon _{1,m _2}\right)\\&+\left.v_{m _1} v_{m _2}
+\left(q_1\cdot \epsilon _1\right){}^2\right)]\,,\\
+&\\
+\eea{spin2part1}
+\bea
+A_{m_1m_2}^{[1,1,1]_9\otimes[1,1,1]_9\rightarrow[2,2]_9\rightarrow[2]_4}&= \frac{\alpha ' }{2 \sqrt{14}}[\left(q_{1,m _1} \left(q_{1,m _2}-\epsilon _{1,m _2} (q_1\cdot \epsilon _1)\right)\right.\\&+\epsilon _{1,m
+		_1} \left(-q_{1,m _2} \left(q_1\cdot \epsilon _1\right)-t_1 \epsilon _{1,m _2}\right)\\&+\left.v_{m _1}
+	v_{m _2} \left(-\left(q_1\cdot \epsilon _1\right){}^2-t_1\right)\right)]\,,\\
+&\\
+A_{m_1 m_2}^{[1,1,1]_9\otimes[1,1,1]_9\rightarrow[2]_9\rightarrow[2]_4}&=\frac{\alpha '}{4 \sqrt{21}}[ \left(q_{1,m _1} \left(\epsilon _{1,m _2} (q_1\cdot \epsilon _1)-q_{1,m _2}\right)\right.\\&+\epsilon _{1,m
+	_1} \left(q_{1,m _2} (q_1\cdot \epsilon _1)+t_1 \epsilon _{1,m _2}\right)\\&+\left.v_{m _1} v_{m _2}
+\left(\left(q_1\cdot \epsilon _1\right){}^2+t_1\right)\right)]\,,\\
+&\\
+\left( A_{\mathbf{m}}^{[1,1,1]_9\otimes[1,1,1]_9\rightarrow[2,2,2]_9\rightarrow[2]_4}\right)^2 &=\frac{\left(\alpha '\right)^2}{1920} \left(37 t_1 \left(q_2\cdot \epsilon _1\right){}^2-74 t_1
+(\epsilon _1\cdot \epsilon _2) (q_2\cdot \epsilon _1) (q_2\cdot \epsilon _2)\right.\\&\left.+17 \left(q_1\cdot
+\epsilon _1\right){}^2 \left(\left(q_2\cdot \epsilon _2\right){}^2+t_2\right)+17 t_1
+\left(\left(q_2\cdot \epsilon _2\right){}^2+t_2\right)\right.\\&+\left(q_1\cdot \epsilon
+_2\right){}^2 \left(117 \left(q_2\cdot \epsilon _1\right){}^2+37 t_2\right)\\&-74 (q_1\cdot
+\epsilon _1) (q_1\cdot \epsilon _2) \left((q_2\cdot \epsilon _1) (q_2\cdot \epsilon _2)+t_2
+(\epsilon _1\cdot \epsilon _2)\right)\\&+\left(q_1\cdot q_2\right){}^2 \left(117
+\left(\epsilon _1\cdot \epsilon _2\right){}^2-37\right)\\&\left.+q_1\cdot q_2 \left(2 q_1\cdot
+\epsilon _2 \left(37 q_2\cdot \epsilon _2-117 \epsilon _1\cdot \epsilon _2 q_2\cdot
+	\epsilon _1\right)\right.\right.\\&\left.\left.+74 q_1\cdot \epsilon _1 \left(q_2\cdot \epsilon _1-\epsilon _1\cdot
+	\epsilon _2 q_2\cdot \epsilon _2\right)\right)-37 t_1 t_2 \left(\epsilon _1\cdot
+\epsilon _2\right){}^2\right)\,,
+\eea{eq:list_amplitudes_spin2}
+
+and 8-fold degenerate spin 0 states
+\bea
+8\, \bullet_4\\
+A_{[2]_9 \otimes [2]_9 \rightarrow [4]_9 \rightarrow \bullet_4}&=\frac{1}{48} \sqrt{\frac{35}{286}} \alpha ' \left(4 t_1-15 \left(q_1\cdot \epsilon _1\right){}^2\right)\,,\\
+&\\
+A_{[2]_9 \otimes [2]_9 \rightarrow [2,2]_9 \rightarrow \bullet_4}&=\frac{1}{24} \sqrt{\frac{5}{7}} \alpha ' \left(3 \left(q_1\cdot \epsilon _1\right){}^2+t_1\right)\,,\\
+&\\
+A_{[2]_9 \otimes [2]_9 \rightarrow [2]_9 \rightarrow \bullet_4}&=\frac{1}{8} \sqrt{\frac{5}{91}} \alpha ' \left(\left(q_1\cdot \epsilon _1\right){}^2-2 t_1\right)\,,\\
+&\\
+A_{[2]_9 \otimes [2]_9 \rightarrow \bullet_9 \rightarrow\bullet_4}&=\frac{\alpha '}{8 \sqrt{11}} \left(\left(q_1\cdot \epsilon _1\right){}^2-t_1\right)\,,\\
+&\\
+A_{[1,1,1]_9 \otimes [1,1,1]_9 \rightarrow [2,2]_9\rightarrow \bullet_4}&=\frac{1}{8} \sqrt{\frac{3}{7}} \alpha ' \left(-\left(q_1\cdot \epsilon _1\right){}^2-t_1\right)\,,\\
+&\\
+\eea{scalarspart1}
+\bea
+A_{[1,1,1]_9 \otimes [1,1,1]_9 \rightarrow [2]_9\rightarrow \bullet_4}&=\frac{1}{8} \sqrt{\frac{5}{21}} \alpha ' \left(\left(q_1\cdot \epsilon _1\right){}^2+t_1\right)\,,\\
+&\\
+A_{[1,1,1]_9 \otimes [1,1,1]_9 \rightarrow \bullet_9\rightarrow \bullet_4}&=\frac{\alpha ' }{8 \sqrt{21}}\left(\left(q_1\cdot \epsilon _1\right){}^2+t_1\right)\,,\\
+&\\
+\left( A_{[1,1,1]_9 \otimes [1,1,1]_9 \rightarrow [2,2,2]_9\rightarrow \bullet_4}\right)^2 &=\frac{\left(\alpha '\right)^2}{4480} \left(-49 t_1 \left(q_2\cdot \epsilon _1\right){}^2+98 t_1
+(\epsilon _1\cdot \epsilon _2) (q_2\cdot \epsilon _1) (q_2\cdot \epsilon _2) \right.\\&-49 \left(q_1\cdot
+\epsilon _2\right){}^2 \left(\left(q_2\cdot \epsilon _1\right){}^2+t_2\right)-29
+\left(q_1\cdot \epsilon _1\right){}^2 \left(\left(q_2\cdot \epsilon
+	_2\right){}^2+t_2\right)\\&-29 t_1 \left(\left(q_2\cdot \epsilon
+	_2\right){}^2+t_2\right)-49
+\left(q_1\cdot q_2\right){}^2 \left(\left(\epsilon _1\cdot \epsilon
+	_2\right){}^2-1\right)\\&+98 (q_1\cdot \epsilon _1) (q_1\cdot \epsilon _2) \left((q_2\cdot
+\epsilon _1) (q_2\cdot \epsilon _2)+t_2 (\epsilon _1\cdot \epsilon _2)\right)\\&\left.-98 q_1\cdot q_2 \left(q_1\cdot \epsilon _2 \left(q_2\cdot
+\epsilon _2-(\epsilon _1\cdot \epsilon _2) (q_2\cdot \epsilon _1)\right)\right.\right.\\&\left.\left.+q_1\cdot \epsilon
+_1 \left(q_2\cdot \epsilon _1-(\epsilon _1\cdot \epsilon _2)( q_2\cdot \epsilon
+_2)\right)\right)+49 t_1 t_2 \left(\epsilon _1\cdot \epsilon _2\right){}^2\right)\,.
+\eea{eq:list_amplitudes_scalar}
+Upon contracting each of these amplitudes (with a Pomeron $P_1$) with the appropriate projector and another three-point amplitude (with a Pomeron $P_2$), we recover, upon summing over all 22 states, the level 1 residue of the four-point amplitude, as described in the main text.
+
+
+\cleardoublepage

@@ -1,0 +1,44 @@
+%!TEX root = ../Central_compile.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusions}
+\label{sec:conclusions}
+In this work, we  derived a perturbative CFT optical theorem which computes the dDisc of a correlator in the $1/N$ expansion in terms of single discontinuities of lower order correlators. Notably, this allows the determination of double-trace contributions to a given one-loop holographic correlator, even when the intermediate fields have spin, which makes them much harder to handle  using unitarity formulas in terms of the CFT data. This also clarifies the underlying CFT principles behind cutting formulas for AdS Witten diagrams, which so far used bulk quantities \cite{Meltzer:2019nbs,Meltzer:2020qbr}.
+
+Using the perturbative CFT optical theorem we fixed the form of the AdS one-loop four-point scattering amplitude in the high-energy limit, accounting for the physical effect of tidal excitations.  This corresponds to box Witten diagrams with two-Pomeron exchange and general string fields as intermediate states. To do this, we transformed the optical theorem to CFT impact parameter space, in which the loop level phase shift is obtained as a contraction of tree-level phase shifts.
+Using the general structure of spinning correlators in the s-channel Regge limit, we rewrote all the tidal excitations in terms of a single scalar function, the AdS vertex function.
+
+For the case of ${\cal N}=4$ SYM, dual to type IIB strings, we fixed part of the answer by relating our expression to the flat space results of \cite{Amati:1987wq,Amati:1987uf,Amati:1988tn} for high energy string scattering, requiring consistency with the flat space limit in impact parameter space. This procedure fixes part of the AdS vertex function and therefore also part of the CFT correlation function at one-loop in the Regge limit.
+Additionally, interpreting the previous result in terms of unitarity, we used the flat-space behavior  to constrain the spectral function for certain spinning CFT correlators  at tree level in the Regge limit. 
+
+
+There are several open directions and applications of this work.
+First, we emphasize that the CFT optical theorem is quite general and does not rely on AdS ingredients.
+Moreover,   it works directly at the level of correlators instead of having to extract the CFT data, which is very difficult to resum into correlators. It would be interesting to test and use this formula for more general holographic correlators and, since the expansion parameter does not necessarily need to be $1/N$, in weakly coupled CFTs such as $\phi^4$ theory at the Wilson-Fisher fixed point in $4-\epsilon$ dimensions. 
+
+Another playground to apply our gluing formula  is $\mathcal{N}=4$ SYM at weak t'Hooft coupling in the Regge limit. One could try to derive the order $1/N^4$ correlator
+explicitly  at leading order in $\lambda$, using the techniques introduced in \cite{Cornalba:2008qf}. The corresponding double discontinuity should be the square 
+of order  $1/N^2$ correlators with impact factors that include the intermediate states. 
+
+In the Regge limit there are kinematical conditions in the CFT optical theorem that simplified the integrations over Lorentzian configurations. An interesting generalization would be to systematically study kinematic corrections to the Regge limit. In fact, in the recent work \cite{Caron-Huot:2020nem} the authors derived a Regge expansion for the correlator valid for any boost. It would be interesting to see how to incorporate this into our analysis, both in a general structural way, but also potentially to impose specific constraints from the flat space limit in a more general kinematic setup. More generally, it would be interesting to understand the Regge limit integrations in terms of light-ray operators \cite{Kravchuk:2018htv}, and to use the more general Lorentzian machinery of \cite{Simmons_Duffin_2018,Kravchuk:2018htv} to write an intrinsically Lorentzian gluing formula in general kinematics.
+
+A possible extension of this work is to consider a higher number of bulk loops. This was analyzed in the large $\Delta_{\text{gap}}$ limit in \cite{Meltzer:2019pyl}. Let us give a few concrete ideas for the stringy generalization of that analysis.
+The leading contribution in the Regge limit at $k-1$ loops is expected to be $k$-Pomeron exchange, related to a $k$-fold product of tree-level phase shifts.
+By repeatedly using \eqref{eq:Omega_prod} one can define a generalization of the function $\Phi$ for such a product, so we expect that the contribution of intermediate states can again be expressed by a vertex function\footnote{This corresponds to eikonalization in the operator sense of \cite{Amati:1987uf} where the phase shift is an operator in the string Hilbert space, with matrix elements between all possible string states.}
+\bea
+-\Re \mathcal{B}_{k-1}(S,L) = \int\limits_{-\infty}^\infty d\nu  \left(\prod\limits_{n=1}^k d\nu_n \, \beta^{(*)}(\nu_n)  \right)
+&V(\nu_1,\ldots,\nu_k,\nu)^2 \,S^{\sum_m j(\nu_m)-k}\\
+&\Phi(\nu_1,\ldots,\nu_k,\nu) \,\Omega_{i \nu} (L)\,,
+\eea{eq:Bk_result}
+where the product of $\beta(\nu_n)$ must be real, which means that the answer is slightly different depending on whether the number of loops is even or odd \cite{Meltzer:2019pyl}.
+In order to find the flat space limit of this $(k-1)$-loop vertex function we would need to consider the flat space result for higher loops, which is known at least in integral form \cite{Amati:1987wq,Amati:1987uf,Amati:1988tn} 
+\begin{equation}
+\label{eq:nloopVfunctn}
+V_k(q_1,\dots,q_k)= \int \prod_{i=1}^{k} \frac{d \sigma_i}{2 \pi} \prod_{1\leq j <l \leq k} |e^{i \sigma_j}- e^{i \sigma_l}|^{ \alpha' q_{l}\cdot q_j}\,.
+\end{equation}
+Note that the symmetry of the integrand is such that only $k-1$ integrals are non-trivial. For example, the one-loop case just gives
+\beq
+V_2(q_1,q_2)= \int \frac{d \sigma_1 d \sigma_2}{(2\pi)^2} \,  |e^{i \sigma_1}- e^{i \sigma_2}|^{\alpha'q_{12}}=
+ \int \frac{d \sigma}{2\pi}|1- e^{i \sigma} \, |^{\alpha'q_{12}}= \frac{\Gamma\big(1+\alpha'\frac{t_1+t_2-t}{2}\big)}{\Gamma \big(1+\alpha'\frac{t_1+t_2-t}{4}\big)^2},
+\eeq
+recovering \eqref{eq:V_flat}.

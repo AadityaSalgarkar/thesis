@@ -1,0 +1,76 @@
+\section{Additional examples of string amplitudes}
+\label{sec:examples}
+In this appendix we provide some additional examples and comments on the chiral and closed string amplitudes.
+\subsection{Chiral Amplitudes}
+
+In the chiral case it is trivial to reproduce level 0. Here we have only the massless particles with residue
+	\beq
+		\sqrt{\underset{k^2=0}{\Res} A^{12P_1P_2} (k, q_{12})}  = \epsilon_1^{\mu} A^{15P_1}_{\mu \alpha} \pi_{[1]_8}^{\alpha;\beta} A^{52P_2}_{\beta \nu}\epsilon_2^{\nu}=\epsilon_1^{\mu} \eta_{\mu \alpha} \eta^{\alpha \beta}\eta_{\beta \nu} \epsilon_2^\nu= \epsilon_1\cdot \epsilon_2\,,
+	\eeq
+where we have used $A^{15P_1}_{\mu \alpha}= \eta_{\mu \alpha}$ and $\pi_{[1]_8}^{\alpha;\beta}=\eta^{\alpha \beta}$. At higher levels we will have non-trivial three-point functions. It will be convenient to absorb the external polarization into the amplitude
+	\beq
+		\epsilon_1^{\mu} A^{15P_1}_{n,\, \mu,\rho_5, \bnu} \equiv A^{15P_1}_{n,\rho_5, \bnu}\,,
+	\eeq
+to be more compact in writing the amplitudes (we are using the integer $n$ to label the mass level of the state). 
+
+From the spectrum described above, we will have two amplitudes at level 1 which are $A^{15P_1}_{1,[1,1,1]_9,\balpha}$ and $A^{15P_1}_{1,[2]_9,\balpha}$.\\
+ Here we 
+will  keep in mind the Young diagrams explained above, along with the index symmetrization that comes with them, packaged in our boldface multi-index notation.
+The explicit level 1 three point amplitudes in the IIB superstring are
+	\beq
+		A^{15P_1}_{1,[1,1,1]_9,\balpha}= \frac{\sqrt{6}}{m_1} \epsilon_{1 \alpha_1}q_{1 \alpha_2} v_{\alpha_3}~,~ A^{15P_1}_{1,[2]_9,\balpha}
+		=-\sqrt{\frac{\alpha'}{2}}\left(\epsilon_{1 \alpha_1} q_{1 \alpha_2} + \frac{1}{2} (q_1 \cdot \epsilon_1) v_{\alpha_1}v_{\alpha_2} \right) \,,
+	\eeq
+with $m_1=2/\sqrt{\alpha'}$ being the mass at level 1, and $q_1$ is the transverse momentum carried by the Pomeron $P_1$ (similarly for $q_2$ and the Pomeron $P_2$). All the relative factors between the different tensor structures and the overall normalization are fixed by computing the three-point amplitudes with the correctly normalized vertex operators for the excited NS states in IIB super string theory \cite{DAppollonio:2013mgj}. We can now contract the three-point amplitudes on each side using the projector for the appropriate representation and check the residue
+	\bea
+		\sqrt{\underset{k^2=-4/\alpha'}{\Res} A^{12P_1P_2} (k, q_{12})}&= A^{15P_1}_{1,\balpha} 
+		\pi_{[1,1,1]_9}^{\balpha;\bbeta} A^{52P_1}_{1,\bbeta}
+		+A^{15P_2}_{1,\balpha} \pi_{[2]_9}^{\alpha;\bbeta} A^{52P_2}_{1,\bbeta}\\
+		&=\frac{\alpha'}{2} (-q_1\cdot q_2)(\epsilon_1\cdot \epsilon_2),
+	\eea{eq:level1_res_flat}
+where we refrained from writing the representation labels in the amplitudes since they are contracted with a projector with the appropriate label.	
+This matches what we extracted from $A^{\alpha_1 \alpha_2}(q_{12})$, or equivalently from the vertex function. We can continue this procedure to the second level, where mixed symmetry tensors appear for the first time. For example, the $[2,1,1]_9$ tensor has the amplitude
+	\beq
+		A^{15P_1}_{2,[2,1,1]_9,\balpha}= \sqrt{\frac{3}{8}} \sqrt{\frac{\alpha'}{2}} 
+		\left(\frac{4}{m_2}q_{1 \alpha_2} +2 v_{\alpha_2}\right) \epsilon_{1 \alpha_1} q_{1 \alpha_3}v_{\alpha_4},
+	\eeq
+where $m_2=\sqrt{8/\alpha'}$ is the mass at level 2. It is important to emphasize that the level 2 amplitude contains a term with more powers of $\alpha'$ than any of the level 1 amplitudes. This would lead to further suppression in $1/\sqrt{\lambda}$ in the AdS theory.\footnote{Clearly, states with higher spin, which can only appear at higher levels, can have higher powers of $\alpha'$ leading to a spin-dependent suppression of couplings, as is expected from the general arguments of \cite{Costa:2017twz,Meltzer:2017rtf}.}
+
+The remaining amplitudes can be found in section 5 of \cite{DAppollonio:2013mgj}. For our purposes it is just important to know that the amplitudes satisfy
+	\bea
+		\sqrt{\underset{k^2=-8/\alpha'}{\Res} A^{12P_1P_2} (k, q_{12})}&= 
+		\sum_{\rho \in S}A^{15P_1}_{2,\rho,\balpha}  \pi_{\rho}^{\balpha;\bbeta}A^{52P_2}_{2,\rho,\bbeta} = \frac{(-\frac{\alpha'}{2}q_1\cdot q_2)_2}{2!} (\epsilon_1\cdot \epsilon_2)\,,\\ 
+		S & =\left\lbrace[3]_9 ~,~ [2,1,1]_9 ~,~[2,1]_9 ~,~[1,1]_9 ~,~[1]_9 \right\rbrace  ,
+	\eea{eq:level2_res_flat}
+which we explicitly checked. More generally, we can conclude that the square root of the residue at mass level $n$ of $A^{12P_1P_2}(k,q_{12})$ can be recovered by unitarity if we account for all the covariant SO(9) representations corresponding to the massive NS states. This gives a microscopic interpretation for the vertex function at a given mass level. As already mentioned, summing over all these mass levels reconstructs the full vertex function.
+
+
+\subsection{Closed string amplitudes}
+Here we consider the simple but instructive level 0 case for the closed string amplitudes, where the little group is SO(8). The square of the residue reads
+	\begin{align}
+\label{eq:level0_closed_so8}
+		{}&A^{15P_1}_{L1, \alpha}A^{15P_1}_{R1,\beta} \; \left( \pi_{[1]_8}^{\alpha ;\gamma}\pi_{[1]_8}^{\beta ;\delta} \right) \;  A^{52P_2}_{L1,\gamma}A^{52P_2}_{R1\delta}     \\
+		&= \hspace{-.4cm} \sum_{\rho_C=[2]_8,[1,1]_8,\bullet_8} \hspace{-.4cm}   A^{15P_1}_{L1, \alpha}A^{15P_1}_{R1,\beta}(
+		p^{\alpha \beta}_{[1]_8 \otimes [1]_8 \to \rho_C,\mu_1 \mu_2}
+		\pi_{\rho_C}^{\mu_1 \mu_2;\nu_1 \nu_2}
+		p^{\gamma \delta}_{[1]_8 \otimes [1]_8 \to \rho_C,\nu_1 \nu_2})A^{52P_2}_{L1,\gamma}A^{52P_2}_{R1\delta}
+		= (\epsilon_1\cdot \epsilon_2)^2  \,,
+\nonumber
+\end{align}
+where we used the group theoretical tensor product identity for projectors
+	\beq
+	 	\pi_{[1]_8}^{\alpha ;\gamma}\pi_{[1]_8}^{\beta ;\delta} \; = \sum_{\rho_C=[2]_8,[1,1]_8,\bullet_8} p^{\alpha \beta}_{[1]_8 \otimes [1]_8 \to \rho_C,\mu_1 \mu_2}
+	 	\pi_{\rho_C}^{\mu_1 \mu_2;\nu_1 \nu_2}
+	 	p^{\gamma \delta}_{[1]_8 \otimes [1]_8 \to \rho_C,\nu_1 \nu_2}\,.
+	\eeq
+We can solve this equation for the tensors $p$ by contracting with polarization vectors for the left and right modes on both sides of the projector ($z_L,z_R$ and $\zb_L,\zb_R$) and equating the polynomials in scalar products of $z$'s. In practice we will always use this procedure, or a similar one where we contract with amplitudes to fix coefficients. In this case it is trivial to directly check that
+	\begin{align}
+		\pi_{[1]_8}^{\alpha ;\gamma}\pi_{[1]_8}^{\beta ;\delta} \; 
+		&= \; \eta^{\alpha \gamma}\eta^{\beta \delta}	\;\equiv \;  \pi_{[2]_8}^{\alpha \beta;\gamma \delta} + \pi_{[1,1]_8}^{\alpha \beta;\gamma \delta} + \frac{1}{8} \eta^{\alpha \beta} \eta^{\gamma \delta}
+	\label{eq:level0_closed_check}
+	       \\
+		& = \left(\frac{1}{2}( \eta^{\alpha \gamma}\eta^{\beta \delta}+\eta^{\alpha \delta}\eta^{\beta \gamma})-\frac{1}{8} \eta^{\alpha \beta}\eta^{\gamma \delta}\right) 
+		+ \frac{1}{2}(\eta^{\alpha \gamma}\eta^{\beta \delta}-\eta^{\alpha \delta}\eta^{\beta \gamma}) + \frac{1}{8}(\eta^{\alpha \beta}\eta^{\gamma \delta})\,,
+	\nonumber
+\end{align}
+where, obviously $p^{\alpha \beta}_{[1]_8 \otimes [1]_8 \to [2]_8,\mu_1 \mu_2}=\delta^\alpha_{\mu_1}\delta^\beta_{\mu_2} ~,~p^{\alpha \beta}_{[1]_8 \otimes [1]_8 \to [1,1]_8,\mu_1 \mu_2}=\delta^\alpha_{\mu_1}\delta^\beta_{\mu_2}$ and $p^{\alpha \beta}_{[1]_8 \otimes [1]_8 \to \bullet_8}= \sqrt{\frac{1 }{8}}\eta^{\alpha\beta}$ extracts traces, thereby projecting to a singlet state.
